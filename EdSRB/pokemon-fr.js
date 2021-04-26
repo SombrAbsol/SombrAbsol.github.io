@@ -420,7 +420,7 @@ var pokemon=[
 "Deoxys",
 "Deoxys",
 "Goinfrex",
-"Appât",
+"Appat",
 "Statue",
 "Rayquaza"
 ];
