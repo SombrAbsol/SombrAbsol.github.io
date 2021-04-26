@@ -398,8 +398,6 @@ var pokemon=[
 "Rosabyss",
 "Relicanth",
 "Lovdisc",
-"Relicanth",
-"Lovdisc",
 "Draby"
 "Drackhaus",
 "Drattak",
