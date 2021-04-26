@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <title>Convertisseur de Lettres Miracle S</title> <meta name="description" content="Convertit les mots de passe des Lettres Miracle pour Pokémon Donjon Mystère : Explorateurs du Ciel entre les différentes version du jeu." /> <link rel="stylesheet" type="text/css" href="wmtools.css" /> <script type="text/javascript" src="wmutils.js"></script> <script type="text/javascript" src="wm.js"></script> <script type="text/javascript">		
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <title>Convertisseur de Lettres Miracle S</title> <meta name="description" content="Convertit les mots de passe des Lettres Miracle pour PokÃ©mon Donjon MystÃ¨re : Explorateurs du Ciel entre les diffÃ©rentes version du jeu." /> <link rel="stylesheet" type="text/css" href="wmtools.css" /> <script type="text/javascript" src="wmutils.js"></script> <script type="text/javascript" src="wm.js"></script> <script type="text/javascript">		
 		// This is a really bad hack.
 		var curCountry = 1;
 		
@@ -32,12 +32,12 @@
 				return WMSParser.byteSwap;
 			}
 		}
-
+	
 		var convertedThisSession = false;
 		function doConvert(fromCountry) {
 			var mailString = WMSParser.sanitize($('inputbox').value);
 			if(mailString.length != 34) {
-				setError("Désolé, le mot de passe de la Lettre Miracle S entré n'a pas la bonne longueur ou contient des caractères invalides.");
+				setError("DÃ©solÃ©, le mot de passe de la Lettre Miracle S entrÃ© n'a pas la bonne longueur ou contient des caractÃ¨res invalides.");
 				return false;
 			}
 			
@@ -65,12 +65,12 @@
 	               Convertisseur de Lettres Miracle S            
 </h1>
 <h2>
-	              <em> Pokémon Donjon Mystère : Explorateurs du Ciel</em>
+	              <em> PokÃ©mon Donjon MystÃ¨re : Explorateurs du Ciel</em>
 </h2>
 <h2>
 	                  
 	<div style="font-size: 13px; font-weight: 400;">
-		      Ce convertisseur permet d'utiliser les mots de passe des Lettres Miracle S des versions américaines et australiennes de <em>Pokémon Donjon Mystère : Explorateurs du Ciel</em> sur des versions européennes, et réciproquement.
+		      Ce convertisseur permet d'utiliser les mots de passe des Lettres Miracle S des versions amÃ©ricaines et australiennes de <em>PokÃ©mon Donjon MystÃ¨re : Explorateurs du Ciel</em> sur des versions europÃ©ennes, et rÃ©ciproquement.
 	</div>
 	           
 	<div style="font-size: 13px; font-weight: 400;">
@@ -87,10 +87,10 @@
 	<p>
 		                     <strong></strong>              
 		<button style="" id="convertUSbtn" onclick="doConvert(1)">
-			                 Convertir US/AU à EU                 
+			                 Convertir US/AU Ã  EU                 
 		</button><strong>       </strong>              
 		<button style="" id="convertEUbtn" onclick="doConvert(2)">
-			                 Convertir EU à US/AU                 
+			                 Convertir EU Ã  US/AU                 
 		</button><strong>       </strong>              
 	</p>
  
