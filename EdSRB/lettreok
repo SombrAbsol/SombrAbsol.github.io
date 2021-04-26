@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "/include/xhtml.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr"><head>
+<title>Pokemon Mystery Dungeon - Mail Converter</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script>
+      (function(i,s,o,g,r,a,m){i[&#039;GoogleAnalyticsObject&#039;]=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,&#039;script&#039;,&#039;//www.google-analytics.com/analytics.js&#039;,&#039;ga&#039;);
+      
+      ga(&#039;create&#039;, &#039;UA-45603406-1&#039;, &#039;syphist.com&#039;);
+      ga(&#039;send&#039;, &#039;pageview&#039;);
+      
+    </script>
+</head>
+<body>
+<h1>Pokemon Mystery Dungeon - Mail Converter</h1>
+<br />
+<ul class="copyheader">
+<li>Written by <a href="https://web.archive.org/web/20070701084313/http://www.upokecenter.com:80/mail.php">Peter O.</a> of <a href="https://web.archive.org/web/20080913124315/http://www.upokecenter.com:80/">The Ultimate Pokemon Center</a>.</li>
+<li>(C) 2007 Peter O.</li>
+<li>The original can be found at <a href="https://web.archive.org/web/20080913124421/http://www.upokecenter.com/games/dungeon/guides/sosmail.php">http://www.upokecenter.com/games/dungeon/guides/sosmail.php</a>.</li>
+</ul>
+<div id="bodyContent">
+<div id="contentSub"></div>
+
+<!-- include virtual="/include/uainfo.htm"-->
+<div id="contentarea">
+<script src="items-fr.js" type="text/javascript"></script>
+<script src="pokemon-fr.js" type="text/javascript"></script>
+<script type="text/javascript">
+var PasswordTooShort="The password was invalid because it contained fewer than 54 characters. Please re-enter the password as it appears in the game and try again."
+var NoPassword="No password was entered."
+var InvalidPasswordLong="The password was invalid.  Please re-enter the password and try again."
+var NotSOSMail="The password given was not an SOS Mail password."
+var NotAOKMail="The password given was not an A-OK Mail password."
+var SOSMailEnteredInAOK="The password given appears to be an SOS Mail password instead of an A-OK Mail password.  Do you want to generate an A-OK Mail from this password? If you do, select OK."
+var AOKMailEnteredInSOS="The password given appears to be an A-OK Mail password instead of an SOS Mail password.  Do you want to generate a Thank-You Mail from this password? If you do, select OK."
+var BasementFloor="BXXF"
+var AboveGroundFloor="XXF"
+var InvalidPassword="The password is invalid."
+var DifficultyLine="Difficulty:"
+var IDLine="ID:"
+var PlaceLine="Place:"
+var ClientLine="Client:"
+var RescueChancesLine="Rescue chances:"
+</script>
+<script src="sosmail.js" type="text/javascript"></script>
+<script src="diff.js" type="text/javascript"></script>
+<script type="text/javascript">//<![CDATA[
+
+var AboveGround=[
+0,0,1,1,0,1,1,1,0,1,1,1,1,1,1,0,0,1,1,0,0,0,
+1,0,0,0,0,0,0,1,0,1,0,1,1,1,0,1,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,1,0
+]
+function IsAboveGround(d){
+ if(d>=AboveGround.length)return 1
+ return AboveGround[d]
+}
+function showitems(name){
+ document.write("<select name=""+name+"">");
+ for(var i=0;i<items.length;i++){
+  document.write("<option value="">"+items[i]+" ["+i.toString(16)+"]</option>");  
+ } 
+ document.write("</select>");
+}
+
+function showpokemon(name){
+ document.write("<select name=""+name+"">");
+ for(var i=0;i<pokemon.length;i++){
+  document.write("<option value="">"+pokemon[i]+"</option>");  
+ } 
+ document.write("</select>");
+}
+
+
+var debug=0
+
+function entrytopass(x){
+ x=x.replace(/[nsr&#039;"]/g,"")
+         .replace(/[u2642]/g,"#")
+         .replace(/[u2640]/g,"%")
+         .replace(/[{([]m([au00e2]le?)?[)]}]/gi,"#")
+         .replace(/[{([]f(em(ale|elle)?)?[)]}]/gi,"%")
+         .replace(/[{([]w(eib(l(ich)?)?)?[)]}]/gi,"%")
+         .replace(/[{([]m(acho)?[)]}]/gi,"#")
+         .replace(/[{([]h(em(bra)?)?[)]}]/gi,"%")
+         .replace(/[{([]m[au00e4u00c4]nn(l(ich)?)?[)]}]/gi,"#")
+         .replace(/[{([]..?.?[)]}]/g,".")
+         .replace(/[{([][u2026][)]}]/g,".")
+         .replace(/[u2026]/g,".")
+         .toUpperCase()
+ testx=x.replace(/.../g,".")
+ if(testx.length==54)
+  x=testx
+ return x
+}
+
+function formatpass(x){
+ x=entrytopass(x)
+ return x.substr(0,5)+" "
+       +x.substr(5,8)+" "
+       +x.substr(13,5)+"rn"
+       +x.substr(18,5)+" "
+       +x.substr(23,8)+" "
+       +x.substr(31,5)+"rn"
+       +x.substr(36,5)+" "
+       +x.substr(41,8)+" "
+       +x.substr(49,5)+"rn"
+}
+
+var baditems="EDEEEFB1E924D8D2B0DC323334C2ECF0"
+
+function option(x){
+ return parseInt(x[x.selectedIndex].value)
+}
+
+function isbaditem(x){
+ if(x>=0xF0)return 0
+ for(var i=0;i<baditems.length/2;i++){
+  if(x==c2c(baditems,i))
+   return 1
+ }
+ return 0
+}
+
+function showrewards(name){
+ document.write("<select name=""+name+"">");
+ for(var i=0;i<items.length;i++){
+  if(!isbaditem(i)){
+   document.write("<option value=""+i+"">"+items[i]
+//      +" ["+i.toString(16)+"]"
+      +"</option>");  
+  }
+ } 
+ document.write("</select>");
+}
+
+function decodemission(pass){
+ var diffstring="EDCBAS*"
+ var client=pass[12]|(pass[13]<<8)
+ var clientname=""
+ for(var i=0;i<10;i++){
+  if(pass[20+i]==0)break
+  clientname+=String.fromCharCode(pass[20+i])
+ }
+ var clientstr=ClientLine+" "+clientname+" ("+pokemon[client]+")"
+ var placestr=PlaceLine+" "+dungeons[pass[4]]+" "
+ if(IsAboveGround(pass[4]))
+  placestr+=AboveGroundFloor.replace("XX",pass[5])
+ else
+  placestr+=BasementFloor.replace("XX",pass[5])
+ var id=pass[16]|(pass[17]<<8)
+ var idstr=IDLine+" "+(id%10000)+"rn"
+          +RescueChancesLine+" "+pass[44]+"rn"
+          +DifficultyLine+" "+diffstring.charAt(GetDifficulty(0,pass[4],pass[5]))
+ return clientstr+"rn"+placestr+"rn"+idstr+"rn"
+}
+
+function genmailex(f,mail,flags,mailtype){
+ var pass=[]
+ var x=entrytopass(mail)
+ if(x.length==0){
+  alert(NoPassword)
+  return 0
+ } if(x.length<54){
+  alert(PasswordTooShort)
+  return 0
+ }
+ if(!convertpass(x,pass)){
+  alert(InvalidPasswordLong)
+  return 0
+ } else if(pass[0]!=mailtype) {
+  if(mailtype==1){
+   if(pass[0]==4){
+    if(confirm(AOKMailEnteredInSOS)){
+     flags=2;
+     f.aok.value=formatpass(x);
+    } else {
+     return 0;
+    }
+   } else {
+    alert(NotSOSMail)
+    return 0
+   }
+  }else if(mailtype==4){
+   if(pass[0]==1){
+    if(confirm(SOSMailEnteredInAOK)){
+     flags=1;
+     f.sos.value=formatpass(x);
+    } else {
+     return 0;
+    }
+   } else {
+    alert(NotAOKMail)
+    return 0
+   }
+  }
+ }
+ f.mission.value=decodemission(pass)
+ if(flags&1){
+  pass[0]=4//A-OK mail ID
+  pass[40]=pass[36]
+  pass[41]=pass[37]
+  pass[42]=pass[38]
+  pass[43]=pass[39]
+  pass[44]=pass[44]-1//rescue chances left
+  //web.archive.org/web/20080913124421/http://works even if line below is commented out
+  f.aok.value=formatpass(datatopass(pass))
+ }
+ if(flags&2){
+  var itemidx=option(f.item)
+  pass[0]=5//Thank-You mail ID
+  if(itemidx){
+   pass[33]=1
+   pass[34]=itemidx&0xFF
+   pass[35]=(itemidx>>8)&0xFF
+  }
+  f.ty.value=formatpass(datatopass(pass))
+ }
+ return 1
+}
+
+function genaok(f){
+ if(genmailex(f,f.sos.value,1,1)){
+  f.sos.value=formatpass(f.sos.value)
+ }
+}
+
+function genaokty(f){
+ if(genmailex(f,f.sos.value,3,1)){
+  f.sos.value=formatpass(f.sos.value)
+ }
+}
+
+function genty(f){
+ if(genmailex(f,f.aok.value,2,4)){
+  f.aok.value=formatpass(f.aok.value)
+ }
+}
+
+function decsos(f){
+ var x=entrytopass(f.sos.value)
+ var pass=[]
+ if(!convertpass(x,pass)){
+  alert(InvalidPassword)
+ } else {
+  x=datatopass(pass)
+  f.sos.value=formatpass(x)
+  if(debug){
+   f.data.value=tostr(pass)
+  }
+ }
+}
+
+function encsos(f){
+ var pass=f.data.value.split(",")
+ for(var i=0;i<pass.length;i++){
+  pass[i]=parseInt(pass[i],16)
+ }
+ x=datatopass(pass)
+ f.sos.value=formatpass(x)
+ if(debug){
+  f.data.value=tostr(pass)
+ }
+}
+//]]>
+</script>
+<p>If none of your friends own Pokemon Mystery Dungeon, it is still possible
+to rescue yourself with the help of this tool.</p>
+<p>Using this tool, you can generate an A-OK and Thank-You Mail password from
+an SOS Mail password, or a Thank-You Mail password from an A-OK Mail
+password.  Note also the following.</p>
+<ul>
+<li>For the male sign (), use &quot;#&quot; or &quot;(m)&quot;.</li>
+<li>For the female sign (), use &quot;%&quot; or &quot;(f)&quot;.</li>
+<li>For the ellipsis (), use &quot;.&quot; or &quot;(...)&quot;.</li></ul>
+<p>I created this tool.  Please <a href="https://web.archive.org/web/20070701084313/http://www.upokecenter.com:80/mail.php">contact me</a> with your comments.</p>
+<form name="s" action="javascript:void(null)">
+SOS Mail Password:<br/>
+<textarea name="sos" cols="30" rows="5"></textarea><br/>
+<!-- <script type="text/javascript">
+if(debug){
+ document.write(&#039;<input type="button" value="Decode SOS Mail" onclick="decsos(this.form)"/><br/>&#039;)
+ document.write(&#039;<textarea name="data" cols="30" rows="6"></textarea><br/>&#039;)
+ document.write(&#039;<input type="button" value="Encode SOS Mail" onclick="encsos(this.form)"/><br/>&#039;)
+}
+</script> //-->
+<input type="button" value="Generate A-OK Mail" onclick="genaok(this.form)"/><br/>
+<input type="button" value="Generate A-OK and Thank-You Mail" onclick="genaokty(this.form)"/><br/>
+A-OK Mail Password:<br/>
+<textarea name="aok" cols="30" rows="5"></textarea><br/>
+Item to send to Thank-You Mail (optional):<br/>
+<!-- <script type="text/javascript">
+showrewards("item")
+</script> //--><br/>
+<input type="button" value="Generate Thank-You Mail" onclick="genty(this.form)"/><br/>
+Thank-You Mail Password:<br/>
+<textarea name="ty" cols="30" rows="5"></textarea><br/>
+Rescue Mission Data:<br/>
+<textarea name="mission" cols="30" rows="6"></textarea>
+</form></div>
+<p><a href="..">&lt; Back</a></p>
+</body>
+</html>
