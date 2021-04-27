@@ -300,12 +300,10 @@ function isbaditem(x){
 }
 
 function showrewards(name){
- document.write("<select name=""+name+"">");
+ document.write("<select name=\""+name+"\">");
  for(var i=0;i<items.length;i++){
   if(!isbaditem(i)){
-   document.write("<option value=""+i+"">"+items[i]
-//      +" ["+i.toString(16)+"]"
-      +"</option>");  
+   document.write("<option value=\""+i+"\">"+items[i]+"</option>");  
   }
  } 
  document.write("</select>");
