@@ -40,7 +40,7 @@ function IsAboveGround(d){
  return AboveGround[d]
 }
 function showitems(name){
- document.write("<select name=\""+name+"\">");
+ document.write("<select name=""+name+"">");
  for(var i=0;i<items.length;i++){
   document.write("<option value="">"+items[i]+" ["+i.toString(16)+"]</option>");  
  } 
@@ -48,7 +48,7 @@ function showitems(name){
 }
 
 function showpokemon(name){
- document.write("<select name=\""+name+"\">");
+ document.write("<select name=""+name+"">");
  for(var i=0;i<pokemon.length;i++){
   document.write("<option value="">"+pokemon[i]+"</option>");  
  } 
@@ -107,10 +107,12 @@ function isbaditem(x){
 }
 
 function showrewards(name){
- document.write("<select name=\""+name+"\">");
+ document.write("<select name=""+name+"">");
  for(var i=0;i<items.length;i++){
   if(!isbaditem(i)){
-   document.write("<option value=""+i+"\">"+items[i]+"["+i.toString(16)+"]"+"</option>");  
+   document.write("<option value=""+i+"">"+items[i]
+//      +" ["+i.toString(16)+"]"
+      +"</option>");  
   }
  } 
  document.write("</select>");
@@ -185,7 +187,7 @@ function genmailex(f,mail,flags,mailtype){
   pass[42]=pass[38]
   pass[43]=pass[39]
   pass[44]=pass[44]-1//rescue chances left
-  //web.archive.org/web/20080913124421/http://works even if line below is commented out
+  //works even if line below is commented out
   f.aok.value=formatpass(datatopass(pass))
  }
  if(flags&2){
