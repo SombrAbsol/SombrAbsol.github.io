@@ -242,7 +242,7 @@ var items=[
 ];
 var dungeons=[
 "Petit Bois",
-"Grotte	Éclair",
+"Grotte Éclair",
 "Mt Acier",
 "Bois Sinistre",
 "Val Silencieux",
