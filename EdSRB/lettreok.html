@@ -53,7 +53,7 @@ function IsAboveGround(d){
 function showitems(name){
  document.write("<select name=\""+name+"\">");
  for(var i=0;i<items.length;i++){
-  document.write("<option value=\"">"+items[i]+" ["+i.toString(16)+"]</option>");  
+  document.write("<option value="">"+items[i]+" ["+i.toString(16)+"]</option>");  
  } 
  document.write("</select>");
 }
@@ -61,7 +61,7 @@ function showitems(name){
 function showpokemon(name){
  document.write("<select name=\""+name+"\">");
  for(var i=0;i<pokemon.length;i++){
-  document.write("<option value=\"">"+pokemon[i]+"</option>");  
+  document.write("<option value="">"+pokemon[i]+"</option>");  
  } 
  document.write("</select>");
 }
@@ -121,7 +121,7 @@ function showrewards(name){
  document.write("<select name=\""+name+"\">");
  for(var i=0;i<items.length;i++){
   if(!isbaditem(i)){
-   document.write("<option value=\""+i+"\">"+items[i]
+   document.write("<option value=""+i+"">"+items[i]
 //      +" ["+i.toString(16)+"]"
       +"</option>");  
   }
