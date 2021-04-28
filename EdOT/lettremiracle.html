@@ -18,7 +18,7 @@ var BasementFloor="BXXF"
 var AboveGroundFloor="XXF"
 var SpecialMission="Mission spéciale"
 var ChooseClient="Choisissez un client."
-var ChooseTarget="Choisissez le Pokémon à sauver/trouver/arrêter."
+var ChooseTarget="Choisissez le Pokémon à sauver/trouver/accompagner/arrêter."
 var ChooseItem="Choisissez un objet à trouver/livrer."
 var ItemNotFound="L'objet XX ne peut pas être trouvé dans le donjon YY."
 var FriendAreaError="Pour recevoir une Zone d'Accueil en récompense, la mission doit être au moins de difficulté D."
@@ -464,7 +464,7 @@ FN01HWN-00%F 8678 +XY@ &%#3
   }
   if(isbadpokemon(poke)>0){
    if(pass[1]!=12){
-    alert("Le Pokémon à accompagner/sauver est incorrect pour la Lettre Miracle. Les mots de passe impliquant ce Pokemon sont sincorrects ou bloquent le jeu.")
+    alert("Le Pokémon à sauver/trouver/accompagner/arrêter est incorrect pour la Lettre Miracle. Les mots de passe impliquant ce Pokemon sont incorrects ou bloquent le jeu.")
     return 0
    }
   }
