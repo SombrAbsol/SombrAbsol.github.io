@@ -111,7 +111,7 @@ function showrewards(name){
 function decodemission(pass){
  var diffstring="EDCBAS*"
  var client=pass[12]|(pass[13]<<8)
- var clientname=""
+ var clientname=
  for(var i=0;i<10;i++){
   if(pass[20+i]==0)break
   clientname+=String.fromCharCode(pass[20+i])
