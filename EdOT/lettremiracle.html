@@ -8,34 +8,34 @@
 <script src="donjons-fr.js" type="text/javascript"></script>
 <script src="pokemon-fr.js" type="text/javascript"></script>
 <script  type="text/javascript">
-var FriendRescue="Friend Rescue"
-var RescueType0="Help me."
-var RescueType1="Find XXPKMN."
-var RescueType2="Escort to XXPKMN."
-var RescueType3="Find XXITEM."
-var RescueType4="Deliver XXITEM."
+var FriendRescue="Sauvetage Ami"
+var RescueType0="M'aider."
+var RescueType1="Trouver XXPKMN."
+var RescueType2="M'escorter à XXPKMN."
+var RescueType3="Trouver XXITEM."
+var RescueType4="Livrer XXITEM."
 var BasementFloor="BXXF"
 var AboveGroundFloor="XXF"
-var SpecialMission="Special mission"
-var ChooseClient="Please choose a client."
-var ChooseTarget="Please choose a target Pokemon."
-var ChooseItem="Please choose an item to find or deliver."
-var ItemNotFound="The XX can&#039;t be found in the YY dungeon."
-var FriendAreaError="To receive a Friend Area reward, the mission must have at least D difficulty."
-var InvalidPassword="The password is invalid."
-var FriendAreaReward="Friend Area [XX]"
-var NearPlace="Near XX"
-var DifficultyLine="Difficulty:"
+var SpecialMission="Mission spéciale"
+var ChooseClient="Choisissez un client."
+var ChooseTarget="Choisissez le Pokémon à accompagner/sauver."
+var ChooseItem="Choisissez un objet à trouver/livrer."
+var ItemNotFound="L'objet XX ne peut pas être trouvé dans le donjon YY."
+var FriendAreaError="Pour recevoir une Zone d'Accueil en récompense, la mission doit être au moins de difficulté D."
+var InvalidPassword="Le mot de passe est incorrect."
+var FriendAreaReward="Zone d'Accueil [XX]"
+var NearPlace="Vers XX"
+var DifficultyLine="Difficulté :"
 var PlusReward="XX + ?"
 var PlusRewardBrackets="XX + ? [YY]"
-var RewardLine="Reward:"
-var PlaceLine="Place:"
-var ClientLine="Client:"
-var ObjectiveLine="Objective:"
-var WonderMailLine="Wonder Mail:"
+var RewardLine="Récompense :"
+var PlaceLine="Lieu :"
+var ClientLine="Client :"
+var ObjectiveLine="Objectif :"
+var WonderMailLine="Lettre Miracle :"
 </script>
 <script src="lettresos.js" type="text/javascript"></script>
-<script src="donjobjet.js" type="text/javascript"></script>
+<script src="donjobjets.js" type="text/javascript"></script>
 <script src="diff.js" type="text/javascript"></script>
 
 <script type="text/javascript">//<![CDATA[
@@ -393,30 +393,30 @@ function genwonder(f){
  pass[2]=[0,0,0,0,1,2,0,0,0,0,0,0, 0, 0][f.type.selectedIndex]
  pass[3]=0
  if(isbadfloor(pass[4],pass[5])){
-  alert("You can&#039;t generate a Wonder Mail in the specified dungeon and floor.")
+  alert("Impossible de générer une Lettre Miracle dans le donjon et l'étage spécifiés.")
   return 0
  }
 /*
 FN01HWN-00%F 8678 +XY@ &%#3
 */
  if(pass[1]==12){
-  if(pass[4]==77) // Mt. Avalanche
+  if(pass[4]==77) // Mt Avalanche
    pass[2]=1
-  else if(pass[4]==79) // Giant Volcano
+  else if(pass[4]==79) // Volcan Géant
    pass[2]=2
-  else if(pass[4]==75) // Shimmer Desert
+  else if(pass[4]==75) // Désert Chatoyant
    pass[2]=3
-  else if(pass[4]==73) // Bottomless Sea
+  else if(pass[4]==73) // Mer Sans Fond
    pass[2]=4
-  else if(pass[4]==81) // World Abyss
+  else if(pass[4]==81) // Abysse du Monde
    pass[2]=5
-  else if(pass[4]==85) // Mystery Jungle
+  else if(pass[4]==85) // Jungle Mystère
    pass[2]=6
-  else if(pass[4]==83) // Sky Stairway
+  else if(pass[4]==83) // Escalier Céleste
    pass[2]=7
   else {
-   alert("You can&#039;t generate a Wonder Mail in the specified dungeon.  Only the following dungeons are valid:rn"+
-         "Mt. Avalanche, Giant Volcano, Shimmer Desert, Bottomless Sea, World Abyss, Mystery Jungle, Sky Stairway")
+   alert("Impossible de générer une Lettre Miracle dans le donjon et l'étage spécifiés. Seuls les donjons suivants sont valides :rn"+
+         "Mt Avalanche, Volcan Géant, Désert Chatoyant, Mer Sans Fond, Abysse du Monde, Jungle Mystère, Escalier Céleste")
    return 0
   }
  }
@@ -437,7 +437,7 @@ FN01HWN-00%F 8678 +XY@ &%#3
   pass[22]=1
   poke=option(f.restrictpkmn)
   if(poke==0){
-   alert("Please choose a restriction Pokemon.")
+   alert("Choisissez une restriction.")
    return 0
   }
   pass[24]=poke&0xFF
@@ -451,7 +451,7 @@ FN01HWN-00%F 8678 +XY@ &%#3
   return 0
  }
  if(isbadpokemon(client)>0 && pass[1]!=12){
-  alert("The chosen client and gender is invalid for Wonder Mail.")
+  alert("Le client et le genre choisis sont incorrects pour la Lettre Miracle.")
   return 0
  }
  pass[12]=client&0xFF
@@ -464,7 +464,7 @@ FN01HWN-00%F 8678 +XY@ &%#3
   }
   if(isbadpokemon(poke)>0){
    if(pass[1]!=12){
-    alert("The chosen target Pokemon is invalid for Wonder Mail.  Passwords involving this Pokemon would either be incorrect or freeze the game.")
+    alert("Le Pokémon à accompagner/sauver est incorrect pour la Lettre Miracle. Les mots de passe impliquant ce Pokemon sont sincorrects ou bloquent le jeu.")
     return 0
    }
   }
@@ -558,65 +558,65 @@ function encwonder(f){
 <p>Utilisez cette outil pour générer une Lettre Miracle.</p>
 <p>Source : <a href="https://web.archive.org/web/20080912161910/http://www.upokecenter.com/games/dungeon2/guides/wondermail.php">The Ultimate Pokemon Center</a>.</p>
 <form name="s" action="javascript:void(null)">
-Mission Type:<br/>
+Type de mission :<br/>
 <select name="type" onchange="updateform(this.form);">
-<option value="">Help me</option>
+<option value="">M'aider</option>
 
-<option value="">Rescue someone</option>
-<option value="">Escort</option>
-<option value="">Explore</option>
-<option value="">Explore (Sealed Chamber)</option>
-<option value="">Explore (Golden Chamber)</option>
-<!--option value="">Explore (New Dungeon)</option-->
-<option value="">Prospect item</option>
-<option value="">Guide someone</option>
-<option value="">Find item</option>
+<option value="">Sauver quelqu'un</option>
+<option value="">Escorter</option>
+<option value="">Explorer</option>
+<option value="">Explorer (Chambre Scellée)</option>
+<option value="">Explorer (Chambre Dorée)</option>
+<!--option value="">Explorer (Nouveau donjon)</option-->
+<option value="">Prospecter un objet</option>
+<option value="">Guider quelqu'un</option>
+<option value="">Trouver un objet</option>
 
-<option value="">Deliver item</option>
-<option value="">Search for someone</option>
+<option value="">Livrer un objet</option>
+<option value="">Chercher quelqu'un</option>
 <option value="">Outlaw (Stolen item)</option>
 <option value="">Outlaw (Arrest)</option>
-<option value="">Special Search</option>
+<option value="">Recherche spéciale</option>
 </select><br/>
-Client:<br/>
+Client :<br/>
 <script type="text/javascript"><!--
 showpkmn("client",1);
 //--></script>
 <input type="checkbox" name="clientfemale" id="clientfemale"/> <label for="clientfemale">Female [uncheck if male]</label>
 
 <br/>
-Other Pokemon:<br/>
+Autre Pokémon :<br/>
 <script type="text/javascript">
 showpkmn("poke");
 </script>
 <input type="checkbox" name="pokefemale" id="pokefemale"/> <label for="pokefemale">Female [uncheck if male]</label>
 <br/>
-Dungeon:<br/>
+Donjon :<br/>
 <script type="text/javascript"><!--
 showdungeon("dungeon");
 //--></script><br/>
-Floor:<br/>
+Étage :<br/>
 <select name="floor" onchange="">
 <option value=""></option></select><br/>
 
-Item to find/deliver:<br/>
+Objet à trouver/livrer :<br/>
 <select name="item" onchange="">
 <option value=""></option></select><br/>
-Reward type:<br/>
+Type de récompense :<br/>
 <select name="rewardtype" onchange="updateform(this.form);">
-<option value="">Item and money</option>
-<option value="">Item</option>
-<option value="">Money</option>
-<option value="">Recruit client</option>
-<option value="">Egg</option>
+<option value="">Objet et argent</option>
+<option value="">Objet</option>
+<option value="">Argent</option>
+<option value="">Recrutement du client</option>
+<option value="">Oeuf</option>
 
 </select><br/>
-Item reward:<br/>
+Objet en récompense :<br/>
 <script type="text/javascript"><!--
 showrewards("reward");
 //--></script>
 <!--
-Friend Area reward:<br/>
+Zone d'Accueil en récompense :<br/>
 <script type="text/javascript">
 showareas("area");
 </script><br/>
@@ -626,39 +626,39 @@ Restrictions:<br/>
 <input type="radio" name="restrict" id="restrict1" value="1"/><label for="restrict1"/>With </label>
 <select name="restricttype">
 <option value="1">Normal</option>
-<option value="2">Fire</option>
+<option value="2">Feu</option>
 
-<option value="3">Water</option>
-<option value="4">Grass</option>
-<option value="5">Electric</option>
-<option value="6">Ice</option>
-<option value="7">Fighting</option>
+<option value="3">Eau</option>
+<option value="4">Plante</option>
+<option value="5">Électrik</option>
+<option value="6">Glace</option>
+<option value="7">Comabat</option>
 <option value="8">Poison</option>
-<option value="9">Ground</option>
-<option value="10">Flying</option>
-<option value="11">Psychic</option>
+<option value="9">Sol</option>
+<option value="10">Vol</option>
+<option value="11">Psy</option>
 
-<option value="12">Bug</option>
-<option value="13">Rock</option>
-<option value="14">Ghost</option>
+<option value="12">Insecte</option>
+<option value="13">Roche</option>
+<option value="14">Spectre</option>
 <option value="15">Dragon</option>
-<option value="16">Dark</option>
-<option value="17">Steel</option>
-</select><label for="restrict1"/>-type partner</label><br/>
-<input type="radio" name="restrict" id="restrict2" value="2"/><label for="restrict2"/>With </label>
+<option value="16">Ténèbres</option>
+<option value="17">Acier</option>
+</select><label for="restrict1"/>-Type du partenaire</label><br/>
+<input type="radio" name="restrict" id="restrict2" value="2"/><label for="restrict2"/>Avec </label>
 <script type="text/javascript"><!--
 showpkmn("restrictpkmn",1);
 //--></script><br/>
 
-<input type="button" value="Generate Wonder Mail" onclick="genwonder(this.form)"/><br/>
-Wonder Mail Password:<br/>
+<input type="button" value="Générer la Lettre Miracle" onclick="genwonder(this.form)"/><br/>
+Mot de passe de la Lettre Miracle :<br/>
 <textarea name="wonder" cols="30" rows="5"></textarea><br/>
 <!---->
 <script type="text/javascript">
  if(debug){
-  document.write(&#039;<input type="button" value="Decode Wonder Mail" onclick="decwonder(this.form)"/><br/>&#039;)
-  document.write(&#039;Wonder Mail Data:<br/><textarea name="data" cols="50" rows="5"></textarea><br/>&#039;)
-  document.write(&#039;<input type="button" value="Encode Wonder Mail" onclick="encwonder(this.form)"/><br/>&#039;)
+  document.write(&#039;<input type="button" value="Décoder la Lettre Miracle" onclick="decwonder(this.form)"/><br/>&#039;)
+  document.write(&#039;Données de la Lettre Miracle :<br/><textarea name="data" cols="50" rows="5"></textarea><br/>&#039;)
+  document.write(&#039;<input type="button" value="Encoder la Lettre Miracle" onclick="encwonder(this.form)"/><br/>&#039;)
  }
 </script><br/>
 <!---->
