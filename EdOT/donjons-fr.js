@@ -10,6 +10,7 @@ if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; re
   let frames = _____WB$wombat$assign$function_____("frames");
   let opener = _____WB$wombat$assign$function_____("opener");
 
+  
 var dungeons=[
 "Donjon Test"/*0 : 0000*/,
 "Grotte Littorale"/*1 : 0001*/,
