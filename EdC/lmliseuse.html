@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Liseuse de Lettres Miracle S</title>
+		<script type="text/javascript" src="lmutils.js"></script>
+		<script type="text/javascript" src="lm.js"></script>
+		
+		<script type="text/javascript" src="sky_dungeon.js"></script>
+		<script type="text/javascript" src="sky_item.js"></script>
+		<script type="text/javascript" src="sky_poke.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+		// This is used in wm.js.
+		function getOption(name) {
+			switch(name) {
+				default:
+					return false;
+				break;
+			}
+		}
+		
+		// Don&#039;t allow option setting on this page.
+		function setOption(name, value) {
+			return false;
+		}
+		
+		function setError(text) {
+			$(&#039;outputbox&#039;).value = text;
+		}
+		
+		function doReadCode() {
+			var mailString = WMSParser.sanitize($(&#039;inputbox&#039;).value);
+			if(mailString.length != 34) {
+				setError("The given Wonder Mail S string seems invalid.");
+				return false;
+			}
+			
+			// Read and convert the string.
+			var mailStringUser = prettyMailString(mailString, 2, 7);
+			var descrambled = WMSParser.unscrambleString(mailString);
+			var ebits = WMSParser.bytesToBits(descrambled);
+			var dbits = WMSParser.decryptBitStream(ebits);
+			var struct = WMSParser.bitsToStructure(dbits);
+			
+			var valid = false;
+			var eu = false;
+			// Does it validate?
+			if(struct.checksum == WMSParser.calculateChecksum(dbits)) {
+				valid = true;
+			}
+			else {
+				// Try EU!
+				descrambled = WMSParser.unscrambleString(mailString, WMSParser.byteSwapEU);
+				ebits = WMSParser.bytesToBits(descrambled);
+				dbits = WMSParser.decryptBitStream(ebits);
+				struct = WMSParser.bitsToStructure(dbits);
+				
+				// Does it validate now?
+				if(struct.checksum == WMSParser.calculateChecksum(dbits)) {
+					valid = true;
+					eu = true;
+				}
+			}
+			
+			if(!valid) {
+				$(&#039;outputbox&#039;).value = "This code does not appear to be valid.";
+				return;
+			}
+			
+			var output = "";
+			
+			// Validate some data.
+			if(struct.mailType != 4) {
+				setError("Désolé, ce mot de passe semble invalide. Je ne peux pas le lire.");
+				return false;
+			}
+			
+			/*
+				Location: Beach Cave 1F
+				Mission: Find Blue Gummi.
+				Client: whoever
+				Reward: Money + Whatever
+				
+				Wonder Mail S:
+			*/
+			
+			// Build the Mission data (oh boy...).
+			var missionName;
+			var noClient = false;
+			var noFloor = false;
+			var noReward = false;
+			switch(struct.missionType) {
+				case 0: // Rescue client
+					missionName = "Rescue " + getMonName(struct.client);
+				break;
+				
+				case 1: // Rescue target
+					missionName = "Rescue " + getMonName(struct.target);
+				break;
+				
+				case 2: // Escort
+					missionName = "Escort " + getMonName(struct.client) + " to " + getMonName(struct.target);
+				break;
+				
+				case 3: // Explore
+					switch(struct.missionSpecial) {
+						case 1:
+							missionName = "Explore the Sealed Chamber with " + getMonName(struct.client);
+						break;
+						
+						case 2:
+							missionName = "Explore the Golden Chamber with " + getMonName(struct.client);
+						break;
+						
+						case 3:
+							missionName = "Explore the new dungeon with " + getMonName(struct.client);
+						break;
+						
+						default:
+							missionName = "Explore with " + getMonName(struct.client);
+						break;
+					}
+				break;
+				
+				case 4: // Prospect
+					missionName = "Prospect for " + getItemName(struct.targetItem) + " with " + getMonName(struct.client);
+				break;
+
+				case 5: // Guide
+					missionName = "Guide " + getMonName(struct.client);
+				break;
+				
+				case 6: // Find item
+					missionName = "Find " + getItemName(struct.targetItem);
+				break;
+
+				case 7: // Deliver item
+					missionName = "Deliver " + getItemName(struct.targetItem);
+				break;
+				
+				case 8: // Search
+					missionName = "Search for " + getMonName(struct.target ? struct.target : struct.client);
+				break;
+
+				case 9: // Outlaw - item
+					missionName = "Take " + getItemName(struct.targetItem) + " from " + getMonName(struct.target);
+					
+					if(struct.missionSpecial == 1) {
+						missionName += " (hidden)";
+					}
+					else if(struct.missionSpecial == 2) {
+						missionName += " (runs away)";
+					}
+				break;
+
+				case 10: // Outlaw - kill
+					missionName = "Arrest " + getMonName(struct.target);
+					
+					if(struct.missionSpecial == 4) {
+						missionName += " (" + getMonName(struct.client) + " escort)";
+					}
+					else if(struct.missionSpecial == 5) {
+						missionName += " (runs away)";
+					}
+					else if(struct.missionSpecial == 6) {
+						missionName += " (Monster House - special floor with " + getMonName(struct.target) + " & " + getMonName(struct.target2) + ")";
+					}
+					else if(struct.missionSpecial == 7) {
+						missionName += " (Monster House)";
+					}
+				break;
+
+				case 11: // Challenge
+					// The fixed challenges 1-5 operate on client only. Challenge 0 operates on client and target/target2 (if nonzero).
+					// target is preferred here, but target2 is checked anyway.
+					if(struct.missionSpecial > 0 && struct.missionSpecial < 6) {
+						missionName = "Challenge Request from " + getMonName(struct.client);
+					}
+					else if(struct.missionSpecial == 0 && (struct.target != 0 || struct.target2 != 0)) {
+						var target = struct.target || struct.target2;
+						missionName = "Challenge Request from " + getMonName(struct.client) + " and " + getMonName(target);
+					}
+					else {
+						missionName = "Challenge Request from " + getMonName(struct.client);
+					}
+				break;
+				
+				case 12: // Treasure hunt
+					missionName = "Treasure Hunt";
+					noClient = true;
+					noReward = true;
+				break;
+				
+				case 14:
+					missionName = "Unlock Seven Treasures Dungeon";
+					noFloor = true;
+					noClient = true;
+					noReward = true;
+				break;
+
+				default:
+					missionName = "Unknown mission type " + struct.missionType + " (special = " + struct.missionSpecial + ")";
+				break;
+			}
+			
+			// Build the location data, based on variables in the mission data.
+			var dungeon = getDungeonName(struct.dungeon);
+			if(noFloor) {
+				output += "Location: " + dungeon + "n";
+			}
+			else {
+				output += "Location: " + dungeon + " " + struct.floor + "Fn";
+			}
+			
+			// Add the mission data.
+			output += "Mission: " + missionName + ".n";
+			
+			// Build the Client line.
+			if(!noClient) {
+				output += "Client: " + getMonName(struct.client) + "n";
+			}
+			
+			// Build the Restrictions line.
+			// multiple of 2: type restrict
+			// non-multiple of 2: mon restrict
+			if(struct.restriction == 0) {
+				output += "Restriction: Nonen";
+			}
+			else if(struct.restrictionType == 1) {
+				output += "Restriction: With " + (getMonName(struct.restriction)) + "n";
+			}
+			else {
+				var types = [
+					0, "Normal", "Feu", "Eau", "Plante", "Électrik", "Glace", "Combat", "Poison",
+					"Sol", "Vol", "Psy", "Insecte", "Roche", "Spectre", "Dragon", "Ténèbres", "Acier"
+				];
+				var restType = types[struct.restriction];
+				if(!restType) {
+					restType = "UNKNOWN";
+				}
+				output += "Restriction: With " + restType + "-type partnern";
+			}
+			
+			// Build the Reward line.
+			if(!noReward) {
+				var reward;
+				switch(struct.rewardType) {
+					case 0: // Money
+						reward = "Money";
+					break;
+					
+					case 1: // Money + item
+						reward = "Money + " + getItemName(struct.reward);
+					break;
+					
+					case 2: // Item
+						reward = getItemName(struct.reward);
+					break;
+
+					case 3: // Item + Item
+						reward = getItemName(struct.reward) + " + random";
+					break;
+
+					case 4: // Random
+						if(struct.reward) {
+							reward = getItemName(struct.reward) + " + random";
+						}
+						else {
+							reward = "Random";
+						}
+					break;
+
+					case 5: // Egg
+						reward = "Egg";
+					break;
+					
+					case 6: // Client joins
+						reward = getMonName(struct.client) + " joins your team";
+					break;
+					
+					default:
+						reward = "Unknown reward type " + struct.rewardType;
+					break;
+				}
+				output += "Reward: " + reward + "n";
+			}
+			
+			// Add the code.
+			output += "nWonder Mail S (" + (eu ? "EU" : "US/AU") + "):n" + mailStringUser;
+			
+			// Add warning
+			if(struct.nullBits != 0)
+				output = "WARNING: This code has not been properly decrypted. The data below is likely to be inaccurate.nn" + output;
+			
+			$(&#039;outputbox&#039;).value = output;
+		}
+		</script>
+		<h1>Liseuse de Lettres Miracle S</h1>
+
+		<p>Cet outil lit les mots de passe des Lettres Miracle S et dit les informations de la mission. Fonctionne pour les mots de passe américains/australiens et européens.</p>
+		
+		<p>Entrez le mot de passe de votre Lettre Miracle ici :</p>
+		<fieldset>
+			<legend>Lettre Miracle S</legend>
+			<textarea id="inputbox" rows="4" cols="60"></textarea>
+		</fieldset>
+		
+		<p><button id="readBtn" onclick="doReadCode()">Lire le mot de passe</button></p>
+
+		<fieldset>
+			<legend>Output</legend>
+			<textarea id="outputbox" rows="10" cols="60"></textarea>
+		</fieldset>
+	</body>
+</html>
