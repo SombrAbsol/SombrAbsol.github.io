@@ -1,5 +1,5 @@
 # Français
 ## Générateurs de mots de passe pour Pokémon Donjon Mystère
 
-# Anglais
+# English
 ## Pokémon Mystery Dungeon password generators
