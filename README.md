@@ -8,7 +8,7 @@ Ce site regroupe non seulement tous les générateurs de Lettres connus pour les
 * Générateur de Lettres S.O.S.
 
 #### Pokémon Donjon Mystère : Explorateurs du Ciel
-* Convertisseur de Lettres Miracle européennes en américaines/australiennes
+* Convertisseur de Lettres Miracle S (européennes à américaines/australiennes)
 
 
 # English
@@ -21,4 +21,4 @@ This site gathers not only all the known French Mail Generators for the Pokémon
 * S.O.S. Mail Generator
 
 #### Pokémon Mystery Dungeon: Explorers of Sky
-* European to American/Australian Wonder Mail Converter
+* Wonder Mail S Converter (European to American/Australian)
