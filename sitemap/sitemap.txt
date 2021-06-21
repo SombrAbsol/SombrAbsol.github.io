@@ -1,9 +1,0 @@
-https://www.sombrabsol.github.io
-https://www.sombrabsol.github.io/EdSRB/lettremiracle.html
-https://www.sombrabsol.github.io/EdSRB/lettresos.html
-https://www.sombrabsol.github.io/EdSRB/lettreok.html
-https://www.sombrabsol.github.io/EdOT/lettremiracle.html
-https://www.sombrabsol.github.io/EdOT/lettreok.html
-https://www.sombrabsol.github.io/EdC/lmconvert.html
-https://www.sombrabsol.github.io/EdC/lmliseuse.html
-https://www.sombrabsol.github.io/EdC/lms.html
