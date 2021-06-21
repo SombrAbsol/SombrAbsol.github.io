@@ -17,7 +17,7 @@ Ce site regroupe non seulement tous les générateurs de Lettres connus pour les
 ### Description
 This site gathers not only all the known French Mail Generators for the Pokémon Mystery Dungeon series (Wonder, S.O.S., O.K. and Thank-You), but also other tools like Mail Readers and Mail Converters. It is currently under development, but you can already try some tools (not all of them work). Most of these tools are in English, so I have to translate them too.
 
-### Tools that work
+### Tools that work 100% of the time
 #### Pokémon Mystery Dungeon: Red Rescue Team and Blue Rescue Team
 * S.O.S. Mail Generator
 * S.O.S. Mail to O.K. and Thank You Mail Converter
