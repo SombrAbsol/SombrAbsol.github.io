@@ -6,6 +6,7 @@ Ce site regroupe non seulement tous les générateurs de Lettres connus pour les
 ### Outils qui fonctionnent
 #### Pokémon Donjon Mystère : Équipe de Secours Rouge et Bleue
 * Générateur de Lettres S.O.S.
+* Convertisseur de Lettres S.O.S. en Lettres O.K. et Remerciement
 
 #### Pokémon Donjon Mystère : Explorateurs du Ciel
 * Convertisseur de Lettres Miracle S (européennes à américaines/australiennes)
@@ -19,6 +20,7 @@ This site gathers not only all the known French Mail Generators for the Pokémon
 ### Tools that work
 #### Pokémon Mystery Dungeon: Red Rescue Team and Blue Rescue Team
 * S.O.S. Mail Generator
+* S.O.S. Mail to O.K. Mail and Thank You Mail Converter
 
 #### Pokémon Mystery Dungeon: Explorers of Sky
 * Wonder Mail S Converter (European to American/Australian)
