@@ -3,7 +3,7 @@
 ### Description
 Ce site regroupe non seulement tous les générateurs de Lettres connus pour les jeux de la série Pokémon Donjon Mystère (Miracle, S.O.S., O.K. et Remerciement), mais aussi d’autres outils comme des liseuses et convertisseurs de Lettres. Il est actuellement en développement, mais vous pouvez déjà essayer quelques outils (ils ne fonctionnent pas tous). La très grande majorité de ces outils étant en anglais, il me faut également les traduire.
 
-### Outils qui fonctionnent
+### Outils qui fonctionnent à 100%
 #### Pokémon Donjon Mystère : Équipe de Secours Rouge et Bleue
 * Générateur de Lettres S.O.S.
 * Convertisseur de Lettres S.O.S. en Lettres O.K. et Remerciement
