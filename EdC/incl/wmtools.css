@@ -1,0 +1,64 @@
+/* General styling */
+body {
+	background-color: #79ACCC;
+}
+
+h1 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	width: 100%;
+	background-color: #AACCE1;
+	border: 1px solid #6F8593;
+}
+
+/* Styling for the options box */
+fieldset legend {
+	font-weight: bold;
+}
+
+#optionsBox {
+	float: right;
+	border: 2px dotted blue;
+}
+
+#optionsBox p {
+	margin: 0;
+}
+
+.beta-marker {
+	color: #C02020;
+}
+
+#genForm {
+	margin-bottom: 20px;
+}
+
+#genForm p {
+	margin: 0;
+}
+
+#genForm label {
+	min-width: 200px;
+	width: 200px;
+	display: inline-block;
+}
+
+#advancedModeOnlyStuff {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.browser-deprecation {
+	border: 4px dashed red;
+	width: 100%;
+	font-size: 150%;
+}
+
+.browser-deprecation p {
+	margin: 8px 0 8px 0;
+}
+
+/* Force textareas to be monospace so that the resulting codes are readable */
+textarea {
+	font-family: monospace;
+}
