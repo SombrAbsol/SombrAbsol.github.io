@@ -46,7 +46,6 @@
   }
   input {
     border: 1px solid;
-    font-size:20pt;
   }
 </style>
 </head>
@@ -590,7 +589,7 @@ Type de mission :
 <option value="">Livrer un objet.</option>
 </select><br/>
 Client :</br>
-<li><script type="text/javascript"><!--
+<script type="text/javascript"><!--
 showpkmn("client");
 //--></script></br>
 Pokémon à sauver/trouver :<br/>
@@ -617,10 +616,10 @@ showareas("area");
 //--></script><br/>
 Titre du message :<br/>
 <select name="mhead" onchange="updateftext(this.form);">
-<option value=""></option></select>
+<option value=""></option></select><br/>
 Contenu du message :<br/>
 <select name="mline1">
-<option value=""></option></select>
+<option value=""></option></select><br/>
 <input type="button" value="Générer la Lettre Miracle" onclick="genwonder(this.form)"/><br/>
 Mot de passe de la Lettre Miracle :<br/>
 <textarea name="wonder" cols="30" rows="5"></textarea><br/>
