@@ -581,18 +581,20 @@ function encwonder(f){
 <p>Source : <a href="http://www.upokecenter.com/games/dungeon/guides/wondermail.php">http://www.upokecenter.com/games/dungeon/guides/wondermail.php</a>.</p>
 </ul>
 <form name="s" action="javascript:void(null)">
-<p>Type de mission :<br/>
-<select name="type" onchange="updateform(this.form);">
+<li>Type de mission :</li>
+<li><select name="type" onchange="updateform(this.form);">
 <option value="">M'aider.</option>
 <option value="">Trouver quelqu'un.</option>
 <option value="">Me mener à quelqu'un.</option>
 <option value="">Trouver un objet.</option>
 <option value="">Livrer un objet.</option>
-</select></p>
-<p>Client :<br/>
-<script type="text/javascript"><!--
+</select></li>
+<li></li>
+<li>Client :</li>
+<li><script type="text/javascript"><!--
 showpkmn("client");
-//--></script></p>
+//--></script></li>
+<li></li>
 <p>Pokémon à sauver/trouver :<br/>
 <script type="text/javascript"><!--
 showpkmn("poke");
@@ -615,10 +617,11 @@ showrewards("reward");
 <script type="text/javascript"><!--
 showareas("area");
 //--></script></p>
-<p>Titre du message :<br/>
-<select name="mhead" onchange="updateftext(this.form);">
-<option value=""></option></select></p>
-<p>Contenu du message :<br/>
+<li>Titre du message :</li>
+<li><select name="mhead" onchange="updateftext(this.form);">
+<option value=""></option></select></li>
+<li></li>
+<li>Contenu du message :</li>
 <select name="mline1">
 <option value=""></option></select></p>
 <input type="button" value="Générer la Lettre Miracle" onclick="genwonder(this.form)"/><br/>
