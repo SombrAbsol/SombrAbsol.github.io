@@ -581,55 +581,52 @@ function encwonder(f){
 <p>Source : <a href="http://www.upokecenter.com/games/dungeon/guides/wondermail.php">http://www.upokecenter.com/games/dungeon/guides/wondermail.php</a>.</p>
 </ul>
 <form name="s" action="javascript:void(null)">
-<li>Type de mission :</li>
-<li><select name="type" onchange="updateform(this.form);">
+Type de mission :
+<select name="type" onchange="updateform(this.form);">
 <option value="">M'aider.</option>
 <option value="">Trouver quelqu'un.</option>
 <option value="">Me mener à quelqu'un.</option>
 <option value="">Trouver un objet.</option>
 <option value="">Livrer un objet.</option>
-</select></li>
-<li></li>
-<li>Client :</li>
+</select><br/>
+Client :</br>
 <li><script type="text/javascript"><!--
 showpkmn("client");
-//--></script></li>
-<li></li>
-<p>Pokémon à sauver/trouver :<br/>
+//--></script></br>
+Pokémon à sauver/trouver :<br/>
 <script type="text/javascript"><!--
 showpkmn("poke");
-//--></script></p>
-<p>Donjon :<br/>
+//--></script></br>
+Donjon :<br/>
 <script type="text/javascript"><!--
 showdungeon("dungeon");
-//--></script></p>
-<p>Étage :<br/>
+//--></script></br>
+Étage :<br/>
 <select name="floor" onchange="updateftext(this.form);">
-<option value=""></option></select></p>
-<p>Objet à trouver/livrer :<br/>
+<option value=""></option></select><br/>
+Objet à trouver/livrer :<br/>
 <select name="item" onchange="showftext(this.form,0);">
-<option value=""></option></select></p>
-<p>Objets en récompense :<br/>
+<option value=""></option></select></br>
+Objets en récompense :<br/>
 <script type="text/javascript"><!--
 showrewards("reward");
-//--></script> <input type="checkbox" name="money" id="money"/> <label for="money">+ <sup>P</sup>o<sup>K</sup>é <img src="../images/POKé_EdSRB.png" /></label></p>
-<p>Zone d'Accueil en récompense :<br/>
+//--></script> <input type="checkbox" name="money" id="money"/> <label for="money">+ <sup>P</sup>o<sup>K</sup>é <img src="../images/POKé_EdSRB.png" /></label></br>
+Zone d'Accueil en récompense :<br/>
 <script type="text/javascript"><!--
 showareas("area");
-//--></script></p>
-<li>Titre du message :</li>
-<li><select name="mhead" onchange="updateftext(this.form);">
-<option value=""></option></select></li>
-<li></li>
-<li>Contenu du message :</li>
+//--></script><br/>
+Titre du message :<br/>
+<select name="mhead" onchange="updateftext(this.form);">
+<option value=""></option></select>
+Contenu du message :<br/>
 <select name="mline1">
-<option value=""></option></select></p>
+<option value=""></option></select>
 <input type="button" value="Générer la Lettre Miracle" onclick="genwonder(this.form)"/><br/>
-<p>Mot de passe de la Lettre Miracle :<br/>
+Mot de passe de la Lettre Miracle :<br/>
 <textarea name="wonder" cols="30" rows="5"></textarea><br/>
 <input type="button" value="Décoder la Lettre Miracle" onclick="decwonder(this.form)"/><br/>
 Données de la Lettres Miracle :<br/>
-<textarea name="data" cols="50" rows="5"></textarea></p>
+<textarea name="data" cols="50" rows="5"></textarea>
 <script type="text/javascript"><!--
 if(debug){
  document.write('<input type="button" value="Encoder la Lettre Miracle" onclick="encwonder(this.form)"/><br/>')
