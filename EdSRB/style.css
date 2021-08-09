@@ -5,6 +5,7 @@ body {
     border-bottom:#b7b7b7;
     font-size:20pt;
     overflow-wrap: anywhere;
+    filter: invert(1);
   }
   h1 {
     color: #ffffff;
@@ -17,6 +18,7 @@ body {
     font-size: 40pt;
     font-weight: 200;
     padding-top: 0.1em;
+    filter: invert(1);
   }
   h2 {
     color: #ffffff;
@@ -29,6 +31,7 @@ body {
     font-size: 32pt;
     font-weight: 200;
     padding-top: 0.1em;
+    filter: invert(1);
   }
   .copyheader {
     background-color: #ffffff;
@@ -37,6 +40,7 @@ body {
     padding: 0.5em 1em;
     padding-left: 1%;
     vertical-align: middle;
+    filter: invert(1);
   }
   input {
     border: 1px solid;
