@@ -543,44 +543,45 @@ function encwonder(f){
 <option value="">Me mener à quelqu'un.</option>
 <option value="">Trouver un objet.</option>
 <option value="">Livrer un objet.</option>
-</select><br/>
-Client :</br>
+</select></p>
+<p>Client :</br>
 <script type="text/javascript"><!--
 showpkmn("client");
-//--></script></br>
-Pokémon à sauver/trouver :<br/>
+//--></script></p>
+<p>Pokémon à sauver/trouver :<br/>
 <script type="text/javascript"><!--
 showpkmn("poke");
-//--></script></br>
-Donjon :<br/>
+//--></script></p>
+<p>Donjon :<br/>
 <script type="text/javascript"><!--
 showdungeon("dungeon");
-//--></script></br>
-Étage :<br/>
+//--></script></p>
+<p>Étage :<br/>
 <select name="floor" onchange="updateftext(this.form);">
-<option value=""></option></select><br/>
-Objet à trouver/livrer :<br/>
+<option value=""></option></select></p>
+<p>Objet à trouver/livrer :<br/>
 <select name="item" onchange="showftext(this.form,0);">
-<option value=""></option></select></br>
-Objets en récompense :<br/>
+<option value=""></option></select></p>
+<p>Objets en récompense :<br/>
 <script type="text/javascript"><!--
 showrewards("reward");
-//--></script> <input type="checkbox" name="money" id="money"/> <label for="money">+ <sup>P</sup>o<sup>K</sup>é <img src="../images/POKé_EdSRB.png" /></label></br>
-Zone d'Accueil en récompense :<br/>
+//--></script><br/>
+<input type="checkbox" name="money" id="money"/> <label for="money">+ <sup>P</sup>o<sup>K</sup>é <img src="../images/POKé_EdSRB.png" /></label></p>
+<p>Zone d'Accueil en récompense :<br/>
 <script type="text/javascript"><!--
 showareas("area");
-//--></script><br/>
-Titre du message :<br/>
+//--></script></p>
+<p>Titre du message :<br/>
 <select name="mhead" onchange="updateftext(this.form);">
-<option value=""></option></select><br/>
-Contenu du message :<br/>
+<option value=""></option></select></p>
+<p>Contenu du message :<br/>
 <select name="mline1">
-<option value=""></option></select><br/>
+<option value=""></option></select></p>
 <input type="button" value="Générer la Lettre Miracle" onclick="genwonder(this.form)"/><br/>
-Mot de passe de la Lettre Miracle :<br/>
+<p>Mot de passe de la Lettre Miracle :<br/>
 <textarea name="wonder" cols="58" rows="5"></textarea><br/>
-<input type="button" value="Décoder la Lettre Miracle" onclick="decwonder(this.form)"/><br/>
-Données de la Lettres Miracle :<br/>
+<input type="button" value="Décoder la Lettre Miracle" onclick="decwonder(this.form)"/></p>
+<p>Données de la Lettres Miracle :<br/>
 <textarea name="data" cols="58" rows="5"></textarea>
 <script type="text/javascript"><!--
 if(debug){
