@@ -55,7 +55,7 @@ var pokemon=[
 "Persian",
 "Psyduck",
 "Golduck",
-"Mankey",
+"Férosinge",
 "Primeape",
 "Growlithe",
 "Arcanine",
