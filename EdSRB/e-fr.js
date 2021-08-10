@@ -42,7 +42,7 @@ var Pairs=[
 "%s et moi faisons la même <!--break-->taille. Sauvez notre amitié de toujours !"],
 [37,347,"Sauvez notre amitié !",
 "Aidez %s ! On partage la même <!--break-->passion pour le feu !"],
-[174,173,"Amitié en pleine infortune !",
+[174,173,"Amitié en pleine infortune !"
 "S'il vous plaît, aidez %s ! <!--break-->On se connaissait déjà avant l'éclosion !"],
 [49,294,"Pokémon en danger !",
 "Sans %s, ce n'est pas drôle de <!--break-->jouer avec de la poudre toxique ! À l'aide !"],
@@ -51,7 +51,7 @@ var Pairs=[
 [286,58,"Please save my friend!",
 "I can't play the biting game without my pal <!--break-->%s! Please help!"],
 [69,238,"Please save my friend!",
-"Please help %s! Our cries are <!--break-->identical! We can tell each other anything!"],
+"Please help %s! Our cries are <!--break-->identical! We can tell each other anything!"]
 [86,392,"Please save my friend!",
 "Someone save %s--my friend <!--break-->and rival at ball juggling!"],
 [97,122,"Please save my friend!",
@@ -60,7 +60,7 @@ var Pairs=[
 "I want to help %s! <!--break-->We both have a thing for pincers!"],
 [143,314,"Please save my friend!",
 "Please help %s! We're both lazy, <!--break-->so we're comfortable around each other!"],
-[127,239,"Please save my friend!",
+[127,239,"Please save my friend!"
 "I lock horns with %s for fun. <!--break-->I terribly miss doing that..."],
 [240,360,"Please save my friend!",
 "We promised to show each other how <!--break-->sharp our claws could be... Someone, help!"],
@@ -69,7 +69,7 @@ var Pairs=[
 [132,185,"Please save my friend!",
 "Without %s around, there's no <!--break-->one to heckle! Please break my boredom!"],
 [241,352,"Please save my friend!",
-"Please save %s. We're both alike <!--break-->in being kind of vacant and unpredictable!"],
+"Please save %s. We're both alike <!--break-->in being kind of vacant and unpredictable!"]
 [79,312,"Please save my friend!",
 "...Help... Please... <!--break-->Who was it?"],
 [164,198,"Please save my friend!",
@@ -78,7 +78,7 @@ var Pairs=[
 "I'm sad without %s's company. <!--break-->We showed flowers to each other..."],
 [250,304,"Please save my friend!",
 "Please save %s. We've been in <!--break-->the delivery business for many years!"],
-[397,38,"Please save my friend!",
+[397,38,"Please save my friend!"
 "Please save %s! We're both <!--break-->old-timers who are longtime friends!"],
 [187,386,"Please save my friend!",
 "Help %s, please! <!--break-->We often took strolls on the wind!"],
