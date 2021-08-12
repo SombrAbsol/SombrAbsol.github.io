@@ -424,3 +424,4 @@ var pokemon=[
 "Statue",
 "Rayquaza"
 ];
+ 
