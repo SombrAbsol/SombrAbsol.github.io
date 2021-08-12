@@ -469,13 +469,13 @@ function maildata(pass){
  data+=RewardLine+" "
  diff=(diff+1)*100
  switch(pass[17]){
-   case 0:data+=diff+" POKe";break
-   case 1:data+=PlusRewardBrackets.replace("XX",diff+" POKe").replace("YY",items[pass[18]]);break
+   case 0:data+=diff+" <sup>P</sup>o<sup>K</sup>é";break
+   case 1:data+=PlusRewardBrackets.replace("XX",diff+" <sup>P</sup>o<sup>K</sup>é").replace("YY",items[pass[18]]);break
    case 2:data+=items[pass[18]];break
    case 3:data+=PlusReward.replace("XX",items[pass[18]]);break
    case 4:data+="???";break
-   case 5:data+=(diff*2)+" POKe";break
-   case 6:data+=PlusRewardBrackets.replace("XX",(diff*2)+" POKe").replace("YY",items[pass[18]]);break
+   case 5:data+=(diff*2)+" <sup>P</sup>o<sup>K</sup>é";break
+   case 6:data+=PlusRewardBrackets.replace("XX",(diff*2)+" <sup>P</sup>o<sup>K</sup>é").replace("YY",items[pass[18]]);break
    case 7:data+=items[pass[18]];break
    case 8:data+=items[pass[18]]+" + ?";break
    case 9:data+=PlusReward.replace("XX",items[pass[18]]);break
