@@ -20,7 +20,7 @@ var ParentChild=[
 [355,353,"Retrouvez vite mon enfant, Kraknoix ! <!--break-->Mon bébé est sûrement tapi quelque part !"],
 [393,391,"Sauvez ma petite Obalie ! Elle est facile à <!--break-->repérer car elle adore rouler !"],
 [302,301,"S’il vous plaît, cherchez Nirondelle ! <!--break-->Mon bébé est très timide, alors j’ai peur !"]
-];
+]
 var Pairs=[
 [103,85,"Amitié en danger !",
 "Ce précieux Pokémon peut bavarder avec <!--break-->trois personnes en même temps. À l’aide !"],
@@ -48,34 +48,34 @@ var Pairs=[
 "Sans %s, ce n'est pas drôle de <!--break-->jouer avec de la poudre toxique ! À l'aide !"],
 [313,57,"En solo, je m'ennuie...",
 "%s fait beaucoup de bruit. Mais <!--break-->c'est trop silencieux,  là... Sniff, sniff..."],
-[286,58,"Please save my friend!",
-"I can't play the biting game without my pal <!--break-->%s! Please help!"],
-[69,238,"Please save my friend!",
-"Please help %s! Our cries are <!--break-->identical! We can tell each other anything!"],
-[86,392,"Please save my friend!",
-"Someone save %s--my friend <!--break-->and rival at ball juggling!"],
-[97,122,"Please save my friend!",
-"We promised each other to perform magic <!--break-->and hypnosis shows together. Please help!"],
-[98,366,"Please save my friend!",
-"I want to help %s! <!--break-->We both have a thing for pincers!"],
-[143,314,"Please save my friend!",
-"Please help %s! We're both lazy, <!--break-->so we're comfortable around each other!"],
-[127,239,"Please save my friend!",
-"I lock horns with %s for fun. <!--break-->I terribly miss doing that..."],
-[240,360,"Please save my friend!",
-"We promised to show each other how <!--break-->sharp our claws could be... Someone, help!"],
-[323,175,"Please save my friend!",
-"Please help %s! <!--break-->My tiny and round best friend!"],
-[132,185,"Please save my friend!",
-"Without %s around, there's no <!--break-->one to heckle! Please break my boredom!"],
-[241,352,"Please save my friend!",
-"Please save %s. We're both alike <!--break-->in being kind of vacant and unpredictable!"],
-[79,312,"Please save my friend!",
-"...Help... Please... <!--break-->Who was it?"],
-[164,198,"Please save my friend!",
-"Without %s, there's no one for <!--break-->me to play with in the dark! Please help!"],
-[340,182,"Please save my friend!",
-"I'm sad without %s's company. <!--break-->We showed flowers to each other..."],
+[286,58,"Aidez-mon acolyte de toujours !",
+"Je ne peux pas jouer à la bagarre sans <!--break-->%s ! Aidez %s !"],
+[69,238,"Sauvez mon acolyte, S.V.P. !",
+"S'il vous plaît, aidez %s ! <!--break-->On a le même cri ! On peut tout se dire !"],
+[86,392,"Pokémon en difficulté !",
+"Que quelqu'un sauve %s, mon <!--break-->acolyte et adversaire de jonglerie !"],
+[97,122,"Partenaire en difficulté !",
+"On veut monter un spectacle de magie et <!--break-->d'hypnose ensemble. À l'aide !"],
+[98,366,"Amitié en péril !",
+"Je veux aider %s !  On partage la <!--break-->même passion pour les pinces !"],
+[143,314,"Camaraderie en danger !",
+"S'il vous plaît, aidez %s! Notre <!--break-->point commun, c'est la paresse !"],
+[127,239,"Partenaire de jeu en danger !",
+"%s et moi, on joue à la bagarre. <!--break-->Ça me manque beaucoup..."],
+[240,360,"Camarade en difficulté !",
+"On s'est promis de comparer nos griffes... <!--break-->À l'aide,  quelqu'un !"],
+[323,175,"Amitié en détresse !",
+"S'il vous plaît, aidez %s ! <!--break-->Je m'inquiète énormément !"],
+[132,185,"S'il vous plaît,  aidez-nous !",
+"Sans %s, personne ne chahute ! <!--break-->S'il vous plaît, c'est trop calme !"],
+[241,352,"Amitié en danger !",
+"S'il vous plaît, sauvez %s ! On <!--break-->est semblables : imprévisibles !"],
+[79,312,"Amitié en péril !",
+"À l'aide... S'il vous plaît... <!--break-->Qui ça, déjà ?"],
+[164,198,"Sauvez mon acolyte, S.V.P. !",
+"Sans %s, il n'y a personne pour <!--break-->jouer avec moi dans le noir ! À l'aide !"],
+[340,182,"Sauvez mon acolyte, S.V.P. !",
+"Je suis triste sans %s. <!--break-->On se montrait des fleurs..."],
 [250,304,"Please save my friend!",
 "Please save %s. We've been in <!--break-->the delivery business for many years!"],
 [397,38,"Please save my friend!",
@@ -112,10 +112,10 @@ var Pairs=[
 "We've been rivals with %s for <!--break-->generations. It can't suddenly end like this!"],
 [172,172,"Please help my brother!",
 "My little brother Pichu disappeared! <!--break-->I'm really worried! Someone, please help!"]
-];
+]
 var Lovers=[
 32,29,33,30,34,31,128,266,338,339,337,336
-];
+]
 var Text1a=[
 "Mais où est la sortie ???",
 "Je ne bougeais pas, on s'en est pris à moi !",
@@ -130,7 +130,7 @@ var Text1a=[
 "Houlà ! C’est trop dur, ici...",
 "Je ne peux pas faire un pas de plus.",
 "J’ai trop faim..."
-];
+]
 var Text1b=[
 "S’il vous plaît, j’ai besoin d’aide !",
 "Que quelqu’un me sorte de là !",
@@ -145,7 +145,7 @@ var Text1b=[
 "Un coup de main !",
 "Gloup ! Ouaaaaaaaah !",
 "Ouilleuuuuuuuh !"
-];
+]
 var Text2a=[
 "La chaleur a mis %s K.O. !",
 "%s est peut-être en danger !",
@@ -192,7 +192,7 @@ var Text2a=[
 "Je ne peux pas joindre %s !",
 "J’ai perdu le contact avec %s !",
 "%s a sauté dans un piège !"
-];
+]
 var Text2b=[
 "Une équipe de secours, s’il vous plaît !",
 "S’il vous plaît ! J’ai besoin d’aide !",
@@ -204,7 +204,7 @@ var Text2b=[
 "Envoyez une équipe de secours,  vite !",
 "Besoin d’une équipe de secours,  urgent !",
 "Récompense pour votre aide !"
-];
+]
 var Text3a=[
 "%s m’attend !",
 "On devait se retrouver dans le donjon !",
@@ -226,13 +226,13 @@ var Text3a=[
 "Peu importe comment, on doit se voir !",
 "%s doit me pardonner.",
 "Je suis très proche de %s !"
-];
+]
 var Text3b=[
 "Emmenez-moi voir %s !",
 "S'il vous plaît,  emmenez-moi avec vous !",
 "Accompagnez-moi là-bas,  s'il vous plaît !",
 "Que quelqu'un m'accompagne !"
-];
+]
 var Text4a=[
 "Avoir %s, ça rassure.",
 "L’objet %s est très utile !",
@@ -256,7 +256,7 @@ var Text4a=[
 "Recherche objet perso : %s !",
 "L’objet %s est à la mode !",
 "Vous savez pour l’objet %s ?"
-];
+]
 var Text4b=[
 "S'il vous plaît ! Donnez-moi cet objet !",
 "Faisons un échange, je veux cet objet !",
@@ -280,7 +280,7 @@ var Text4b=[
 "Aidez-moi ! J'offre une récompense !",
 "Aidez-moi ! Je récompenserai vos efforts !",
 "Contactez-moi si vous trouvez l'objet !"
-];
+]
 var Text5a=[
 "Faites-moi rencontrer %s! ",
 "Emmenez-moi jusqu'à %s !",
@@ -288,7 +288,7 @@ var Text5a=[
 "Je veux rencontrer %s !",
 "Je m'inquiète pour %s...",
 "Sans %s, je..."
-];
+]
 var Text5b=[
 "On s'aime ! Alors, emmenez-moi là-bas !",
 "Je l'aime ! Accompagnez-moi !",
@@ -296,7 +296,7 @@ var Text5b=[
 "Cela signifie énormément pour moi !",
 "Si on n'est pas ensemble, ça ne va pas !",
 "Emmenez-moi et brisez ma solitude !"
-];
+]
 var Mankey="Punir le gang des méchants Férosinge."
 var Smeargle="Je ne veux pas devenir adulte, alors j'ai <!--break-->fui, mais j'ai perdu mon chemin ! À l'aide !"
 var Medicham="C'est Charmina. Aidez-moi s'il vous plaît ! <!--break-->La récompense, c'est un secret～♪"
@@ -329,7 +329,7 @@ var Title8=[
 "Je suis triste et solitaire.",
 "Je ne trouve plus mon chemin !",
 "Au secours !"
-];
+]
 var Title9=[
 "Aidez %s, S.V.P. !",
 "%s a besoin d’aide !",
@@ -341,7 +341,7 @@ var Title9=[
 "N’est pas encore de retour.",
 "Dépêchez-vous !",
 "Disparition !"
-];
+]
 var Title10=[
 "Emmenez-moi !",
 "Je veux voir %s.",
