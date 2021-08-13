@@ -162,7 +162,7 @@ var Text2a=[
 "%s a l’air gelé !",
 "%s a peut-être eu des ennuis !",
 "On a paralysé %s !",
-"On ne sait pas où se trouve %s's !",
+"On ne sait pas où se trouve %s !",
 "Je suis m’inquiète pour %s !",
 "Ils ont coincé %s !",
 "%s a disparu depuis longtemps !",
