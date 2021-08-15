@@ -17,7 +17,7 @@ Ce site regroupe non seulement tous les générateurs de Lettres connus pour les
 * Les sites et auteurs respectifs de ces outils :
     * Peter O. (pseudonymisé poccil) de *Ultimate Pokémon Center* ([upokecenter.com](https://web.archive.org/web/20150103135114/Upokecenter.com/content/main-page)) pour les outils relatifs à *PDM1* et *PDM2TO* ;
     * Le site *A Pointless Place* ([apointlessplace.net](https://web.archive.org/web/20170917141154/http://apointlessplace.net/)) pour les outils relatifs à *PDM2C* ;
-    * Le site *Mangario* (mangario.fr) pour avoir traduit en premier le générateur de Lettres Miracle de *PDM2TO* en français ;
+    * Le site *Mangario* ([mangario.fr](https://web.archive.org/web/20210308082718/https://www.mangario.fr/)) pour avoir traduit en premier le générateur de Lettres Miracle de *PDM2TO* en français ;
     * Syphist de *Syphist's Website* ([syphist.com](https://syphist.com)) pour avoir archivé les outils de *PDM1*, *PDM2TO* ainsi que le générateur de Lettres Miracle S de *PDM2C* sur son site afin de les rendre plus faciles d'accès ;
     * Karthik99999 de *PMD Gen* ([pmd-gen.herokuapp.com](https://pmd-gen.herokuapp.com)) pour son générateur de mots de passe pour *PDMDX* ;
 * Le serveur Discord de *Poképédia* ([pokepedia.fr](https://pokepedia.fr)) pour son soutien, son aide et ses conseils.
@@ -38,11 +38,11 @@ This site gathers not only all the known French Mail Generators for the *Pokémo
 * Wonder Mail S Converter (European to American/Australian)
 
 ### Acknowledgements
-* abcboy from *Bulbapedia* (bulbapedia.bulbagarden.net) for having made available, on his user page, an almost complete collection of the texts of all the Pokémon games. I used it to get the vocabulary used in *Pokémon Mystery Dungeon* ;
+* abcboy from *Bulbapedia* ([bulbapedia.bulbagarden.net](https://bulbapedia.bulbagarden.net)) for having made available, on his user page, an almost complete collection of the texts of all the Pokémon games. I used it to get the vocabulary used in *Pokémon Mystery Dungeon* ;
 * The respective sites and authors of these tools:
-    * Peter O. (pseudonymized poccil) of *Ultimate Pokémon Center* (upokecenter.com) for the tools related to *PMD1* and *PMD2TD*;
-    * The *A Pointless Place* site (apointlessplace.net) for tools related to *PMD2S*;
-    * The *Mangario* site (mangario.fr) for being the first to translate the *PMD2TD* Wonder Mail Generator into French;
-    * Syphist of *Syphist's Website* (syphist.com) for archiving the *PMD1* and *PMD2TD* tools and the *PMD2S* Wonder Mail S Generator on his site to make them more easily accessible;
-    * Karthik99999 of *PMD Gen* (pmd-gen.herokuapp.com) for his password generator for *PMDDX* ;
-* The *Poképédia* (pokepedia.fr) Discord server for its support, help and advice.
+    * Peter O. (pseudonymized poccil) of *Ultimate Pokémon Center* ([upokecenter.com](https://web.archive.org/web/20150103135114/Upokecenter.com/content/main-page)) for the tools related to *PMD1* and *PMD2TD*;
+    * The *A Pointless Place* site ([apointlessplace.net](https://web.archive.org/web/20170917141154/http://apointlessplace.net/)) for tools related to *PMD2S*;
+    * The *Mangario* site ([mangario.fr](https://web.archive.org/web/20210308082718/https://www.mangario.fr/)) for being the first to translate the *PMD2TD* Wonder Mail Generator into French;
+    * Syphist of *Syphist's Website* ([syphist.com](https://syphist.com)) for archiving the *PMD1* and *PMD2TD* tools and the *PMD2S* Wonder Mail S Generator on his site to make them more easily accessible;
+    * Karthik99999 of *PMD Gen* ([pmd-gen.herokuapp.com](https://pmd-gen.herokuapp.com)) for his password generator for *PMDDX* ;
+* The *Poképédia* ([pokepedia.fr](https://pokepedia.fr)) Discord server for its support, help and advice.
