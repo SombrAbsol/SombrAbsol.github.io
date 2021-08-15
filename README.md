@@ -13,14 +13,14 @@ Ce site regroupe non seulement tous les générateurs de Lettres connus pour les
 * Convertisseur de Lettres Miracle S (européennes à américaines/australiennes)
 
 ### Remerciements
-* abcboy du site *Bulbapedia* (bulbapedia.bulbagarden.net) pour avoir mis à disposition, sur sa page utilisateur, une collection quasiment complète des textes de tous les jeux Pokémon. Cela m'a notamment servi à reprendre le vocabulaire utilisé dans *Pokémon Donjon Mystère* ;
+* abcboy du site *Bulbapedia* ([bulbapedia.bulbagarden.net](https://bulbapedia.bulbagarden.net)) pour avoir mis à disposition, sur sa page utilisateur, une collection quasiment complète des textes de tous les jeux Pokémon. Cela m'a notamment servi à reprendre le vocabulaire utilisé dans *Pokémon Donjon Mystère* ;
 * Les sites et auteurs respectifs de ces outils :
-    * Peter O. (pseudonymisé poccil) de *Ultimate Pokémon Center* (upokecenter.com) pour les outils relatifs à *PDM1* et *PDM2TO* ;
-    * Le site *A Pointless Place* (apointlessplace.net) pour les outils relatifs à *PDM2C* ;
+    * Peter O. (pseudonymisé poccil) de *Ultimate Pokémon Center* ([upokecenter.com](https://web.archive.org/web/20150103135114/Upokecenter.com/content/main-page)) pour les outils relatifs à *PDM1* et *PDM2TO* ;
+    * Le site *A Pointless Place* ([apointlessplace.net](https://web.archive.org/web/20170917141154/http://apointlessplace.net/)) pour les outils relatifs à *PDM2C* ;
     * Le site *Mangario* (mangario.fr) pour avoir traduit en premier le générateur de Lettres Miracle de *PDM2TO* en français ;
     * Syphist de *Syphist's Website* ([syphist.com](https://syphist.com)) pour avoir archivé les outils de *PDM1*, *PDM2TO* ainsi que le générateur de Lettres Miracle S de *PDM2C* sur son site afin de les rendre plus faciles d'accès ;
-    * Karthik99999 de *PMD Gen* (pmd-gen.herokuapp.com) pour son générateur de mots de passe pour *PDMDX* ;
-* Le serveur Discord de *Poképédia* (pokepedia.fr) pour son soutien, son aide et ses conseils.
+    * Karthik99999 de *PMD Gen* ([pmd-gen.herokuapp.com](https://pmd-gen.herokuapp.com)) pour son générateur de mots de passe pour *PDMDX* ;
+* Le serveur Discord de *Poképédia* ([pokepedia.fr](https://pokepedia.fr)) pour son soutien, son aide et ses conseils.
 
 
 # English
