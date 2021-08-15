@@ -37,7 +37,7 @@ body {
     padding: 0.5em 1em;
     padding-left: 1%;
     vertical-align: middle;
-    list-style: disc;
+    list-style: square;
   }
   input {
     border: 1px solid;
