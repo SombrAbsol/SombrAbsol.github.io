@@ -44,5 +44,5 @@ This site gathers not only all the known French Mail Generators for the *Pokémo
     * The *A Pointless Place* site ([apointlessplace.net](https://web.archive.org/web/20170917141154/http://apointlessplace.net/)) for tools related to *PMD2S*;
     * The *Mangario* site ([mangario.fr](https://web.archive.org/web/20210308082718/https://www.mangario.fr/)) for being the first to translate the *PMD2TD* Wonder Mail Generator into French;
     * [Syphist] of *Syphist's Website* ([syphist.com](https://syphist.com)) for archiving the *PMD1* and *PMD2TD* tools and the *PMD2S* Wonder Mail S Generator on his site to make them more easily accessible;
-    * [Karthik99999] of *PMD Gen* ([pmd-gen.herokuapp.com](https://pmd-gen.herokuapp.com)) for his password generator for *PMDDX* ;
+    * [Karthik99999](Karthik99999) of *PMD Gen* ([pmd-gen.herokuapp.com](https://pmd-gen.herokuapp.com)) for his password generator for *PMDDX* ;
 * The *Poképédia* ([pokepedia.fr](https://pokepedia.fr)) Discord server for its support, help and advice.
