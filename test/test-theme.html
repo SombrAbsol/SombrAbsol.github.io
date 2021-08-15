@@ -536,6 +536,30 @@ function encwonder(f){
 </ul>
 <p>Source : <a href="http://www.upokecenter.com/games/dungeon/guides/wondermail.php">http://www.upokecenter.com/games/dungeon/guides/wondermail.php</a></p>
 </ul>
+<label for="theme">Choisissez un thème</label>
+<select id="theme">
+  <option value=".syphist">Syphist</option>
+  <option value=".dark">Dark</option>
+</select>
+
+const select = document.querySelector('select');
+const para = document.querySelector('p');
+
+select.addEventListener('change', setWeather);
+
+function setWeather() {
+  const choice = select.value;
+
+  if (choice === '.syphist') {
+    para.textContent = 'It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.';
+  } else if (choice === '.dark') {
+    para.textContent = 'The snow is coming down — it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.';
+  } else {
+    para.textContent = '';
+  }
+}
+
+<p></p>
 <form name="s" action="javascript:void(null)">
 Type de mission :<br/>
 <select name="type" onchange="updateform(this.form);">
