@@ -18,7 +18,7 @@ Ce site regroupe non seulement tous les générateurs de Lettres connus pour les
     * Peter O. (pseudonymisé poccil) de *Ultimate Pokémon Center* (upokecenter.com) pour les outils relatifs à *PDM1* et *PDM2TO* ;
     * Le site *A Pointless Place* (apointlessplace.net) pour les outils relatifs à *PDM2C* ;
     * Le site *Mangario* (mangario.fr) pour avoir traduit en premier le générateur de Lettres Miracle de *PDM2TO* en français ;
-    * Syphist de *Syphist's Website* ([syphist.com](syphist.com)) pour avoir archivé les outils de *PDM1*, *PDM2TO* ainsi que le générateur de Lettres Miracle S de *PDM2C* sur son site afin de les rendre plus faciles d'accès ;
+    * Syphist de *Syphist's Website* ([syphist.com](https://syphist.com)) pour avoir archivé les outils de *PDM1*, *PDM2TO* ainsi que le générateur de Lettres Miracle S de *PDM2C* sur son site afin de les rendre plus faciles d'accès ;
     * Karthik99999 de *PMD Gen* (pmd-gen.herokuapp.com) pour son générateur de mots de passe pour *PDMDX* ;
 * Le serveur Discord de *Poképédia* (pokepedia.fr) pour son soutien, son aide et ses conseils.
 
