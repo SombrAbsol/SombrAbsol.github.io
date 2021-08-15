@@ -37,7 +37,7 @@ This site gathers not only all the known French Mail Generators for the *Pokémo
 * Wonder Mail S Converter (European to American/Australian)
 
 ### Acknowledgements
-* abcboy from *Bulbapedia* (bulbapedia.bulbagarden.net) for having made available, on his user page, an almost complete collection of the texts of all the Pokémon games. I used it to get the vocabulary used in *Pokémon Mystery Dungeon*.
+* abcboy from *Bulbapedia* (bulbapedia.bulbagarden.net) for having made available, on his user page, an almost complete collection of the texts of all the Pokémon games. I used it to get the vocabulary used in *Pokémon Mystery Dungeon* ;
 * Peter O. (pseudonymized poccil) of *Ultimate Pokémon Center* (upokecenter.com) for the tools related to *PMD1* and *PMD2TD*;
 * The *A Pointless Place* site (apointlessplace.net) for tools related to *PMD2S*;
 * The *Mangario* site (mangario.fr) for being the first to translate the *PMD2TD* Wonder Mail Generator into French;
