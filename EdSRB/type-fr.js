@@ -25,7 +25,7 @@ var Pairs=[
 [103,85,"Amitié en danger !",
 "Ce précieux Pokémon peut bavarder avec <!--break-->trois personnes en même temps. À l’aide !"],
 [22,112,"Allez sauver notre amitié !",
-"S’il vous  plaît, sauvez %s, on <!--break-->part toujours à l’aventure ensemble !"],
+"S’il vous plaît, sauvez %s, on <!--break-->part toujours à l’aventure ensemble !"],
 [90,394,"Veuillez sauver ce Pokémon !",
 "Sauvez %s ! <!--break-->On est identiques : bivalves!"],
 [89,342,"Amitié en danger !",
@@ -33,7 +33,7 @@ var Pairs=[
 [52,325,"Aidez ce Pokémon !",
 "Portez secours à %s ! <!--break-->On joue toujours ensemble !"],
 [129,374,"Camarade en danger !",
-"À l'aide ! %s paraît faible, mais <!--break-->après évolution,  ce Pokémon est super !"],
+"À l'aide ! %s paraît faible, mais <!--break-->après évolution, ce Pokémon est super !"],
 [13,290,"Camarade en détresse !",
 "À l'aide ! %s et moi, on a <!--break-->tant de choses en commun ! On évolue vite !"],
 [293,291,"Pokémon en danger !",
@@ -47,7 +47,7 @@ var Pairs=[
 [49,294,"Pokémon en danger !",
 "Sans %s, ce n'est pas drôle de <!--break-->jouer avec de la poudre toxique ! À l'aide !"],
 [313,57,"En solo, je m'ennuie...",
-"%s fait beaucoup de bruit. Mais <!--break-->c'est trop silencieux,  là... Sniff, sniff..."],
+"%s fait beaucoup de bruit. Mais <!--break-->c'est trop silencieux, là... Sniff, sniff..."],
 [286,58,"Aidez-mon acolyte de toujours !",
 "Je ne peux pas jouer à la bagarre sans <!--break-->%s ! Aidez %s !"],
 [69,238,"Sauvez mon acolyte, S.V.P. !",
@@ -57,16 +57,16 @@ var Pairs=[
 [97,122,"Partenaire en difficulté !",
 "On veut monter un spectacle de magie et <!--break-->d'hypnose ensemble. À l'aide !"],
 [98,366,"Amitié en péril !",
-"Je veux aider %s !  On partage la <!--break-->même passion pour les pinces !"],
+"Je veux aider %s ! On partage la <!--break-->même passion pour les pinces !"],
 [143,314,"Camaraderie en danger !",
 "S'il vous plaît, aidez %s! Notre <!--break-->point commun, c'est la paresse !"],
 [127,239,"Partenaire de jeu en danger !",
 "%s et moi, on joue à la bagarre. <!--break-->Ça me manque beaucoup..."],
 [240,360,"Camarade en difficulté !",
-"On s'est promis de comparer nos griffes... <!--break-->À l'aide,  quelqu'un !"],
+"On s'est promis de comparer nos griffes... <!--break-->À l'aide, quelqu'un !"],
 [323,175,"Amitié en détresse !",
 "S'il vous plaît, aidez %s ! <!--break-->Je m'inquiète énormément !"],
-[132,185,"S'il vous plaît,  aidez-nous !",
+[132,185,"S'il vous plaît, aidez-nous !",
 "Sans %s, personne ne chahute ! <!--break-->S'il vous plaît, c'est trop calme !"],
 [241,352,"Amitié en danger !",
 "S'il vous plaît, sauvez %s ! On <!--break-->est semblables : imprévisibles !"],
@@ -141,7 +141,7 @@ var Text1b=[
 "Ouuuuuuuaaaah ! Au secours !",
 "Je perds conscience... Aidez-moi...",
 "Assistance requise !",
-"À l’aide,  je vous en prie !",
+"À l’aide, je vous en prie !",
 "Un coup de main !",
 "Gloup ! Ouaaaaaaaah !",
 "Ouilleuuuuuuuh !"
@@ -201,8 +201,8 @@ var Text2b=[
 "Aidez-moi !",
 "Je vous en prie, à l’aide !",
 "Que quelqu’un m’aide !",
-"Envoyez une équipe de secours,  vite !",
-"Besoin d’une équipe de secours,  urgent !",
+"Envoyez une équipe de secours, vite !",
+"Besoin d’une équipe de secours, urgent !",
 "Récompense pour votre aide !"
 ];
 var Text3a=[
@@ -220,7 +220,7 @@ var Text3a=[
 "%s n’est pas encore de retour !",
 "%s est peut-être dedans, K.O...",
 "L’inquiétude me ronge...",
-"Il faut qu’on se voie,  depuis longtemps.",
+"Il faut qu’on se voie, depuis longtemps.",
 "Je dois y aller !",
 "On doit se rencontrer, coûte que coûte !",
 "Peu importe comment, on doit se voir !",
@@ -229,8 +229,8 @@ var Text3a=[
 ];
 var Text3b=[
 "Emmenez-moi voir %s !",
-"S'il vous plaît,  emmenez-moi avec vous !",
-"Accompagnez-moi là-bas,  s'il vous plaît !",
+"S'il vous plaît, emmenez-moi avec vous !",
+"Accompagnez-moi là-bas, s'il vous plaît !",
 "Que quelqu'un m'accompagne !"
 ];
 var Text4a=[
@@ -345,6 +345,6 @@ var Title9=[
 var Title10=[
 "Emmenez-moi !",
 "Je veux voir %s.",
-"S’il vous plaît,  emmenez-moi !",
+"S’il vous plaît, emmenez-moi !",
 "Accompagnez-moi !"
 ]
