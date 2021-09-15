@@ -47,7 +47,7 @@ var Pairs=[
 [49,294,"Pokémon en danger !",
 "Sans %s, ce n'est pas drôle de <!--break-->jouer avec de la poudre toxique ! À l'aide !"],
 [313,57,"En solo, je m'ennuie...",
-"%s fait beaucoup de bruit. Mais <!--break-->c'est trop silencieux, là... Sniff, sniff..."],
+"%s fait beaucoup de bruit. Mais <!--break-->c'est trop silencieux, là… Sniff, sniff…"],
 [286,58,"Aidez-mon acolyte de toujours !",
 "Je ne peux pas jouer à la bagarre sans <!--break-->%s ! Aidez %s !"],
 [69,238,"Sauvez mon acolyte, S.V.P. !",
