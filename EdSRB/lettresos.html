@@ -229,12 +229,20 @@ Concernant les caractères spéciaux :
 Source : <a href="https://web.archive.org/web/20080913190100/http://www.upokecenter.com:80/games/dungeon/guides/sosgen.php">http://www.upokecenter.com/games/dungeon/guides/sosgen.php</a>
 </ul>
 <form name="s" action="javascript:void(null)">
-Pokémon à secourir :<br /><script type="text/javascript"><!--
+Pokémon à secourir :<br/><script type="text/javascript"><!--
 showpkmn("poke");
-//--></script><br /><br />Nom du Pokémon (dix lettres maximum) :<br /><input type="text" name="pokename" maxlength="10" size="10" /><br /><br />Donjon :<br /><script type="text/javascript"><!--
+//--></script><br/><br/>
+Nom du Pokémon (dix lettres maximum) :<br /><input type="text" name="pokename" maxlength="10" size="10" /><br/><br/>
+Donjon :<br /><script type="text/javascript"><!--
 showdungeon("dungeon");
-//--></script><br /><br />Étage :<br /><select name="floor">
-<option value=""></option></select><br /><br />ID de la Lettre (optionnel) :<br /><input type="text" name="mailid" maxlength="4" size="4" /><br /><br />Possibilités de sauvetages restantes :<br /><input type="text" name="chances" value="10" maxlength="2" size="2" /><br /><br /><input type="button" value="Générer la Lettre S.O.S." onclick="genpass(this.form)" /><br /><br />Mot de passe de la Lettre S.O.S. :<br /><textarea name="sos" cols="60" rows="5"></textarea><br /><script type="text/javascript"><!--
+//--></script><br/><br/>
+Étage :<br /><select name="floor">
+<option value=""></option></select><br/><br/>
+ID de la Lettre (optionnel) :<br /><input type="text" name="mailid" maxlength="4" size="4" /><br/><br/>
+Possibilités de sauvetages restantes :<br /><input type="text" name="chances" value="10" maxlength="2" size="2" /><br/><br/>
+<input type="button" value="Générer la Lettre S.O.S." onclick="genpass(this.form)" /><br/><br/>
+Mot de passe de la Lettre S.O.S. :<br /><textarea name="sos" cols="60" rows="5"></textarea><br/>
+<script type="text/javascript"><!--
 if(debug){
  document.write('<input type="button" value="Décoder la Lettre S.O.S." onclick="decsos(this.form)"/><br/>')
  document.write('<textarea name="data" cols="60" rows="5"></textarea><br/>')
