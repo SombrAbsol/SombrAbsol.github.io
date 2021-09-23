@@ -1,13 +1,17 @@
 <!--?xml version="1.0" encoding="UTF-8"?-->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>
-	<url></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
 		<loc>https://sombrabsol.github.io</loc>
 	
-	<url></url>
+	</url>
+	<url>
 		<loc>https://sombrabsol.github.io/EdSRB/lettremiracle.html</loc>
 
-	<url></url>
+	</url>
+	<url>
 		<loc>https://sombrabsol.github.io/EdSRB/lettresos.html</loc>
 
-	<url></url>
+	</url>
+	<url>
 		<loc>https://sombrabsol.github.io/EdSRB/lettreok.html</loc>
+</urlset>
