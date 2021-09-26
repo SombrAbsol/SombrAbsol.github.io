@@ -25,30 +25,30 @@ WMSGenData = {
 	//
 	// Every mission type can have a "subTypes" array which overrides all settings for the parent.
 	missionTypes: [
-		{name: "Rescue client", mainType: 0, specialType: 0, clientIsTarget: true},
-		{name: "Rescue target", mainType: 1, specialType: 0},
-		{name: "Escort to target", mainType: 2, specialType: 0},
+		{name: "Sauver le client.", mainType: 0, specialType: 0, clientIsTarget: true},
+		{name: "Sauver la cible.", mainType: 1, specialType: 0},
+		{name: "Escorter jusqu'à la cible.", mainType: 2, specialType: 0},
 		
-		{name: "Explore with client", mainType: 3, clientIsTarget: true, subTypes: [
+		{name: "Explorer avec le client", mainType: 3, clientIsTarget: true, subTypes: [
 			{name: "Normal", specialType: 0},
-			{name: "Sealed Chamber", specialType: 1, specialFloor: 165},
-			{name: "Golden Chamber", specialType: 2, specialFloor: 111},
-			{name: "New Dungeon (broken?)", specialType: 3, advancedOnly: true}
+			{name: "Chambre Scellée", specialType: 1, specialFloor: 165},
+			{name: "Chamber Dorée", specialType: 2, specialFloor: 111},
+			{name: "Nouveau Donjon", specialType: 3, advancedOnly: true}
 		]},
 		
-		{name: "Prospect with client", mainType: 4, specialType: 0, useTargetItem: true, clientIsTarget: true},
-		{name: "Guide client", mainType: 5, specialType: 0, clientIsTarget: true},
-		{name: "Find target item", mainType: 6, specialType: 0, useTargetItem: true, clientIsTarget: true},
-		{name: "Deliver target item", mainType: 7, specialType: 0, useTargetItem: true, clientIsTarget: true},
-		{name: "Search for client", mainType: 8, specialType: 0},
+		{name: "Prospecter avec le client.", mainType: 4, specialType: 0, useTargetItem: true, clientIsTarget: true},
+		{name: "Guider le client.", mainType: 5, specialType: 0, clientIsTarget: true},
+		{name: "Trouver un objet.", mainType: 6, specialType: 0, useTargetItem: true, clientIsTarget: true},
+		{name: "Livrer un objet.", mainType: 7, specialType: 0, useTargetItem: true, clientIsTarget: true},
+		{name: "Chercher le client.", mainType: 8, specialType: 0},
 		
-		{name: "Steal from target", mainType: 9, useTargetItem: true, subTypes: [
+		{name: "Prendre l'objet à la cible.", mainType: 9, useTargetItem: true, subTypes: [
 			{name: "Normal", specialType: 0},
-			{name: "Target hidden", specialType: 1},
-			{name: "Target runs", specialType: 2}
+			{name: "Cible cachée", specialType: 1},
+			{name: "Cible en fuite", specialType: 2}
 		]},
 		
-		{name: "Arrest client (Magnemite)", advancedOnly: true, mainType: 10, forceClient: 81, subTypes: [
+		{name: "Arrêter la cible. (Magnéti)", advancedOnly: true, mainType: 10, forceClient: 81, subTypes: [
 			{name: "Normal", specialType: 0},
 			{name: "Escort", specialType: 4},
 			{name: "Special Floor (broken)", specialType: 6, useTarget2: true, specialFloorFromList: "thievesden"},
@@ -56,24 +56,24 @@ WMSGenData = {
 		]},
 		
 		// This is the same list as above, just with Magnezone.
-		{name: "Arrest client (Magnezone)", advancedOnly: true, mainType: 10, forceClient: 504, subTypes: [
+		{name: "Arrêter la cible. (Magnézone)", advancedOnly: true, mainType: 10, forceClient: 504, subTypes: [
 			{name: "Normal", specialType: 0},
-			{name: "Escort", specialType: 4},
-			{name: "Special Floor (broken)", specialType: 6, useTarget2: true, specialFloorFromList: "thievesden"},
-			{name: "Monster House", specialType: 7}
+			{name: "Escorte", specialType: 4},
+			{name: "Étage spécial", specialType: 6, useTarget2: true, specialFloorFromList: "thievesden"},
+			{name: "Maison de monstres", specialType: 7}
 		]},
 		
-		{name: "Challenge Request", mainType: 11, subTypes: [
-			{name: "Normal (broken)", specialType: 0, useTarget2: true, advancedOnly: true, specialFloorFromList: "challengerequest"},
+		{name: "Battre la cible.", mainType: 11, subTypes: [
+			{name: "Normal", specialType: 0, useTarget2: true, advancedOnly: true, specialFloorFromList: "challengerequest"},
 			{name: "Mewtwo", specialType: 1, forceClient: 150, forceTarget: 150, specialFloor: 145},
 			{name: "Entei", specialType: 2, forceClient: 271, forceTarget: 271, specialFloor: 146},
 			{name: "Raikou", specialType: 3, forceClient: 270, forceTarget: 270, specialFloor: 147},
-			{name: "Suicine", specialType: 4, forceClient: 272, forceTarget: 272, specialFloor: 148},
+			{name: "Suicune", specialType: 4, forceClient: 272, forceTarget: 272, specialFloor: 148},
 			{name: "Jirachi", specialType: 5, forceClient: 417, forceTarget: 417, specialFloor: 149}
 		]},
 		
 		// You can use any client/target but the game prefers them to be the same.
-		{name: "Treasure hunt", mainType: 12, specialType: 0, forceClient: 422, forceTarget: 422, specialFloorFromList: "treasurehunt", noReward: true}
+		{name: "Trouver le trésor.", mainType: 12, specialType: 0, forceClient: 422, forceTarget: 422, specialFloorFromList: "treasurehunt", noReward: true}
 		
 		// Let's just use game-generated codes, these are all weird and pointless to generate and stuff.
 		//{name: "Unlock seven treasures dungeon (broken)", mainType: 13, specialType: 0}
