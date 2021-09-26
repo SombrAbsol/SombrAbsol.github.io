@@ -10,6 +10,7 @@ Ce site regroupe non seulement tous les générateurs de Lettres connus pour les
 * Convertisseur de Lettres S.O.S. en Lettres O.K. et Remerciement
 
 #### *Pokémon Donjon Mystère : Explorateurs du Ciel*
+* Générateur de Lettres Miracle S
 * Convertisseur de Lettres Miracle S (européennes à américaines/australiennes)
 
 ### Remerciements
@@ -35,6 +36,7 @@ This site gathers not only all the known French Mail Generators for the *Pokémo
 * S.O.S. Mail to O.K. and Thank You Mail Converter
 
 #### *Pokémon Mystery Dungeon: Explorers of Sky*
+* Wonder Mail S Generator
 * Wonder Mail S Converter (European to American/Australian)
 
 ### Acknowledgements
