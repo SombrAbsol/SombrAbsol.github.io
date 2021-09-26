@@ -32,7 +32,7 @@ WMSGenData = {
 		{name: "Explorer avec le client", mainType: 3, clientIsTarget: true, subTypes: [
 			{name: "Normal", specialType: 0},
 			{name: "Chambre Scellée", specialType: 1, specialFloor: 165},
-			{name: "Chamber Dorée", specialType: 2, specialFloor: 111},
+			{name: "Chambre Dorée", specialType: 2, specialFloor: 111},
 			{name: "Nouveau Donjon", specialType: 3, advancedOnly: true}
 		]},
 		
@@ -50,9 +50,9 @@ WMSGenData = {
 		
 		{name: "Arrêter la cible. (Magnéti)", advancedOnly: true, mainType: 10, forceClient: 81, subTypes: [
 			{name: "Normal", specialType: 0},
-			{name: "Escort", specialType: 4},
-			{name: "Special Floor (broken)", specialType: 6, useTarget2: true, specialFloorFromList: "thievesden"},
-			{name: "Monster House", specialType: 7}
+			{name: "Escorte", specialType: 4},
+			{name: "Étage spécial", specialType: 6, useTarget2: true, specialFloorFromList: "thievesden"},
+			{name: "Maison de monstres", specialType: 7}
 		]},
 		
 		// This is the same list as above, just with Magnezone.
