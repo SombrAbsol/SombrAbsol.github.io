@@ -124,30 +124,29 @@
 						break;
 					}
 				break;
-				break;
 				
 				case 4: // Prospect
-					missionName = "Prospect for " + getItemName(struct.targetItem) + " with " + getMonName(struct.client);
+					missionName = "Prospecter l'objet " + getItemName(struct.targetItem) + " avec " + getMonName(struct.client) + ".";
 				break;
 
 				case 5: // Guide
-					missionName = "Guide " + getMonName(struct.client);
+					missionName = "Guider " + getMonName(struct.client) + ".";
 				break;
 				
 				case 6: // Find item
-					missionName = "Find " + getItemName(struct.targetItem);
+					missionName = "Trouver " + getItemName(struct.targetItem) + "!";
 				break;
 
 				case 7: // Deliver item
-					missionName = "Deliver " + getItemName(struct.targetItem);
+					missionName = "Livrer " + getItemName(struct.targetItem) + "!";
 				break;
 				
 				case 8: // Search
-					missionName = "Search for " + getMonName(struct.target ? struct.target : struct.client);
+					missionName = "Chercher " + getMonName(struct.target ? struct.target : struct.client) + ".";
 				break;
 
 				case 9: // Outlaw - item
-					missionName = "Take " + getItemName(struct.targetItem) + " from " + getMonName(struct.target);
+					missionName = "Prendre l'objet " + getItemName(struct.targetItem) + " à " + getMonName(struct.target) + ".";
 					
 					if(struct.missionSpecial == 1) {
 						missionName += " (hidden)";
@@ -158,19 +157,19 @@
 				break;
 
 				case 10: // Outlaw - kill
-					missionName = "Arrest " + getMonName(struct.target);
+					missionName = "Arrêter " + getMonName(struct.target) ".";
 					
 					if(struct.missionSpecial == 4) {
-						missionName += " (" + getMonName(struct.client) + " escort)";
+						missionName += " (Escorte de" + getMonName(struct.client) + ".";
 					}
 					else if(struct.missionSpecial == 5) {
-						missionName += " (runs away)";
+						missionName += " (Fuite).";
 					}
 					else if(struct.missionSpecial == 6) {
-						missionName += " (Monster House - special floor with " + getMonName(struct.target) + " & " + getMonName(struct.target2) + ")";
+						missionName += " (Maison de monstres - étage spécial avec " + getMonName(struct.target) + " et " + getMonName(struct.target2) + ").";
 					}
 					else if(struct.missionSpecial == 7) {
-						missionName += " (Monster House)";
+						missionName += " (Maison de monstres).";
 					}
 				break;
 
@@ -178,71 +177,71 @@
 					// The fixed challenges 1-5 operate on client only. Challenge 0 operates on client and target/target2 (if nonzero).
 					// target is preferred here, but target2 is checked anyway.
 					if(struct.missionSpecial > 0 && struct.missionSpecial < 6) {
-						missionName = "Challenge Request from " + getMonName(struct.client);
+						missionName = "Lettre Défi de " + getMonName(struct.client) + ".";
 					}
 					else if(struct.missionSpecial == 0 && (struct.target != 0 || struct.target2 != 0)) {
 						var target = struct.target || struct.target2;
-						missionName = "Challenge Request from " + getMonName(struct.client) + " and " + getMonName(target);
+						missionName = "Lettre Défi de " + getMonName(struct.client) + " et " + getMonName(target) + ".";
 					}
 					else {
-						missionName = "Challenge Request from " + getMonName(struct.client);
+						missionName = "Letre Défi de " + getMonName(struct.client) + ".";
 					}
 				break;
 				
 				case 12: // Treasure hunt
-					missionName = "Treasure Hunt";
+					missionName = "Trouver le trésor.";
 					noClient = true;
 					noReward = true;
 				break;
 				
 				case 14:
-					missionName = "Unlock Seven Treasures Dungeon";
+					missionName = "Débloquer un donjon des Sept Trésors.";
 					noFloor = true;
 					noClient = true;
 					noReward = true;
 				break;
 
 				default:
-					missionName = "Unknown mission type " + struct.missionType + " (special = " + struct.missionSpecial + ")";
+					missionName = "Type de mission inconnu. " + struct.missionType + " (Spécial = " + struct.missionSpecial + ").";
 				break;
 			}
 			
 			// Build the location data, based on variables in the mission data.
 			var dungeon = getDungeonName(struct.dungeon);
 			if(noFloor) {
-				output += "Location: " + dungeon + "\n";
+				output += "Lieu : " + dungeon + "n";
 			}
 			else {
-				output += "Location: " + dungeon + " " + struct.floor + "F\n";
+				output += "Lieu : " + dungeon + " " + struct.floor + "Fn";
 			}
 			
 			// Add the mission data.
-			output += "Mission: " + missionName + ".\n";
+			output += "Mission : " + missionName + ".n";
 			
 			// Build the Client line.
 			if(!noClient) {
-				output += "Client: " + getMonName(struct.client) + "\n";
+				output += "Client : " + getMonName(struct.client) + "n";
 			}
 			
 			// Build the Restrictions line.
 			// multiple of 2: type restrict
 			// non-multiple of 2: mon restrict
 			if(struct.restriction == 0) {
-				output += "Restriction: None\n";
+				output += "Restriction : Aucune";
 			}
 			else if(struct.restrictionType == 1) {
-				output += "Restriction: With " + (getMonName(struct.restriction)) + "\n";
+				output += "Restriction : Avec " + (getMonName(struct.restriction)) + "n";
 			}
 			else {
 				var types = [
-					0, "Normal", "Fire", "Water", "Grass", "Electric", "Ice", "Fighting", "Poison",
-					"Ground", "Flying", "Psychic", "Bug", "Rock", "Ghost", "Dragon", "Dark", "Steel"
+					0, "Normal", "Feu", "Eau", "Plante", "Électrik", "Glace", "Combat", "Poison",
+					"Sol", "Vol", "Psy", "Insecte", "Roche", "Spectre", "Dragon", "Ténèbres", "Acier"
 				];
 				var restType = types[struct.restriction];
 				if(!restType) {
 					restType = "UNKNOWN";
 				}
-				output += "Restriction: With " + restType + "-type partner\n";
+				output += "Restriction : Partenaire de type " + restType;
 			}
 			
 			// Build the Reward line.
@@ -250,11 +249,11 @@
 				var reward;
 				switch(struct.rewardType) {
 					case 0: // Money
-						reward = "Money";
+						reward = "Argent";
 					break;
 					
 					case 1: // Money + item
-						reward = "Money + " + getItemName(struct.reward);
+						reward = "Argent + " + getItemName(struct.reward);
 					break;
 					
 					case 2: // Item
@@ -262,41 +261,41 @@
 					break;
 
 					case 3: // Item + Item
-						reward = getItemName(struct.reward) + " + random";
+						reward = getItemName(struct.reward) + " + aléatoire";
 					break;
 
 					case 4: // Random
 						if(struct.reward) {
-							reward = getItemName(struct.reward) + " + random";
+							reward = getItemName(struct.reward) + " + aléatoire";
 						}
 						else {
-							reward = "Random";
+							reward = "Aléatoire";
 						}
 					break;
 
 					case 5: // Egg
-						reward = "Egg";
+						reward = "Œuf";
 					break;
 					
 					case 6: // Client joins
-						reward = getMonName(struct.client) + " joins your team";
+						reward = getMonName(struct.client) + " rejoint l'équipe";
 					break;
 					
 					default:
-						reward = "Unknown reward type " + struct.rewardType;
+						reward = "Type de récompense inconnu " + struct.rewardType;
 					break;
 				}
-				output += "Reward: " + reward + "\n";
+				output += "Récompense : " + reward + "n";
 			}
 			
 			// Add the code.
-			output += "\nWonder Mail S (" + (eu ? "EU" : "US/AU") + "):\n" + mailStringUser;
+			output += "nLettre Miracle S (" + (eu ? "EU" : "US/AU") + "):n" + mailStringUser;
 			
 			// Add warning
 			if(struct.nullBits != 0)
-				output = "WARNING: This code has not been properly decrypted. The data below is likely to be inaccurate.\n\n" + output;
+				output = "ATTENTION : Ce code n'a pas été correctement décrypté. Les données ci-dessous sont susceptibles d'être inexactes.nn" + output;
 			
-			$('outputbox').value = output;
+			$(&#039;outputbox&#039;).value = output;
 		}
 		</script>
 		<h1>Wonder Mail S Reader</h1>
