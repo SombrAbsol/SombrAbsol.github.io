@@ -149,15 +149,15 @@
 					missionName = "Prendre l'objet " + getItemName(struct.targetItem) + " à " + getMonName(struct.target) + ".";
 					
 					if(struct.missionSpecial == 1) {
-						missionName += " (hidden)";
+						missionName += " (caché)";
 					}
 					else if(struct.missionSpecial == 2) {
-						missionName += " (runs away)";
+						missionName += " (en fuite)";
 					}
 				break;
 
 				case 10: // Outlaw - kill
-					missionName = "Arrêter " + getMonName(struct.target) ".";
+					missionName = "Arrêter " + getMonName(struct.target) + ".";
 					
 					if(struct.missionSpecial == 4) {
 						missionName += " (Escorte de" + getMonName(struct.client) + ".";
