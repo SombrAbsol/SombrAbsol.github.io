@@ -131,7 +131,7 @@
 				break;
 
 				case 5: // Guide
-					missionName = "Guider " + getMonName(struct.client) + ".";
+					missionName = "Guider " + getMonName(struct.client);
 				break;
 				
 				case 6: // Find item
@@ -143,17 +143,17 @@
 				break;
 				
 				case 8: // Search
-					missionName = "Chercher " + getMonName(struct.target ? struct.target : struct.client) + ".";
+					missionName = "Chercher " + getMonName(struct.target ? struct.target : struct.client);
 				break;
 
 				case 9: // Outlaw - item
-					missionName = "Prendre l'objet " + getItemName(struct.targetItem) + " à " + getMonName(struct.target) + ".";
+					missionName = "Prendre l'objet " + getItemName(struct.targetItem) + " à " + getMonName(struct.target);
 					
 					if(struct.missionSpecial == 1) {
 						missionName += " (caché)";
 					}
 					else if(struct.missionSpecial == 2) {
-						missionName += " (Fuite)";
+						missionName += " (fuite)";
 					}
 				break;
 
@@ -161,16 +161,16 @@
 					missionName = "Arrêter " + getMonName(struct.target) + ".";
 					
 					if(struct.missionSpecial == 4) {
-						missionName += " (" + getMonName(struct.client) + " escort)";
+						missionName += " (Escorte de " + getMonName(struct.client) + ").";
 					}
 					else if(struct.missionSpecial == 5) {
-						missionName += " (runs away)";
+						missionName += " (fuite)";
 					}
 					else if(struct.missionSpecial == 6) {
-						missionName += " (Monster House - special floor with " + getMonName(struct.target) + " & " + getMonName(struct.target2) + ")";
+						missionName += " (Maison de monstres - étage spécial avec " + getMonName(struct.target) + " et " + getMonName(struct.target2) + ").";
 					}
 					else if(struct.missionSpecial == 7) {
-						missionName += " (Monster House)";
+						missionName += " (Maison de monstres).";
 					}
 				break;
 
