@@ -127,38 +127,38 @@
 				break;
 				
 				case 4: // Prospect
-					missionName = "Prospect for " + getItemName(struct.targetItem) + " with " + getMonName(struct.client);
+					missionName = "Prospect l'objet " + getItemName(struct.targetItem) + " avec " + getMonName(struct.client) + ".";
 				break;
 
 				case 5: // Guide
-					missionName = "Guide " + getMonName(struct.client);
+					missionName = "Guider " + getMonName(struct.client) + ".";
 				break;
 				
 				case 6: // Find item
-					missionName = "Find " + getItemName(struct.targetItem);
+					missionName = "Trouver " + getItemName(struct.targetItem) + "!";
 				break;
 
 				case 7: // Deliver item
-					missionName = "Deliver " + getItemName(struct.targetItem);
+					missionName = "Livrer " + getItemName(struct.targetItem) + "!";
 				break;
 				
 				case 8: // Search
-					missionName = "Search for " + getMonName(struct.target ? struct.target : struct.client);
+					missionName = "Chercher " + getMonName(struct.target ? struct.target : struct.client) + ".";
 				break;
 
 				case 9: // Outlaw - item
-					missionName = "Take " + getItemName(struct.targetItem) + " from " + getMonName(struct.target);
+					missionName = "Prendre l'objet " + getItemName(struct.targetItem) + " à " + getMonName(struct.target) + ".";
 					
 					if(struct.missionSpecial == 1) {
-						missionName += " (hidden)";
+						missionName += " (caché)";
 					}
 					else if(struct.missionSpecial == 2) {
-						missionName += " (runs away)";
+						missionName += " (Fuite)";
 					}
 				break;
 
 				case 10: // Outlaw - kill
-					missionName = "Arrest " + getMonName(struct.target);
+					missionName = "Arrêter " + getMonName(struct.target) + ".";
 					
 					if(struct.missionSpecial == 4) {
 						missionName += " (" + getMonName(struct.client) + " escort)";
