@@ -238,7 +238,7 @@ WMSGen = {
 		var femaleOnly = (WMSGenData.femaleOnly.indexOf(id) != -1);
 		
 		if((maleOnly || femaleOnly) && femaleChecked) {
-			console.info("Prevented %d from being marked as female.", id);
+			console.info("A empêché %d d'être marqué comme féminin.", id);
 			return id;
 		}
 		else if(femaleChecked) {
@@ -403,7 +403,7 @@ WMSGen = {
 				
 				// Build the error.
 				if(!checkPassed) {
-					var error = "Invalid client selected. You must use one of: ";
+					var error = "Le client sélectionné n'est pas valide. Vous devez utiliser l'un d'eux : ";
 					for(var i = 0; i < typeData.validClients.length; ++i) {
 						error += (i !== 0 ? ", " : "") + getMonName(typeData.validClients[i]);
 					}
@@ -417,7 +417,7 @@ WMSGen = {
 		if(!typeData.noReward && rewardType >= 1 && rewardType <= 4) {
 			var rewardItem = parseInt(this.getComboBoxValue("rewardItemBox", 10));
 			if(rewardItem == 0) {
-				errors[errors.length] = "You must select a reward item!";
+				errors[errors.length] = "Vous devez sélectionner un objet en récompense !";
 			}
 		}
 
@@ -426,7 +426,7 @@ WMSGen = {
 			var targetItem = parseInt(this.getComboBoxValue("targetItemBox", 10));
 			for(var i = 0; i < WMSGenData.badTargetItems.length; ++i) {
 				if(WMSGenData.badTargetItems[i] == targetItem) {
-					errors[errors.length] = "The target item you selected is invalid (stackables are not allowed).";
+					errors[errors.length] = "L'objet cible que vous avez sélectionné n'est pas valide (les empilables ne sont pas autorisés).";
 				}
 			}
 		}
@@ -603,10 +603,10 @@ WMSGen = {
 			var listName = typeData.specialFloorFromList;
 			var list = WMSGenData.staticLists[listName];
 			if(!list) {
-				console.error("Static list %s not found.", listName);
+				console.error("Liste statique %s non trouvée", listName);
 			}
 			var entry = Math.floor(Math.random() * (list.length - 1));
-			console.info("Picked specialFloor entry %d, value: %d", entry, list[entry]);
+			console.info("A choisi l'entrée specialFloor %d, valeur : %d", entry, list[entry]);
 			struct.specialFloor = list[entry];
 		}
 		else {
