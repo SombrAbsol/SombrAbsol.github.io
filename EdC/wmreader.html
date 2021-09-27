@@ -207,6 +207,14 @@
 				break;
 			}
 			
+			// Build the Client line.
+			if(!noClient) {
+				output += "Client: " + getMonName(struct.client) + "\n";
+			}
+			
+			// Add the mission data.
+			output += "Objectif : " + missionName + ".\n";
+			
 			// Build the location data, based on variables in the mission data.
 			var dungeon = getDungeonName(struct.dungeon);
 			if(noFloor) {
@@ -214,14 +222,6 @@
 			}
 			else {
 				output += "Lieu : " + dungeon + " E. " + struct.floor + "\n";
-			}
-			
-			// Add the mission data.
-			output += "Objectif : " + missionName + ".\n";
-			
-			// Build the Client line.
-			if(!noClient) {
-				output += "Client: " + getMonName(struct.client) + "\n";
 			}
 			
 			// Build the Restrictions line.
