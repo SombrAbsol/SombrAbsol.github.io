@@ -34,7 +34,7 @@
 		function doReadCode() {
 			var mailString = WMSParser.sanitize($('inputbox').value);
 			if(mailString.length != 34) {
-				setError("The given Wonder Mail S string seems invalid.");
+				setError("La chaîne de caractères de la Lettre Miracle S semble invalide.");
 				return false;
 			}
 			
@@ -66,7 +66,7 @@
 			}
 			
 			if(!valid) {
-				$('outputbox').value = "This code does not appear to be valid.";
+				$('outputbox').value = "Ce code ne semble pas être valide.";
 				return;
 			}
 			
@@ -74,7 +74,7 @@
 			
 			// Validate some data.
 			if(struct.mailType != 4) {
-				setError("Sorry, this code seems to be invalid. I can't read it.");
+				setError("Désolé, ce mot de passe semble invalide. Je ne peux pas le lire.");
 				return false;
 			}
 			
@@ -94,35 +94,36 @@
 			var noReward = false;
 			switch(struct.missionType) {
 				case 0: // Rescue client
-					missionName = "Rescue " + getMonName(struct.client);
+					missionName = "Sauver " + getMonName(struct.client) + ".";
 				break;
 				
 				case 1: // Rescue target
-					missionName = "Rescue " + getMonName(struct.target);
+					missionName = "Sauver " + getMonName(struct.target) + ".";
 				break;
 				
 				case 2: // Escort
-					missionName = "Escort " + getMonName(struct.client) + " to " + getMonName(struct.target);
+					missionName = "Escorter " + getMonName(struct.client) + "jusqu'à " + getMonName(struct.target) + ".";
 				break;
 				
 				case 3: // Explore
 					switch(struct.missionSpecial) {
 						case 1:
-							missionName = "Explore the Sealed Chamber with " + getMonName(struct.client);
+							missionName = "Explorer la Chambre Scellée avec " + getMonName(struct.client) + ".";
 						break;
 						
 						case 2:
-							missionName = "Explore the Golden Chamber with " + getMonName(struct.client);
+							missionName = "Explorer la Chambre Dorée avec " + getMonName(struct.client) + ".";
 						break;
 						
 						case 3:
-							missionName = "Explore the new dungeon with " + getMonName(struct.client);
+							missionName = "Explorer le nouveau donjon avec " + getMonName(struct.client) + ".";
 						break;
 						
 						default:
-							missionName = "Explore with " + getMonName(struct.client);
+							missionName = "Explorer avec " + getMonName(struct.client) + ".";
 						break;
 					}
+				break;
 				break;
 				
 				case 4: // Prospect
