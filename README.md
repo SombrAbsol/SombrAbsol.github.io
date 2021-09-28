@@ -11,7 +11,7 @@ Ce site regroupe non seulement tous les générateurs de Lettres connus pour les
 
 #### *Pokémon Donjon Mystère : Explorateurs du Ciel*
 * Générateur de Lettres Miracle S
-* Convertisseur de Lettres Miracle S (US/AU => EU et EU => US/AU)
+* Convertisseur de Lettres Miracle S (européennes et américaines/australiennes)
 * Liseuse de Lettres Miracle S
 
 ### Remerciements
@@ -38,7 +38,8 @@ This site gathers not only all the known French Mail Generators for the *Pokémo
 
 #### *Pokémon Mystery Dungeon: Explorers of Sky*
 * Wonder Mail S Generator
-* Wonder Mail S Converter (European to American/Australian)
+* Wonder Mail S Converter (European and American/Australian)
+* Wonder Mail S Reader
 
 ### Acknowledgements
 * abcboy from *Bulbapedia* ([bulbapedia.bulbagarden.net](https://bulbapedia.bulbagarden.net)) for having made available, on his user page, an almost complete collection of the texts of all the Pokémon games. I used it to get the vocabulary used in *Pokémon Mystery Dungeon* ;
