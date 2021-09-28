@@ -128,7 +128,7 @@
 				break;
 				
 				case 4: // Prospect
-					missionName = "Prospect l'objet " + getItemName(struct.targetItem) + " avec " + getMonName(struct.client);
+					missionName = "Prospecter l'objet " + getItemName(struct.targetItem) + " avec " + getMonName(struct.client);
 				break;
 
 				case 5: // Guide
@@ -179,14 +179,14 @@
 					// The fixed challenges 1-5 operate on client only. Challenge 0 operates on client and target/target2 (if nonzero).
 					// target is preferred here, but target2 is checked anyway.
 					if(struct.missionSpecial > 0 && struct.missionSpecial < 6) {
-						missionName = "Lettre Défi de " + getMonName(struct.client);
+						missionName = "Battre " + getMonName(struct.client);
 					}
 					else if(struct.missionSpecial == 0 && (struct.target != 0 || struct.target2 != 0)) {
 						var target = struct.target || struct.target2;
-						missionName = "Lettre Défi de " + getMonName(struct.client) + " et " + getMonName(target);
+						missionName = "Battre " + getMonName(struct.client) + " et " + getMonName(target);
 					}
 					else {
-						missionName = "Lettre Défi de " + getMonName(struct.client);
+						missionName = "Battre " + getMonName(struct.client);
 					}
 				break;
 				
@@ -263,15 +263,15 @@
 					break;
 
 					case 3: // Item + Item
-						reward = getItemName(struct.reward) + " + random";
+						reward = getItemName(struct.reward) + " + ??? (aléatoire)";
 					break;
 
 					case 4: // Random
 						if(struct.reward) {
-							reward = getItemName(struct.reward) + " + aléatoire";
+							reward = getItemName(struct.reward) + " + ??? (aléatoire)";
 						}
 						else {
-							reward = "Aléatoire";
+							reward = "??? (aléatoire)";
 						}
 					break;
 
