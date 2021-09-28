@@ -11,7 +11,8 @@ Ce site regroupe non seulement tous les générateurs de Lettres connus pour les
 
 #### *Pokémon Donjon Mystère : Explorateurs du Ciel*
 * Générateur de Lettres Miracle S
-* Convertisseur de Lettres Miracle S (européennes à américaines/australiennes)
+* Convertisseur de Lettres Miracle S (US/AU => EU et EU => US/AU)
+* Liseuse de Lettres Miracle S
 
 ### Remerciements
 * abcboy du site *Bulbapedia* ([bulbapedia.bulbagarden.net](https://bulbapedia.bulbagarden.net)) pour avoir mis à disposition, sur sa page utilisateur, une collection quasiment complète des textes de tous les jeux Pokémon. Cela m'a notamment servi à reprendre le vocabulaire utilisé dans *Pokémon Donjon Mystère* ;
