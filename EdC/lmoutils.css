@@ -1,6 +1,7 @@
 /* General styling */
 body {
 	background-color: #79ACCC;
+	overflow-wrap: anywhere;
 }
 
 h1 {
