@@ -618,29 +618,29 @@ Type de mission :<br/>
 <option value="">Outlaw (Stolen item)</option>
 <option value="">Outlaw (Arrest)</option>
 <option value="">Special Search</option>
-</select><br/>
+</select><br/><br/>
 Client :<br/>
 <script type="text/javascript"><!--
 showpkmn('client',1);
 //--></script>
 <input type="checkbox" name="clientfemale" id="clientfemale"/> <label for="clientfemale">femelle (décocher pour mâle)</label>
-<br/>
+<br/><br/>
 Pokémon à sauver/trouver/accompagner/arrêter :<br/>
 <script type="text/javascript">
 showpkmn('poke');
 </script>
 <input type="checkbox" name="pokefemale" id="pokefemale"/> <label for="pokefemale">femelle (décocher pour mâle)</label>
-<br/>
+<br/><br/>
 Donjon :<br/>
 <script type="text/javascript"><!--
 showdungeon('dungeon');
-//--></script><br/>
+//--></script><br/><br/>
 Étage :<br/>
 <select name="floor" onchange="">
-<option value=""></option></select><br/>
+<option value=""></option></select><br/><br/>
 Objet à trouver/livrer :<br/>
 <select name="item" onchange="">
-<option value=""></option></select><br/>
+<option value=""></option></select><br/><br/>
 Type de récompense :<br/>
 <select name="rewardtype" onchange="updateform(this.form);">
 <option value="">Objet et argent</option>
@@ -648,7 +648,7 @@ Type de récompense :<br/>
 <option value="">Argent</option>
 <option value="">Recrutement du client</option>
 <option value="">Œuf</option>
-</select><br/>
+</select><br/><br/>
 Objet en récompense :<br/>
 <script type="text/javascript"><!--
 showrewards('reward');
@@ -658,7 +658,7 @@ Friend Area reward:<br/>
 <script type='text/javascript'>
 showareas('area');
 </script><br/>
---><br/>
+--><br/><br/>
 Restrictions :<br/>
 <input type="radio" name="restrict" checked="checked" id="restrict0" value="0"/><label for="restrict0">Aucune</label><br/>
 <input type="radio" name="restrict" id="restrict1" value="1"/><label for="restrict1">Avec partenaire de type </label>
@@ -684,8 +684,8 @@ Restrictions :<br/>
 <input type="radio" name="restrict" id="restrict2" value="2"/><label for="restrict2">Avec </label>
 <script type="text/javascript"><!--
 showpkmn('restrictpkmn',1);
-//--></script><br/>
-<input type="button" value="Générer la Lettre Miracle" onclick="genwonder(this.form)"/><br/>
+//--></script><br/><br/>
+<input type="button" value="Générer la Lettre Miracle" onclick="genwonder(this.form)"/><br/><br/>
 Mot de passe de la Lettre Miracle :<br/>
 <textarea name="wonder" cols="60" rows="5"></textarea><br/></div></form>
 <!--
