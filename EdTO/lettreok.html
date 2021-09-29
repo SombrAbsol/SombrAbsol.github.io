@@ -4,20 +4,19 @@
 <title>Convertisseur de Lettres S.O.S. en Lettres O.K. (PDM2OT)</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="Convertisseur français de Lettres S.O.S. en Lettres O.K. pour Pokémon Donjon Mystère : Explorateurs du Temps et de l'Ombre.">
+<link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
-<script src="objets-fr.js" type="text/javascript"></script>
-<script src="pokemon-fr.js" type="text/javascript"></script>
 <script type="text/javascript">
 var PasswordTooShort="The password was invalid because it contained fewer than 54 characters. Please re-enter the password as it appears in the game and try again."
 var NoPassword="No password was entered."
-var InvalidPasswordLong="The password was invalid.  Please re-enter the password and try again."
+var InvalidPasswordLong="The password was invalid. Please re-enter the password and try again."
 var NotSOSMail="The password given was not an SOS Mail password."
 var NotAOKMail="The password given was not an A-OK Mail password."
-//var SOSMailEnteredInAOK="The password given appears to be an SOS Mail password instead of an A-OK Mail password.  Do you want to generate an A-OK Mail from this password? If you do, select OK."
-//var AOKMailEnteredInSOS="The password given appears to be an A-OK Mail password instead of an SOS Mail password.  Do you want to generate a Thank-You Mail from this password? If you do, select OK."
+//var SOSMailEnteredInAOK="The password given appears to be an SOS Mail password instead of an A-OK Mail password. Do you want to generate an A-OK Mail from this password? If you do, select OK."
+//var AOKMailEnteredInSOS="The password given appears to be an A-OK Mail password instead of an SOS Mail password. Do you want to generate a Thank-You Mail from this password? If you do, select OK."
 var SOSMailEnteredInAOK="The password given appears to be an SOS Mail password instead of an A-OK Mail password."
-var AOKMailEnteredInSOS="The password given appears to be an A-OK Mail password instead of an SOS Mail password.  We will generate a Thank-You Mail instead."
+var AOKMailEnteredInSOS="The password given appears to be an A-OK Mail password instead of an SOS Mail password."
 var BasementFloor="BXXF"
 var AboveGroundFloor="XXF"
 var InvalidPassword="The password is invalid."
@@ -27,8 +26,8 @@ var PlaceLine="Place:"
 var ClientLine="Client:"
 var RescueChancesLine="Rescue chances:"
 </script>
-<script src="lettresos.js" type="text/javascript"></script>
-<script src="diff.js" type="text/javascript"></script>
+<script src="https://web.archive.org/web/20141029083442js_/http://www.upokecenter.com/games/dungeon2/guides/sosmail.js" type="text/javascript"></script>
+<script src="https://web.archive.org/web/20141029083442js_/http://www.upokecenter.com/games/dungeon2/guides/diff.js" type="text/javascript"></script>
 <script type="text/javascript">//<![CDATA[
 
 var AboveGround=[
@@ -41,26 +40,25 @@ function IsAboveGround(d){
  return AboveGround[d]
 }
 function showitems(name){
- document.write("<select name=""+name+"">");
+ document.write("<select name=\""+name+"\">");
  for(var i=0;i<items.length;i++){
-  document.write("<option value="">"+items[i]+" ["+i.toString(16)+"]</option>");  
- } 
+  document.write("<option value=\"\">"+items[i]+" ["+i.toString(16)+"]</option>");
+ }
  document.write("</select>");
 }
 
 function showpokemon(name){
- document.write("<select name=""+name+"">");
+ document.write("<select name=\""+name+"\">");
  for(var i=0;i<pokemon.length;i++){
-  document.write("<option value="">"+pokemon[i]+"</option>");  
- } 
+  document.write("<option value=\"\">"+pokemon[i]+"</option>");
+ }
  document.write("</select>");
 }
-
 
 var debug=0
 
 function entrytopass(x){
- x=x.replace(/[nsr]/g,"").toUpperCase()
+ x=x.replace(/[\n\s\r]/g,"").toUpperCase()
  return x
 }
 
@@ -68,13 +66,13 @@ function formatpass(x){
  x=entrytopass(x)
  return x.substr(0,6)+" "
        +x.substr(6,6)+" "
-       +x.substr(12,6)+"rn"
+       +x.substr(12,6)+"\r\n"
        +x.substr(18,6)+" "
        +x.substr(24,6)+" "
-       +x.substr(30,6)+"rn"
+       +x.substr(30,6)+"\r\n"
        +x.substr(36,6)+" "
        +x.substr(42,6)+" "
-       +x.substr(48,6)+"rn"
+       +x.substr(48,6)+"\r\n"
 }
 
 var baditems="EDEEEFB1E924D8D2B0DC323334C2ECF0"
@@ -93,14 +91,14 @@ function isbaditem(x){
 }
 
 function showrewards(name){
- document.write("<select name=""+name+"">");
+ document.write("<select name=\""+name+"\">");
  for(var i=0;i<items.length;i++){
   if(!isbaditem(i)){
-   document.write("<option value=""+i+"">"+items[i]
+   document.write("<option value=\""+i+"\">"+items[i]
 //      +" ["+i.toString(16)+"]"
-      +"</option>");  
+      +"</option>");
   }
- } 
+ }
  document.write("</select>");
 }
 
@@ -119,10 +117,10 @@ function decodemission(pass){
  else
   placestr+=BasementFloor.replace("XX",pass[5])
  var id=pass[16]|(pass[17]<<8)
- var idstr=IDLine+" "+(id%10000)+"rn"
-          +RescueChancesLine+" "+pass[44]+"rn"
+ var idstr=IDLine+" "+(id%10000)+"\r\n"
+          +RescueChancesLine+" "+pass[44]+"\r\n"
           +DifficultyLine+" "+diffstring.charAt(GetDifficulty(0,pass[4],pass[5]))
- return clientstr+"rn"+placestr+"rn"+idstr+"rn"
+ return clientstr+"\r\n"+placestr+"\r\n"+idstr+"\r\n"
 }
 
 function genmailex(f,mail,flags,mailtype){
@@ -171,14 +169,14 @@ function genmailex(f,mail,flags,mailtype){
   f.aok.value=formatpass(datatopass(pass))
  }
  if(flags&2){
-//  var itemidx=option(f.item)
+  var itemidx=option(f.item)
   pass[0]=5//Thank-You mail ID
-//  if(itemidx){
-//   pass[33]=1
-//   pass[34]=itemidx&0xFF
-//   pass[35]=(itemidx>>8)&0xFF
-//  }
-  f.aok.value=formatpass(datatopass(pass))
+  if(itemidx){
+   pass[33]=1
+   pass[34]=itemidx&0xFF
+   pass[35]=(itemidx>>8)&0xFF
+  }
+  f.ty.value=formatpass(datatopass(pass))
  }
  return 1
 }
@@ -228,28 +226,25 @@ function encsos(f){
 }
 //]]>
 </script>
-<h1>Convertisseur de Lettres S.O.S. en Lettres O.K.</h1>
-<h2><em>Pokémon Donjon Mystère : Explorateurs du Temps et de l'Ombre</em></h2> 
-<p>If none of your friends own Pokemon Mystery Dungeon 2, it is still possible
-to rescue yourself with the help of this tool.  This tool converts SOS to A-OK Mail
-and A-OK Mail to Thank-You Mail.</p>
-<p>DISCLAIMER: I did not create this tool, I&#039;m just archiving it.
+<h1>Convertisseur de Lettre S.O.S. en Lettres O.K.</h1>
+<h2><em>Pokémon Donjon Mystère : Explorateurs du Temps et de l'Ombre</em></h2>
+<ul class="copyheader">
+Utilisez cet outil pour générer une Lettre O.K. à partir d'une Lettre S.O.S.<br/>
+Source : <a href="https://web.archive.org/web/20141029083442/http://www.upokecenter.com/content/pokemon-mystery-dungeon-2-mail-converter">http://www.upokecenter.com/content/pokemon-mystery-dungeon-2-mail-converter</a>
+</ul>
 <form name="s" action="javascript:void(null)">
-SOS Mail Password:<br/>
+Mot de passe de la Lettre S.O.S. :<br/>
 <textarea name="sos" cols="30" rows="5"></textarea><br/>
-<!-- <script type="text/javascript">
+<script type="text/javascript"><!--
 if(debug){
- document.write(&#039;<input type="button" value="Decode SOS Mail" onclick="decsos(this.form)"/><br/>&#039;)
- document.write(&#039;<textarea name="data" cols="30" rows="6"></textarea><br/>&#039;)
- document.write(&#039;<input type="button" value="Encode SOS Mail" onclick="encsos(this.form)"/><br/>&#039;)
+ document.write('<input type="button" value="Décoder la Lettre S.O.S." onclick="decsos(this.form)"/><br/>')
+ document.write('<textarea name="data" cols="30" rows="6"></textarea><br/>')
+ document.write('<input type="button" value="Encoder la Lettre S.O.S." onclick="encsos(this.form)"/><br/>')
 }
-</script> //-->
-<input type="button" value="Generate A-OK Mail" onclick="genaok(this.form)"/><br/>
-A-OK Mail Password:<br/>
+//--></script><br/>
+<input type="button" value="Générer la Lettre O.K." onclick="genaok(this.form)"/><br/><br/>
+Mot de passe de la Lettre O.K. :<br/>
 <textarea name="aok" cols="30" rows="5"></textarea><br/>
 </form>
-</div>
-</p>
-<p>< <html><a href="https://sombrabsol.github.io">Retourner à l'accueil</a></html></p>
 </body>
 </html>
