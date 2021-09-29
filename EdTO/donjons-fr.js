@@ -15,7 +15,7 @@ var dungeons=[
 "Grotte Littorale"/*1 : 0001*/,
 "Grotte Littorale - fond"/*2 : 0002*/,
 "Falaise Trempée"/*3 : 0003*/,
-"Mt Hériss\351"/*4 : 0004*/,
+"Mt Hérissé"/*4 : 0004*/,
 "Mt Hérissé - pic"/*5 : 0005*/,
 "Grotte Cascade"/*6 : 0006*/,
 "Bois aux Pommes"/*7 : 0007*/,
