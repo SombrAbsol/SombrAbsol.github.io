@@ -9,6 +9,10 @@ Ce site regroupe non seulement tous les générateurs de Lettres connus pour les
 * Générateur de Lettres S.O.S.
 * Convertisseur de Lettres S.O.S. en Lettres O.K. et Remerciement
 
+### *Pokémon Donjon Mystère : Explorateurs du Temps et de l'Ombre*
+* Générateur de Lettres Miracle
+* Convertisseur de Lettres S.O.S. en Lettre O.K.
+
 #### *Pokémon Donjon Mystère : Explorateurs du Ciel*
 * Générateur de Lettres Miracle S
 * Convertisseur de Lettres Miracle S (européennes et américaines/australiennes)
@@ -28,13 +32,17 @@ Ce site regroupe non seulement tous les générateurs de Lettres connus pour les
 # English
 ## French tools for *Pokémon Mystery Dungeon*
 ### Description
-This site gathers not only all the known French Mail Generators for the *Pokémon Mystery Dungeon* series (Wonder, S.O.S., O.K. and Thank-You), but also other tools like Mail Readers and Mail Converters. It is currently under development, but you can already try some tools (not all of them work). Most of these tools are in English, so I have to translate them too.
+This site gathers not only all the known French Mail Generators for the *Pokémon Mystery Dungeon* series (Wonder, SOS, A-OK and Thank-You), but also other tools like Mail Readers and Mail Converters. It is currently under development, but you can already try some tools (not all of them work). Most of these tools are in English, so I have to translate them too.
 
 ### Tools that work 100% of the time
 #### *Pokémon Mystery Dungeon: Red Rescue Team and Blue Rescue Team*
 * Wonder Mail Generator
-* S.O.S. Mail Generator
-* S.O.S. Mail to O.K. and Thank You Mail Converter
+* SOS Mail Generator
+* SOS Mail to A-OK and Thank-You Mail Converter
+
+#### *Pokémon Mystery Dungeon: Explorers of Time and Darkness*
+* Wonder Mail Generator
+* SOS Mail to A-OK
 
 #### *Pokémon Mystery Dungeon: Explorers of Sky*
 * Wonder Mail S Generator
