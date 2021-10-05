@@ -101,7 +101,7 @@ var pokemon=[
 "Krabboss",
 "Voltorbe",
 "Electrode",
-"Nœunœuf",
+"Noeunoeuf",
 "Noadkoko",
 "Osselait",
 "Ossatueur",
