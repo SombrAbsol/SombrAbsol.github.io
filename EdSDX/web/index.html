@@ -123,10 +123,42 @@
     </div>
   </div>
 </div>
-
-   
+<div class="modal fade" id="rtdx-revive" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="rtdx-revive" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="revivalModalTitle">Générateur de mots de passe pour reprendre connaissance de Pokémon Donjon Mystère : Équipe de Secours DX</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Le mot de passe doit être saisi avec deux caractères par symbole. Le premier caractère est le chiffre/la lettre en haut, et le second est la première lettre du nom anglais de la forme.</p>
+        <p>F = Fire (Feu)</p>
+        <p>H = Heart (Cœur)</p>
+        <p>W = Water (Eau)</p>
+        <p>E = Emerald (Émeraude)</p>
+        <p>S = Star (Étoile)</p>
+        <p>Par exemple : "1f xh pw 4e 8s"</p>
+        <form action="rtdx-revival" method="get">
+          <div class="form-group">
+            <label for="rescuePassword">Mot de passe de secours :</label>
+            <textarea type="text" class="form-control" id="rescuePassword" name="password" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="team">Nom de l'équipe (celle qui vous « sauvera ») :</label>
+            <input type="text" class="form-control" name="team" maxlength="12" placeholder="Poképotes" value="pmd-gen" required>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        <button type="submit" class="btn btn-primary">Générer</button>
+      </div>
+      </form>
     </div>
-
+  </div>
+</div>
+  </div>
     <footer>
       © 2020 Karthik99999 | <a href="https://github.com/Karthik99999/pmd-gen" target="_blank">Source</a>
       <br>
