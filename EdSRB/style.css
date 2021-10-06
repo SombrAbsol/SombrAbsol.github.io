@@ -31,6 +31,29 @@ body {
     font-weight: 200;
     padding-top: 0.1em;
   }
+  table tr th {
+    background-color: #c1c1c1;
+    border-color: #f5f5f5 #b7b7b7 #b7b7b7 #f5f5f5;
+  }
+  td, th {
+    border: 1px solid;
+    padding: 0.2em 0.2em 0.2em 0.2em;
+    display: table-cell;
+    vertical-align: inherit;
+    border-color: #b7b7b7 #b7b7b7 #b7b7b7 #b7b7b7;
+  }
+  th {
+    font-weight: bold;
+    text-align: -internal-center;
+  }
+  td {
+    background-color: #ffffff;
+  }
+  table {
+    font-size: 100%;
+    border: 1px solid;
+    border-collapse: collapse;
+  }
   .copyheader {
     background-color: #ffffff;
     border: #b7b7b7;
