@@ -8,6 +8,7 @@ Ce site regroupe non seulement tous les générateurs de Lettres connus pour les
 * Générateur de Lettres Miracle
 * Générateur de Lettres S.O.S.
 * Convertisseur de Lettres S.O.S. en Lettres O.K. et Remerciement
+* Aide à la réalisation du questionaire
 
 #### *Pokémon Donjon Mystère : Explorateurs du Temps et de l'Ombre*
 * Générateur de Lettres Miracle
@@ -39,6 +40,7 @@ This site gathers not only all the known French Mail Generators for the *Pokémo
 * Wonder Mail Generator
 * SOS Mail Generator
 * SOS Mail to A-OK and Thank-You Mail Converter
+* Quiz-Taking Aid
 
 #### *Pokémon Mystery Dungeon: Explorers of Time and Darkness*
 * Wonder Mail Generator
