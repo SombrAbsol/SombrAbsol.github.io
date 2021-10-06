@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Aide aux réponses du quiz (PDM1)</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="Aide à la saisie des réponses du quiz pour Pokémon Donjon Mystère : Équipe de Secours Rouge et Bleue.">
+<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body class="ns-0">
+<h1>Aide aux réponses du quiz</h1>
+<h2><em>Pokémon Donjon Mystère : Équipe de Secours Rouge et Bleue</em></h2>
+<script type="text/javascript" src="./quiz.js"></script>
+<script type="text/javascript" src="./pokemon-fr.js"></script>
+<script type="text/javascript"><!--
+var loc=self.location.href
+if(loc.charAt(loc.length-1)=="/"){
+ self.location.replace(loc.substr(0,loc.length-1))
+}
+
+var qflags=[]
+var natures=[]
+var quesleft=8
+
+var genderpokemon=
+"04001900010098004200040007009E00"+
+"190068009E0085009B001B0118014501"+
+"150118011B0101003600070068003600"+
+"34001501"
+
+function c2c(s,c){
+ return parseInt(s.substr(c<<1,2),16)
+}
+function c2w(s,c){
+ return c2c(s,c<<1)|(c2c(s,(c<<1)+1)<<8)
+}
+
+for(var i=0;i<56;i++){
+ qflags[i]=0
+}
+for(var i=0;i<13;i++){
+ natures[i]=0
+}
+
+function radio(name,id,value,label){
+ return "<input type=\"radio\" name=\""+name+"\" id=\""+id+"\" value=\""+value+"\" "
+       +" onclick=\"radiocheck(this)\" />"
+       +"<label for=\""+id+"\">"+label+"</label>"
+}
+
+function option(x){
+ return parseInt(x[x.selectedIndex].value)
+}
+
+function questionlist(){
+ var ret="<xmp>"
+ for(var i=0;i<questions.length;i++){
+  var group=parseInt(quesgroups.charAt(i),16)
+  var ques=questions[i]
+  ret+="<p>"+ques[0]+" [Group "+group+"]</p><ul>\r\n"
+  for(var k=0;k<ques.length-2;k++){
+   ret+="<li>"+ques[k+2]
+   ret+=" ("
+   var comma=0
+   for(var j=0;j<13;j++){
+    if(answers[ques[1]+k][j]){
+     if(comma)ret+="; "
+     ret+=naturenames[j]+": "+answers[ques[1]+k][j];
+     comma=1
+    }
+   }
+   ret+=")</li>\r\n"
+  }
+  ret+="</ul>\r\n"
+ }
+ ret+="</xmp>"
+ document.write(ret)
+}
+
+function loadquestion(q,dst,qname){
+ var o=document.getElementById(dst)
+ var oLeft=document.getElementById("quesleft")
+ var ques=questions[q]
+ var answer=ques[1]
+ var ret="<p>"+ques[0]+"</p>\r\n"
+ ret+="<table><tr><th>Answers</th><th>Score Changes</th>";
+ ret+="</tr>"
+ for(var i=2;i<ques.length;i++){
+  ret+="<tr><td>"
+  ret+=radio(qname,qname+""+(i-2),i-2,ques[i])+"\r\n"
+  ret+="</td><td>"
+  var comma=0
+  for(var j=0;j<13;j++){
+   if(answers[answer][j]){
+    if(comma)ret+="; "
+    ret+=naturenames[j]+": "+answers[answer][j];
+    comma=1
+   }
+  }
+  ret+="</td></tr>"
+  answer++
+ }
+ ret+="</table>"
+ o.innerHTML=ret
+ oLeft.innerHTML="<p><b>Questions Left: "+quesleft+"</b></p>"
+}
+
+function sortfunc(a,b){
+ if(a[0]==b[0])return 0
+ return (a[0]<b[0])?-1:1
+}
+
+function writequestions(name){
+ var sorted=[]
+ for(var i=0;i<questions.length;i++){
+  var question=questions[i][0].replace(/<.*?>/g,"")
+  if(question.length>80){
+   question=question.substr(0,80)+"..."
+  }
+  sorted[i]=[question,i]
+ }
+ sorted=sorted.sort(sortfunc)
+ document.write("<select name=\""+name+"\" onchange=\"loadques(this.form)\">\r\n")
+ document.write("<option value=\"-1\">Select a question.</option>\r\n");
+ for(var i=0;i<questions.length;i++){
+  document.write("<option value=\""+sorted[i][1]+"\">"
+    +sorted[i][0]+"</option>\r\n");
+ }
+ document.write("</select>\r\n")
+}
+
+function radiocheck(rad){
+ var val=parseInt(rad.value)
+ var o=document.getElementById("quesdiv")
+ var oLeft=document.getElementById("quesleft")
+ var oStatus=document.getElementById("quesstatus")
+ var oResult=document.getElementById("quesresult")
+ var q=option(rad.form.queslist)
+ var answer=questions[q][1]+val
+ var ans=answers[answer]
+ var maxnature=-1
+ var maxholders=[]
+ var bestnature
+ if(quesleft<=0){
+  return
+ }
+ if(answer!=22){
+  quesleft=quesleft-1
+ }
+ var result="<ul>";
+ for(var i=0;i<13;i++){
+  natures[i]+=ans[i]
+  result+="<li>"+naturenames[i]+": "+natures[i]+"</li>"
+  maxnature=Math.max(maxnature,natures[i])
+ }
+ result+="</ul>"
+ o.innerHTML=""
+ oLeft.innerHTML="<p><b>Questions Left: "+quesleft+"</b></p>"
+ oStatus.innerHTML=result
+ if(quesleft==0){
+  for(var i=0;i<13;i++){
+   if(natures[i]==maxnature){
+    maxholders[maxholders.length]=i
+   }
+  }
+  bestnature=maxholders[Math.floor(Math.random()*maxholders.length)]
+  var boypokemon=pokemon[c2w(genderpokemon,(bestnature<<1))]
+  var girlpokemon=pokemon[c2w(genderpokemon,(bestnature<<1)+1)]
+  oResult.innerHTML="<p>"+naturetext[bestnature]+"</p><ul>"
+   +"<li>Boy:...The Pokémon <a href=\"/dex/?name="+boypokemon+"\">"+boypokemon+"</a>!</li>"
+   +"<li>Girl:...The Pokémon <a href=\"/dex/?name="+girlpokemon+"\">"+girlpokemon+"</a>!</li>"
+   +"</ul>";
+ }
+}
+
+function loadques(form){
+ var q=option(form.queslist)
+ if(q>=0){
+  loadquestion(q,"quesdiv","question")
+ }
+}
+
+//--></script>
+<ul class="copyheader">
+Utilisez cet outil pour répondre aux questions du quiz au début du jeu, afin de vous aider à choisir le Pokémon que vous souhaitez incarner.<br/><br/>
+Source : <a href="https://web.archive.org/web/20140918064742mp_/http://www.upokecenter.com/content/pokemon-mystery-dungeon-quiz-taking-aid">http://www.upokecenter.com/content/pokemon-mystery-dungeon-quiz-taking-aid</a>
+</ul>
+
+<form name="f" action="javascript:void(null)">
+<script type="text/javascript"><!--
+writequestions("queslist");
+//--></script>
+<div id="quesleft"></div>
+<div id="quesdiv"></div>
+<div id="quesstatus"></div>
+<div id="quesresult"></div>
+</form>
+
+<h3>Natures</h3>
+
+<table><tr>
+<th>Nature</th>
+<th>Garçon</th>
+<th>Fille</th>
+</tr>
+<tr><td>Hardi•e</td><td>Salamèche</td><td>Pikachu</td></tr>
+<tr><td>Docile</td><td>Bulbizarre</td><td>Germignon</td></tr>
+<tr><td>Brave</td><td>Machoc</td><td>Salamèche</td></tr>
+<tr><td>Jovial•e</td><td>Carapuce</td><td>Kaiminus</td></tr>
+<tr><td>Malin•gne</td><td>Pikachu</td><td>Osselait</td></tr>
+<tr><td>Naï•f•ve</td><td>Kaiminus</td><td>Evoli</td></tr>
+<tr><td>Timide</td><td>Héricendre</td><td>Gobou</td></tr>
+<tr><td>Pressé•e</td><td>Poussifeu</td><td>Skitty</td></tr>
+<tr><td>Malpoli•e</td><td>Arcko</td><td>Poussifeu</td></tr>
+<tr><td>Calme</td><td>Gobou</td><td>Bulbizarre</td></tr>
+<tr><td>Relax</td><td>Psykokwak</td><td>Carapuce</td></tr>
+<tr><td>Solo</td><td>Osselait</td><td>Psykokwak</td></tr>
+<tr><td>Bizarre</td><td>Miaouss</td><td>Arcko</td></tr>
+</table>
+
+<h3>Partners</h3>
+
+<p>La liste complète des partenaires comprend Bulbizarre, Salamèche, Germignon, Héricendre, Gobou, Pikachu, Carapuce, Poussifeu, Kaiminus et Arcko. Selon le Pokémon du joueur, cette liste peut changer ; à savoir, toutes les espèces qui partagent un type avec ou correspondent à l'espèce du Pokémon sont retirées de la liste.</p>
+<p><a href="..">< Retourner à l'accueil</a></p>
+</body>
+</html>
