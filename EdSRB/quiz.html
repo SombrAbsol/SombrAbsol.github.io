@@ -82,7 +82,7 @@ function loadquestion(q,dst,qname){
  var ques=questions[q]
  var answer=ques[1]
  var ret="<p>"+ques[0]+"</p>\r\n"
- ret+="<table><tr><th>Answers</th><th>Score Changes</th>";
+ ret+="<table><tr><th>Réponses</th><th>Changements de score</th>";
  ret+="</tr>"
  for(var i=2;i<ques.length;i++){
   ret+="<tr><td>"
@@ -101,7 +101,7 @@ function loadquestion(q,dst,qname){
  }
  ret+="</table>"
  o.innerHTML=ret
- oLeft.innerHTML="<p><b>Questions Left: "+quesleft+"</b></p>"
+ oLeft.innerHTML="<p><b>Questions restantes : "+quesleft+"</b></p>"
 }
 
 function sortfunc(a,b){
@@ -120,7 +120,7 @@ function writequestions(name){
  }
  sorted=sorted.sort(sortfunc)
  document.write("<select name=\""+name+"\" onchange=\"loadques(this.form)\">\r\n")
- document.write("<option value=\"-1\">Select a question.</option>\r\n");
+ document.write("<option value=\"-1\">Sélectionnez une question.</option>\r\n");
  for(var i=0;i<questions.length;i++){
   document.write("<option value=\""+sorted[i][1]+"\">"
     +sorted[i][0]+"</option>\r\n");
@@ -154,7 +154,7 @@ function radiocheck(rad){
  }
  result+="</ul>"
  o.innerHTML=""
- oLeft.innerHTML="<p><b>Questions Left: "+quesleft+"</b></p>"
+ oLeft.innerHTML="<p><b>Questions restantes : "+quesleft+"</b></p>"
  oStatus.innerHTML=result
  if(quesleft==0){
   for(var i=0;i<13;i++){
@@ -166,8 +166,8 @@ function radiocheck(rad){
   var boypokemon=pokemon[c2w(genderpokemon,(bestnature<<1))]
   var girlpokemon=pokemon[c2w(genderpokemon,(bestnature<<1)+1)]
   oResult.innerHTML="<p>"+naturetext[bestnature]+"</p><ul>"
-   +"<li>Garçon :... le Pokémon <a href=\"/dex/?name="+boypokemon+"\">"+boypokemon+"</a>!</li>"
-   +"<li>Fille :... le Pokémon <a href=\"/dex/?name="+girlpokemon+"\">"+girlpokemon+"</a>!</li>"
+   +"<li>Garçon : ... le Pokémon <a href=\"/dex/?name="+boypokemon+"\">"+boypokemon+"</a>!</li>"
+   +"<li>Fille : ... le Pokémon <a href=\"/dex/?name="+girlpokemon+"\">"+girlpokemon+"</a>!</li>"
    +"</ul>";
  }
 }
@@ -184,7 +184,6 @@ function loadques(form){
 Utilisez cet outil pour répondre aux questions du quiz au début du jeu, afin de vous aider à choisir le Pokémon que vous souhaitez incarner.<br/><br/>
 Source : <a href="https://web.archive.org/web/20140918064742mp_/http://www.upokecenter.com/content/pokemon-mystery-dungeon-quiz-taking-aid">http://www.upokecenter.com/content/pokemon-mystery-dungeon-quiz-taking-aid</a>
 </ul>
-
 <form name="f" action="javascript:void(null)">
 <script type="text/javascript"><!--
 writequestions("queslist");
@@ -194,9 +193,7 @@ writequestions("queslist");
 <div id="quesstatus"></div>
 <div id="quesresult"></div>
 </form>
-
 <h3>Natures</h3>
-
 <table><tr>
 <th>Nature</th>
 <th>Garçon</th>
@@ -207,7 +204,7 @@ writequestions("queslist");
 <tr><td>Brave</td><td>Machoc</td><td>Salamèche</td></tr>
 <tr><td>Jovial•e</td><td>Carapuce</td><td>Kaiminus</td></tr>
 <tr><td>Malin•gne</td><td>Pikachu</td><td>Osselait</td></tr>
-<tr><td>Naï•f•ve</td><td>Kaiminus</td><td>Evoli</td></tr>
+<tr><td>Naïf•ve</td><td>Kaiminus</td><td>Evoli</td></tr>
 <tr><td>Timide</td><td>Héricendre</td><td>Gobou</td></tr>
 <tr><td>Pressé•e</td><td>Poussifeu</td><td>Skitty</td></tr>
 <tr><td>Malpoli•e</td><td>Arcko</td><td>Poussifeu</td></tr>
@@ -216,9 +213,7 @@ writequestions("queslist");
 <tr><td>Solo</td><td>Osselait</td><td>Psykokwak</td></tr>
 <tr><td>Bizarre</td><td>Miaouss</td><td>Arcko</td></tr>
 </table>
-
-<h3>Partners</h3>
-
+<h3>Partenaires</h3>
 <p>La liste complète des partenaires comprend Bulbizarre, Salamèche, Germignon, Héricendre, Gobou, Pikachu, Carapuce, Poussifeu, Kaiminus et Arcko. Selon le Pokémon du joueur, cette liste peut changer ; à savoir, toutes les espèces qui partagent un type avec ou correspondent à l'espèce du Pokémon sont retirées de la liste.</p>
 <p><a href="..">< Retourner à l'accueil</a></p>
 </body>
