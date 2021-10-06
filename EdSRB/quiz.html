@@ -63,7 +63,7 @@ function questionlist(){
    var comma=0
    for(var j=0;j<13;j++){
     if(answers[ques[1]+k][j]){
-     if(comma)ret+="; "
+     if(comma)ret+=" ; "
      ret+=naturenames[j]+" : "+answers[ques[1]+k][j];
      comma=1
     }
@@ -91,7 +91,7 @@ function loadquestion(q,dst,qname){
   var comma=0
   for(var j=0;j<13;j++){
    if(answers[answer][j]){
-    if(comma)ret+="; "
+    if(comma)ret+=" ; "
     ret+=naturenames[j]+" : "+answers[answer][j];
     comma=1
    }
