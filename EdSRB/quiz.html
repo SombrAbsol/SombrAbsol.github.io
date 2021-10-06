@@ -64,7 +64,7 @@ function questionlist(){
    for(var j=0;j<13;j++){
     if(answers[ques[1]+k][j]){
      if(comma)ret+="; "
-     ret+=naturenames[j]+": "+answers[ques[1]+k][j];
+     ret+=naturenames[j]+" : "+answers[ques[1]+k][j];
      comma=1
     }
    }
@@ -92,7 +92,7 @@ function loadquestion(q,dst,qname){
   for(var j=0;j<13;j++){
    if(answers[answer][j]){
     if(comma)ret+="; "
-    ret+=naturenames[j]+": "+answers[answer][j];
+    ret+=naturenames[j]+" : "+answers[answer][j];
     comma=1
    }
   }
@@ -149,7 +149,7 @@ function radiocheck(rad){
  var result="<ul>";
  for(var i=0;i<13;i++){
   natures[i]+=ans[i]
-  result+="<li>"+naturenames[i]+": "+natures[i]+"</li>"
+  result+="<li>"+naturenames[i]+" : "+natures[i]+"</li>"
   maxnature=Math.max(maxnature,natures[i])
  }
  result+="</ul>"
