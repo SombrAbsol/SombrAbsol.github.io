@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="description" content="Mario Kart DS Time Trial Code Decoder">
+	<meta name="description" content="Décodeur français de codes en Contre-la-Montre pour Mario Kart DS.">
 	<meta name="theme-color" content="#28c8c8">
 	<meta name="viewport" content="width=1024">
 
@@ -50,20 +50,21 @@
 		}
 	</style>
 
-	<title>MKDS Decoder</title>
+	<title>Décodeur de codes en Contre-la-Montre (MKDS)</title>
 </head>
 
 <body>
 	<div class="bimg"></div>
 
 	<div class="main">
-		<h1>Mario Kart DS Time Trial Code Decoder</h1>
+		<h1>Décodeur de codes en Contre-la-Montre</h1>
+                <h2><em>Mario Kart DS</em></h2>
 		<br>
-		Enter code:
+		Entrer le code :
 		<br><br><br><br>
 		<input type="text" id="code">
 		<br><br><br>
-		<button onclick="getInfo(code.value)">Decode</button>
+		<button onclick="getInfo(code.value)">Décoder</button>
 		<p id="output"></p>
 	</div>
 
@@ -88,38 +89,38 @@
 		}
 
 		const courseNames = [
-			"Figure-8 Circuit",
-			"Yoshi Falls",
-			"Cheep Cheep Beach",
-			"Luigi's Mansion",
-			"Desert Hills",
-			"Delfino Square",
-			"Waluigi Pinball",
-			"Shroom Ridge",
-			"DK Pass",
-			"Tick-Tock Clock",
-			"Mario Circuit",
-			"Airship Fortress",
-			"Wario Stadium",
-			"Peach Gardens",
-			"Bowser Castle",
-			"Rainbow Road",
-			"SNES Mario Circuit 1",
-			"N64 Moo Moo Farm",
-			"GBA Peach Circuit",
-			"GCN Luigi Circuit",
-			"SNES Donut Plains 1",
-			"N64 Frappe Snowland",
-			"GBA Bowser Castle 2",
-			"GCN Baby Park",
-			"SNES Koopa Beach 2",
-			"N64 Choco Mountain",
-			"GBA Luigi Circuit",
-			"GCN Mushroom Bridge",
-			"SNES Choco Island 2",
-			"N64 Banshee Boardwalk",
-			"GBA Sky Garden",
-			"GCN Yoshi Circuit"
+			"Circuit en 8",
+			"Cascades Yoshi",
+			"Plage Cheep Cheep",
+			"Manoir de Luigi",
+			"Désert du Soleil",
+			"Quartier Delfino",
+			"Flipper Waluigi",
+			"Corniche Champignon",
+			"Alpes DK",
+			"Horloge Tic-Tac",
+			"Circuit Mario",
+			"Bateau Volant",
+			"Stade Wario",
+			"Jardin Peach",
+			"Château de Bowser",
+			"Route Arc-en-ciel",
+			"SNES Circuit Mario 1",
+			"N64 Ferme Meuh Meuh",
+			"GBA Circuit Peach",
+			"GCN Circuit Luigi",
+			"SNES Plaine Donut 1",
+			"N64 Route Glagla",
+			"GBA Château de Bowser 2",
+			"GCN Parc Baby",
+			"SNES Plage Koopa 2",
+			"N64 Montagne Choco",
+			"GBA Circuit Luigi",
+			"GCN Pont Champignon",
+			"SNES Île Choco 2",
+			"N64 Ponton Lugubre",
+			"GBA Jardin Volant",
+			"GCN Circuit Yoshi"
 		]
 
 		const characterNames = [
@@ -131,51 +132,51 @@
 			"Wario",
 			"Yoshi",
 			"Luigi",
-			"Dry Bones",
+			"Skelerex",
 			"Daisy",
 			"Waluigi",
 			"R.O.B.",
-			"Shy Guy"
+			"Maskass"
 		]
 
 		const kartNames = [
-			"Standard MR",
-			"Shooting Star",
-			"B Dasher",
-			"Standard DK",
-			"Wildlife",
-			"Ranbi Rider",
-			"Standard TD",
-			"Mushmellow",
-			"4-Wheel Cradle",
-			"Standard BW",
-			"Hurricane",
-			"Tyrant",
-			"Standard PC",
-			"Light Tripper",
+			"MR Standard",
+			"Étoile Filante",
+			"Intrépide",
+			"DK Standard",
+			"Explorateur",
+			"Rambi Mobile",
+			"TD Standard",
+			"Champmignon",
+			"4 x 4",
+			"BW Standard",
+			"Ouragan",
+			"Tyran",
+			"PC Standard",
+			"Élégante",
 			"Royale",
-			"Standard WR",
+			"WR Standard",
 			"Brute",
-			"Dragonfly",
-			"Standard YS",
-			"Egg 1",
-			"Cucumber",
-			"Standard LG",
-			"Poltergust 4000",
-			"Streamliner",
-			"Standard DB",
-			"Dry Bomber",
-			"Banisher",
-			"Standard DS",
-			"Light Dancer",
-			"Power Flower",
-			"Standard WL",
-			"Gold Mantis",
-			"Zipper",
-			"Standard RB",
-			"ROB-BLS",
-			"ROB-LGS",
-			"Standard SG"
+			"Dragonito",
+			"YS Standard",
+			"Œuf 1",
+			"Végétale",
+			"LG Standard",
+			"Ectoblast 4000",
+			"Bolide",
+			"SR Standard",
+			"Tank",
+			"Outre Tombe",
+			"DS Standard",
+			"Discomobile",
+			"Hippy",
+			"WL Standard",
+			"Mante Pelleteuse",
+			"Chopper",
+			"RB Standard",
+			"R.O.B. Mobile",
+			"Mecha R.O.B.",
+			"MS Standard"
 		]
 
 		const base32LUT = "S7LCX3JZE8FG4HBKWN52YPA6RTU9VMDQ";
