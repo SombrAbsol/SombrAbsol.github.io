@@ -1,27 +1,30 @@
 body {
-    background:#dddddd;
-    color:#606060;
-    border-left:#b7b7b7;
-    border-bottom:#b7b7b7;
+    background:#000000;
+    color:#ffffff;
+    border-left:#012f7b;
+    border-bottom:#012f7b;
     font-size:20pt;
     overflow-wrap: anywhere;
   }
+   a {
+     color: #d38301;
+  }
   h1 {
     color: #ffffff;
-    background-color: #c1c1c1;
+    background-color: #012f7b;
     text-align: center;
     border-style: solid;
-    border-width: 2px 3px 3px 2px;
-    border-color: #f5f5f5 #b0b0b0 #b0b0b0 #f5f5f5;
-    margin-top: 59px;
-    margin-bottom: 0.15em;
+    border-width: thick;
+    border-color: #61187c #61187c #61187c #61187c;
+    margin: -0.15em;
+    margin-bottom: 0.1em;
     font-size: 40pt;
     font-weight: 200;
     padding-top: 0.1em;
   }
   h2 {
     color: #ffffff;
-    background-color: #c1c1c1;
+    background-color: #012f7b;
     text-align: center;
     border-style: solid;
     border-width: 2px 3px 3px 2px;
@@ -53,14 +56,6 @@ body {
     font-size: 100%;
     border: 1px solid;
     border-collapse: collapse;
-  }
-  .copyheader {
-    background-color: #ffffff;
-    border: #b7b7b7;
-    margin: 0 0 0.5em;
-    padding: 0.5em 1em;
-    padding-left: 1%;
-    vertical-align: middle;
   }
   input {
     border: 1px solid;
