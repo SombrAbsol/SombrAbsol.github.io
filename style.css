@@ -14,9 +14,10 @@ body {
     background-color: #012f7b;
     text-align: center;
     border-style: solid;
-    border-width: 2px 3px 3px 2px;
+    border-width: thick;
     border-color: #61187c #61187c #61187c #61187c;
-    margin-bottom: 0.15em;
+    margin: -0.15em;
+    margin-bottom: 0.1em;
     font-size: 40pt;
     font-weight: 200;
     padding-top: 0.1em;
