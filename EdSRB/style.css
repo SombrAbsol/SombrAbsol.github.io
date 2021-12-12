@@ -35,22 +35,22 @@ body {
     padding-top: 0.1em;
   }
   table tr th {
-    background-color: #c1c1c1;
-    border-color: #f5f5f5 #b7b7b7 #b7b7b7 #f5f5f5;
+    background-color: #012f7b;
+    border-color: #000000 #000000 #000000 #000000;
   }
   td, th {
     border: 1px solid;
     padding: 0.2em 0.2em 0.2em 0.2em;
     display: table-cell;
     vertical-align: inherit;
-    border-color: #b7b7b7 #b7b7b7 #b7b7b7 #b7b7b7;
+    border-color: #000000 #000000 #000000 #000000;
   }
   th {
     font-weight: bold;
     text-align: -internal-center;
   }
   td {
-    background-color: #ffffff;
+    background-color: #b18cfe;
   }
   table {
     font-size: 100%;
