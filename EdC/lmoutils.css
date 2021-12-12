@@ -1,23 +1,27 @@
 /* General styling */
 body {
-	background-color: #79ACCC;
-	overflow-wrap: anywhere;
+	background-color: #000000;
+  color: #ffffff;
+}
+
+a {
+  color: #d38301
 }
 
 h1 {
 	margin-top: 0;
 	margin-bottom: 10px;
 	width: 100%;
-	background-color: #AACCE1;
-	border: 1px solid #6F8593;
+	background-color: #012f7b;
+	border: 1px solid #61187c;
 }
 
 h2 {
 	margin-top: 0;
 	margin-bottom: 10px;
 	width: 100%;
-	background-color: #AACCE1;
-	border: 1px solid #6F8593;
+	background-color: #012f7b;
+	border: 1px solid #61187c;
 }
 
 /* Styling for the options box */
