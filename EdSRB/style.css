@@ -27,9 +27,9 @@ body {
     background-color: #012f7b;
     text-align: center;
     border-style: solid;
-    border-width: 2px 3px 3px 2px;
-    border-color: #f5f5f5 #b0b0b0 #b0b0b0 #f5f5f5;
-    margin-bottom: 0.15em;
+    border-width: thick;
+    border-color: #61187c #61187c #61187c #61187c;
+    margin-bottom: -0.15em;
     font-size: 32pt;
     font-weight: 200;
     padding-top: 0.1em;
