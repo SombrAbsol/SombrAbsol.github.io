@@ -11,7 +11,7 @@
 <script type="text/javascript" src="./lm.js"></script> 
 <script type="text/javascript">		
 		// This is a really bad hack.
-		var curCountry = 1;
+		let curCountry = 1;
 		
 		// This is used in wm.js.
 		function getOption(name) {
@@ -44,9 +44,9 @@
 			}
 		}
 	
-		var convertedThisSession = false;
+		let convertedThisSession = false;
 		function doConvert(fromCountry) {
-			var mailString = WMSParser.sanitize($('inputbox').value);
+			let mailString = WMSParser.sanitize($('inputbox').value);
 			if(mailString.length != 34) {
 				setError("Désolé, le mot de passe de la Lettre Miracle S entré n'a pas la bonne longueur ou contient des caractères invalides.");
 				return false;
@@ -54,11 +54,11 @@
 			
 			// Parse the code as the fromCountry first.
 			curCountry = fromCountry;
-			var unscrambled = WMSParser.unscrambleString(mailString, getByteSwap());
+			let unscrambled = WMSParser.unscrambleString(mailString, getByteSwap());
 			
 			// 3 - 1 = 2, 3 - 2 = 1. What a wonderful piece of logic.
 			curCountry = 3 - fromCountry;
-			var scrambled = WMSParser.scrambleString(unscrambled, getByteSwap());
+			let scrambled = WMSParser.scrambleString(unscrambled, getByteSwap());
 			
 			// Write the newly scrambled code in the box.
 			$('outputbox').value = prettyMailString(scrambled, 2, 7);
@@ -91,12 +91,12 @@
  
 	                <fieldset> <legend><span style="font-weight: normal;">Mot de passe converti</span></legend> <textarea id="outputbox" rows="4" cols="60"></textarea> </fieldset>                
 	<!--                   analytics                   --> <script type="text/javascript">
-		var _gaq = _gaq || [];
+		let _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-5727513-1']);
 		_gaq.push(['_trackPageview']);
 
 		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			let ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
 		})();
