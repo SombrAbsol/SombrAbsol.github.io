@@ -33,21 +33,21 @@
 		}
 		
 		function doReadCode() {
-			var mailString = WMSParser.sanitize($('inputbox').value);
+			let mailString = WMSParser.sanitize($('inputbox').value);
 			if(mailString.length != 34) {
 				setError("La chaîne de caractères de la Lettre Miracle S semble invalide.");
 				return false;
 			}
 			
 			// Read and convert the string.
-			var mailStringUser = prettyMailString(mailString, 2, 7);
-			var descrambled = WMSParser.unscrambleString(mailString);
-			var ebits = WMSParser.bytesToBits(descrambled);
-			var dbits = WMSParser.decryptBitStream(ebits);
-			var struct = WMSParser.bitsToStructure(dbits);
+			let mailStringUser = prettyMailString(mailString, 2, 7);
+			let descrambled = WMSParser.unscrambleString(mailString);
+			let ebits = WMSParser.bytesToBits(descrambled);
+			let dbits = WMSParser.decryptBitStream(ebits);
+			let struct = WMSParser.bitsToStructure(dbits);
 			
-			var valid = false;
-			var eu = false;
+			let valid = false;
+			let eu = false;
 			// Does it validate?
 			if(struct.checksum == WMSParser.calculateChecksum(dbits)) {
 				valid = true;
@@ -71,7 +71,7 @@
 				return;
 			}
 			
-			var output = "";
+			let output = "";
 			
 			// Validate some data.
 			if(struct.mailType != 4) {
@@ -89,10 +89,10 @@
 			*/
 			
 			// Build the Mission data (oh boy...).
-			var missionName;
-			var noClient = false;
-			var noFloor = false;
-			var noReward = false;
+			let missionName;
+			let noClient = false;
+			let noFloor = false;
+			let noReward = false;
 			switch(struct.missionType) {
 				case 0: // Rescue client
 					missionName = "Sauver " + getMonName(struct.client);
@@ -182,7 +182,7 @@
 						missionName = "Battre " + getMonName(struct.client);
 					}
 					else if(struct.missionSpecial == 0 && (struct.target != 0 || struct.target2 != 0)) {
-						var target = struct.target || struct.target2;
+						let target = struct.target || struct.target2;
 						missionName = "Battre " + getMonName(struct.client) + " et " + getMonName(target);
 					}
 					else {
@@ -216,8 +216,8 @@
 			// Add the mission data.
 			output += "Objectif : " + missionName + ".\n";
 			
-			// Build the location data, based on variables in the mission data.
-			var dungeon = getDungeonName(struct.dungeon);
+			// Build the location data, based on letiables in the mission data.
+			let dungeon = getDungeonName(struct.dungeon);
 			if(noFloor) {
 				output += "Lieu : " + dungeon + "\n";
 			}
@@ -235,11 +235,11 @@
 				output += "Restriction : Avec " + (getMonName(struct.restriction)) + "\n";
 			}
 			else {
-				var types = [
+				let types = [
 					0, "Normal", "Feu", "Eau", "Plante", "Electrik", "Glace", "Combat", "Poison",
 					"Sol", "Vol", "Psy", "Insecte", "Roche", "Spectre", "Dragon", "Ténèbres", "Acier"
 				];
-				var restType = types[struct.restriction];
+				let restType = types[struct.restriction];
 				if(!restType) {
 					restType = "INCONNU";
 				}
@@ -248,7 +248,7 @@
 			
 			// Build the Reward line.
 			if(!noReward) {
-				var reward;
+				let reward;
 				switch(struct.rewardType) {
 					case 0: // Money
 						reward = "Argent";
