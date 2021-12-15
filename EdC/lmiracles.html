@@ -41,12 +41,12 @@
 			return false;
 		}
 		
-		var generatedThisSession = false;
+		let generatedThisSession = false;
 		function doGenerate() {
 			// Check for errors
-			var errors = WMSGen.verify();
+			let errors = WMSGen.verify();
 			if(errors.length == 0) {
-				var code = WMSGen.generate();
+				let code = WMSGen.generate();
 				$('outputbox').value = code;
 				
 				// See how many people are actually using this thing...
@@ -58,8 +58,8 @@
 				}
 			}
 			else {
-				var errorStr = "";
-				for(var i = 0; i < errors.length; ++i) {
+				let errorStr = "";
+				for(let i = 0; i < errors.length; ++i) {
 					errorStr += " * " + errors[i] + "\n";
 				}
 				$('outputbox').value = errorStr;
