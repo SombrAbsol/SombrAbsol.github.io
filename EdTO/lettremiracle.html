@@ -13,38 +13,38 @@
 <script src="./donjons-fr.js" type="text/javascript"></script>
 <script src="./pokemon-fr.js" type="text/javascript"></script>
 <script type="text/javascript">
-var FriendRescue="Sauvetage Ami"
-var RescueType0="M'aider."
-var RescueType1="Trouver XXPKMN."
-var RescueType2="Me mener à XXPKMN."
-var RescueType3="Trouver XXITEM!"
-var RescueType4="Livrer XXITEM!"
-var BasementFloor="E. -XX"
-var AboveGroundFloor="E. XX"
-var SpecialMission="Mission spéciale"
-var ChooseClient="Choisissez un client."
-var ChooseTarget="Choisissez un Pokémon cible."
-var ChooseItem="Choisissez un objet à trouver/livrer."
-var ItemNotFound="L'objet XX ne peut pas être trouvé dans le donjon YY."
-var FriendAreaError="Pour recevoir une Zone d'Accueil en récompense, la mission doit être au moins de difficulté D."
-var InvalidPassword="Le mot de passe est incorrect."
-var FriendAreaReward="Zone d'Accueil [XX]"
-var NearPlace="Vers XX"
-var DifficultyLine="Difficulté :"
-var PlusReward="XX + ?"
-var PlusRewardBrackets="XX + ? [YY]"
-var RewardLine="Récompense :"
-var PlaceLine="Lieu :"
-var ClientLine="Client :"
-var ObjectiveLine="Objectif :"
-var WonderMailLine="Lettre Miracle :"
+let FriendRescue="Sauvetage Ami"
+let RescueType0="M'aider."
+let RescueType1="Trouver XXPKMN."
+let RescueType2="Me mener à XXPKMN."
+let RescueType3="Trouver XXITEM!"
+let RescueType4="Livrer XXITEM!"
+let BasementFloor="E. -XX"
+let AboveGroundFloor="E. XX"
+let SpecialMission="Mission spéciale"
+let ChooseClient="Choisissez un client."
+let ChooseTarget="Choisissez un Pokémon cible."
+let ChooseItem="Choisissez un objet à trouver/livrer."
+let ItemNotFound="L'objet XX ne peut pas être trouvé dans le donjon YY."
+let FriendAreaError="Pour recevoir une Zone d'Accueil en récompense, la mission doit être au moins de difficulté D."
+let InvalidPassword="Le mot de passe est incorrect."
+let FriendAreaReward="Zone d'Accueil [XX]"
+let NearPlace="Vers XX"
+let DifficultyLine="Difficulté :"
+let PlusReward="XX + ?"
+let PlusRewardBrackets="XX + ? [YY]"
+let RewardLine="Récompense :"
+let PlaceLine="Lieu :"
+let ClientLine="Client :"
+let ObjectiveLine="Objectif :"
+let WonderMailLine="Lettre Miracle :"
 </script>
 <script src="./lettresos.js" type="text/javascript"></script>
 <script src="./donjobjets.js" type="text/javascript"></script>
 <script src="./diff.js" type="text/javascript"></script>
 <script type="text/javascript">//<![CDATA[
 
-var AboveGround=[
+let AboveGround=[
 0,0,1,1,0,1,1,1,0,1,1,1,1,1,1,0,0,1,1,0,0,0,
 1,0,0,0,0,0,0,1,0,1,0,1,1,1,0,1,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,1,0
@@ -55,7 +55,7 @@ function IsAboveGround(d){
 }
 function showitems(name){
  document.write("<select name=\""+name+"\">");
- for(var i=0;i<items.length;i++){
+ for(let i=0;i<items.length;i++){
   document.write("<option value=\"\">"+items[i]+" ["+i.toString(16)+"]</option>");
  }
  document.write("</select>");
@@ -76,8 +76,8 @@ function formatpass(x){
        +x.substr(20,4)+"\r\n"
 }
 
-var debug=0
-var floors=
+let debug=0
+let floors=
 "030401060901080C09050E050B050807"+
 "010A09010F0A0A010B0D01080F080601"+
 "080C140905010F08010D0A010D01140A"+
@@ -93,12 +93,12 @@ onload=function(){
 }
 
 function isbaditem(x){
- var baditems=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 43, 68, 98, 104, 105,
+ let baditems=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 43, 68, 98, 104, 105,
  106, 107, 113, 114, 116, 117, 118, 137, 138, 166, 167, 168, 169, 170, 171, 172, 175,
  176, 177, 178, 179, 180, 181, 183, 184, 185, 187, 194, 198, 205, 219, 224, 226, 236,
 258, 259, 293, 294, 295, 296, 297, 298, 299, 300, 324, 339, 345, 349, 353, 360, 361,
 363, 769, 825, 998, 999]
- for(var i=0;i<baditems.length;i++){
+ for(let i=0;i<baditems.length;i++){
   if(x==baditems[i])return 1
 //  if(items[i].charAt(0)=="$")return 1
  }
@@ -155,7 +155,7 @@ fullybadpokemon=[279, 384, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544
 1128, 1129, 1130, 1131, 1132, 1133, 1134, 1135, 1136, 1137, 1138, 1139, 1140, 1141, 1142, 1143,
  1144, 1145, 1146, 1147, 1148, 1149, 1150, 1151, 1152]
 function isbadfloor(dungeon,floor){
- for(var i=0;i<badfloors.length;i++){
+ for(let i=0;i<badfloors.length;i++){
   if(dungeon==badfloors[i][0] && floor==badfloors[i][1])return 1
  }
  return 0
@@ -185,7 +185,7 @@ function getspecies(id){
 }
 
 function isbadpokemon(x){
- var species=getspecies(x)
+ let species=getspecies(x)
  if(species!=x){
   return 2
  }
@@ -196,11 +196,11 @@ function isbadpokemon(x){
  if(species>=0x216+600&&species<=0x227+600)
   return 2
  if(species>=fullybadpokemon[0]){
-  for(var i=0;i<fullybadpokemon.length;i++){
+  for(let i=0;i<fullybadpokemon.length;i++){
    if(species==fullybadpokemon[i])return 2
   }
  }
- for(var i=0;i<badpokemon.length;i++){
+ for(let i=0;i<badpokemon.length;i++){
   if(species==badpokemon[i])return 1
  }
  return 0
@@ -211,7 +211,7 @@ function option(x){
 }
 
 function radio(x){
- for(var i=0;i<x.length;i++){
+ for(let i=0;i<x.length;i++){
   if(x[i].checked)return parseInt(x[i].value)
  }
  return 0
@@ -221,8 +221,8 @@ function optionarray(x){
  if(x.selectedIndex<0){
   return []
  } else {
-  var v=x[x.selectedIndex].value.split(",")
-  for(var i=0;i<v.length;i++){
+  let v=x[x.selectedIndex].value.split(",")
+  for(let i=0;i<v.length;i++){
    v[i]=parseInt(v[i])
   }
   return v
@@ -230,17 +230,17 @@ function optionarray(x){
 }
 
 function showfloors(f){
- var dungeon=option(f.dungeon)
- var numf=numfloors(dungeon);
+ let dungeon=option(f.dungeon)
+ let numf=numfloors(dungeon);
  f.floor.options.length=0
- for(var i=1;i<numf;i++){
+ for(let i=1;i<numf;i++){
   f.floor.options[i-1]=new Option(i+"",i+"")
  }
 }
 
 function showdungeon(name){
  dw="<select name=\""+name+"\" onchange=\"showfloors(this.form);updateform(this.form);\">";
- for(var i=0;i<dungeons.length;i++){
+ for(let i=0;i<dungeons.length;i++){
   if(!isbaddungeon(i)){
    dw+="<option value=\""+i+"\">"+dungeons[i]+"</option>";
   }
@@ -258,15 +258,15 @@ function pkmnsort(a,b){
 
 function showpkmnhtml(level){
  if(level==null)level=2
- var poke=[]
+ let poke=[]
  dw=""
- for(var i=0;i<pokemon.length;i++){
+ for(let i=0;i<pokemon.length;i++){
   if(i==0||isbadpokemon(i)<level||isbadpokemon(i+600)<level){
    poke[poke.length]=[i,pokemon[i]]
   }
  }
  poke=poke.sort(pkmnsort)
- for(var i=0;i<poke.length;i++){
+ for(let i=0;i<poke.length;i++){
   dw+="<option value=\""+poke[i][0]+"\">"+poke[i][1]+"</option>";
  }
  dw+="</select>";
@@ -282,9 +282,9 @@ function showpkmn(name,level){
 
 function showpkmn2(elem,level){
  if(level==null)level=2
- var poke=[]
+ let poke=[]
  oldsel=option(elem)
- for(var i=0;i<pokemon.length;i++){
+ for(let i=0;i<pokemon.length;i++){
   if(i==0||isbadpokemon(i)<level||isbadpokemon(i+600)<level){
    poke[poke.length]=[i,pokemon[i]]
   }
@@ -292,7 +292,7 @@ function showpkmn2(elem,level){
  oldlength=elem.options.length
  selindex=-1
  if(oldlength!=poke.length){
-  for(var i=0;i<poke.length;i++){
+  for(let i=0;i<poke.length;i++){
    elem.options[i]=new Option(poke[i][1]+"",poke[i][0]+"")
    if(poke[i][0]==oldsel){
     selindex=i
@@ -310,7 +310,7 @@ function showpkmn2(elem,level){
 function showareas(name){
  document.write("<select name=\""+name+"\">");
  document.write("<option value=\"-1\">\-\-\-\-\-\-</a>");
- for(var i=0;i<friendareas.length;i++){
+ for(let i=0;i<friendareas.length;i++){
   if(i==10||i==14||i==35||i==36){
    document.write("<option value=\""+i+"\">"+friendareas[i]+"</option>");
   }
@@ -319,10 +319,10 @@ function showareas(name){
 }
 
 function showfind2(f){
- var dungeon=option(f.dungeon)
+ let dungeon=option(f.dungeon)
  f.item.options.length=0
- var len=0
- for(var i=0;i<items.length;i++){
+ let len=0
+ for(let i=0;i<items.length;i++){
   if(!isbaditem(i)){
    if(f.type.selectedIndex!=3||true/*ItemInDungeon(i,dungeon)*/){
     f.item.options[len++]=new Option(items[i],i+"")
@@ -346,7 +346,7 @@ function updateform2(f){
 
 function showrewards(name){
  document.write("<select name=\""+name+"\">");
- for(var i=0;i<items.length;i++){
+ for(let i=0;i<items.length;i++){
   if(!isbaditem(i)){
    document.write("<option value=\""+i+"\">"+items[i]+"</option>");
   }
@@ -356,7 +356,7 @@ function showrewards(name){
 
 function isgooditem(x){
  gooditems=[0x5d,0x49,0x5e,0x58,0x4b,0x79,0x88,0xad,0xae,0xb6,0x1e,0x39,0x3a,0x14a,0x73]
- for(var i=0;i<gooditems.length;i++){
+ for(let i=0;i<gooditems.length;i++){
   if(x==gooditems[i])return 1
  }
  return 0
@@ -364,34 +364,34 @@ function isgooditem(x){
 
 function showrewards(name){
  document.write("<select name=\""+name+"\">");
- var goodrewards=[]
+ let goodrewards=[]
  document.write("<option value=\"0\">"+items[0]+"</option>")
- for(var i=0;i<items.length;i++){
+ for(let i=0;i<items.length;i++){
   if(isgooditem(i)){
    goodrewards[goodrewards.length]=[i,items[i].replace(/\[[^\]]+\]/g,"")]
   }
  }
  goodrewards=goodrewards.sort(pkmnsort)
- for(var i=0;i<goodrewards.length;i++){
+ for(let i=0;i<goodrewards.length;i++){
   document.write("<option value=\""+goodrewards[i][0]+"\">"+goodrewards[i][1]+"</option>");
  }
  document.write("<option value=\"0\">----------</option>")
- var rewards=[]
- for(var i=1;i<items.length;i++){
+ let rewards=[]
+ for(let i=1;i<items.length;i++){
   if(!isbaditem(i) || i<16){
    rewards[rewards.length]=[i,items[i].replace(/\[[^\]]+\]/g,"")]
   }
  }
  rewards=rewards.sort(pkmnsort)
- for(var i=0;i<rewards.length;i++){
+ for(let i=0;i<rewards.length;i++){
   document.write("<option value=\""+rewards[i][0]+"\">"+rewards[i][1]+"</option>");
  }
  document.write("</select>");
 }
 
 function setpass(f,pass){
- var headinfo=optionarray(f.mhead)
- var line1=optionarray(f.mline1)
+ let headinfo=optionarray(f.mhead)
+ let line1=optionarray(f.mline1)
  PassSetFlavorText(pass,headinfo[0],headinfo[1],headinfo[2],
    line1[2]);
 }
@@ -413,15 +413,15 @@ with egg
 */
 
 function selectedpoke(selbox,chkbox){
- var v=option(selbox)
+ let v=option(selbox)
  if(chkbox && chkbox.checked && v>0 && v<0x258)
   v+=0x258
  return v
 }
 
 function genwonder(f){
- var pass=[]
- for(var i=0;i<26;i++){
+ let pass=[]
+ for(let i=0;i<26;i++){
   pass[i]=0
  }
  pass[0]=4
@@ -482,8 +482,8 @@ FN01HWN-00%F 8678 +XY@ &%#3
   pass[25]=(poke>>8)&0xFF
  }
 // setpass(f,pass)
- var client=selectedpoke(f.client,f.clientfemale)
- var otherpoke=selectedpoke(f.poke,f.pokefemale)
+ let client=selectedpoke(f.client,f.clientfemale)
+ let otherpoke=selectedpoke(f.poke,f.pokefemale)
  if(client==0){
   alert(ChooseClient)
   return 0
@@ -495,7 +495,7 @@ FN01HWN-00%F 8678 +XY@ &%#3
  pass[12]=client&0xFF
  pass[13]=(client>>8)&0xFF
  if(pass[1]==1||pass[1]==2||pass[1]==8||pass[1]==9||pass[1]==10||pass[1]==12||pass[1]==13){
-  var poke=otherpoke
+  let poke=otherpoke
   if(poke==0){
    alert(ChooseTarget)
    return 0
@@ -557,13 +557,13 @@ FN01HWN-00%F 8678 +XY@ &%#3
   pass[20]=0
   pass[21]=0
  }
- var wonder=datatowonderpass(pass)
+ let wonder=datatowonderpass(pass)
  f.wonder.value=formatpass(wonder)
 }
 
 function decwonder(f){
- var x=entrytopass(f.wonder.value)
- var pass=[]
+ let x=entrytopass(f.wonder.value)
+ let pass=[]
  if(!convertwonderpass(x,pass)
 //   ||pass[0]!=4
 //   ||pass[1]>4
@@ -580,8 +580,8 @@ function decwonder(f){
 }
 
 function encwonder(f){
- var pass=f.data.value.split(",")
- for(var i=0;i<pass.length;i++){//>
+ let pass=f.data.value.split(",")
+ for(let i=0;i<pass.length;i++){//>
   pass[i]=parseInt(pass[i],16)
  }
  x=datatowonderpass(pass)
