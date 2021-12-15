@@ -8,29 +8,29 @@
 </head>
 <body>
 <script type="text/javascript">
-var PasswordTooShort="Le mot de passe est incorrect car il contient moins de cinquente-quatre caractères. Ressaisissez-le tel qu'il apparaît dans le jeu puis réessayez."
-var NoPassword="Aucun mot de passe n'a été entré."
-var InvalidPasswordLong="Le mot de passe est incorrect. Ressaisissez-le puis réessayez."
-var NotSOSMail="Le mot de passe saisi n'est pas celui d'une Lettre S.O.S."
-var NotAOKMail="Le mot de passe saisi n'est pas celui d'une Lettre O.K."
-//var SOSMailEnteredInAOK="The password given appears to be an SOS Mail password instead of an A-OK Mail password. Do you want to generate an A-OK Mail from this password? If you do, select OK."
-//var AOKMailEnteredInSOS="The password given appears to be an A-OK Mail password instead of an SOS Mail password. Do you want to generate a Thank-You Mail from this password? If you do, select OK."
-var SOSMailEnteredInAOK="Le mot de passe saisi semble être celui d'une Lettre S.O.S. et non d'une Lettre O.K."
-var AOKMailEnteredInSOS="Le mot de passe saisi semble être celui d'une Lettre O.K. et non d'une Lettre S.O.S."
-var BasementFloor="E. -XX"
-var AboveGroundFloor="E. XX"
-var InvalidPassword="Le mot de passe est incorrect.."
-var DifficultyLine="Difficulté :"
-var IDLine="ID :"
-var PlaceLine="Lieu :"
-var ClientLine="Client :"
-var RescueChancesLine="Possibilités de sauvetages restantes :"
+let PasswordTooShort="Le mot de passe est incorrect car il contient moins de cinquente-quatre caractères. Ressaisissez-le tel qu'il apparaît dans le jeu puis réessayez."
+let NoPassword="Aucun mot de passe n'a été entré."
+let InvalidPasswordLong="Le mot de passe est incorrect. Ressaisissez-le puis réessayez."
+let NotSOSMail="Le mot de passe saisi n'est pas celui d'une Lettre S.O.S."
+let NotAOKMail="Le mot de passe saisi n'est pas celui d'une Lettre O.K."
+//let SOSMailEnteredInAOK="The password given appears to be an SOS Mail password instead of an A-OK Mail password. Do you want to generate an A-OK Mail from this password? If you do, select OK."
+//let AOKMailEnteredInSOS="The password given appears to be an A-OK Mail password instead of an SOS Mail password. Do you want to generate a Thank-You Mail from this password? If you do, select OK."
+let SOSMailEnteredInAOK="Le mot de passe saisi semble être celui d'une Lettre S.O.S. et non d'une Lettre O.K."
+let AOKMailEnteredInSOS="Le mot de passe saisi semble être celui d'une Lettre O.K. et non d'une Lettre S.O.S."
+let BasementFloor="E. -XX"
+let AboveGroundFloor="E. XX"
+let InvalidPassword="Le mot de passe est incorrect.."
+let DifficultyLine="Difficulté :"
+let IDLine="ID :"
+let PlaceLine="Lieu :"
+let ClientLine="Client :"
+let RescueChancesLine="Possibilités de sauvetages restantes :"
 </script>
 <script src="./lettresos.js" type="text/javascript"></script>
 <script src="./diff.js" type="text/javascript"></script>
 <script type="text/javascript">//<![CDATA[
 
-var AboveGround=[
+let AboveGround=[
 0,0,1,1,0,1,1,1,0,1,1,1,1,1,1,0,0,1,1,0,0,0,
 1,0,0,0,0,0,0,1,0,1,0,1,1,1,0,1,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,1,0
@@ -41,7 +41,7 @@ function IsAboveGround(d){
 }
 function showitems(name){
  document.write("<select name=\""+name+"\">");
- for(var i=0;i<items.length;i++){
+ for(let i=0;i<items.length;i++){
   document.write("<option value=\"\">"+items[i]+" ["+i.toString(16)+"]</option>");
  }
  document.write("</select>");
@@ -49,13 +49,13 @@ function showitems(name){
 
 function showpokemon(name){
  document.write("<select name=\""+name+"\">");
- for(var i=0;i<pokemon.length;i++){
+ for(let i=0;i<pokemon.length;i++){
   document.write("<option value=\"\">"+pokemon[i]+"</option>");
  }
  document.write("</select>");
 }
 
-var debug=0
+let debug=0
 
 function entrytopass(x){
  x=x.replace(/[\n\s\r]/g,"").toUpperCase()
@@ -75,7 +75,7 @@ function formatpass(x){
        +x.substr(48,6)+"\r\n"
 }
 
-var baditems="EDEEEFB1E924D8D2B0DC323334C2ECF0"
+let baditems="EDEEEFB1E924D8D2B0DC323334C2ECF0"
 
 function option(x){
  return parseInt(x[x.selectedIndex].value)
@@ -83,7 +83,7 @@ function option(x){
 
 function isbaditem(x){
  if(x>=0xF0)return 0
- for(var i=0;i<baditems.length/2;i++){
+ for(let i=0;i<baditems.length/2;i++){
   if(x==c2c(baditems,i))
    return 1
  }
@@ -92,7 +92,7 @@ function isbaditem(x){
 
 function showrewards(name){
  document.write("<select name=\""+name+"\">");
- for(var i=0;i<items.length;i++){
+ for(let i=0;i<items.length;i++){
   if(!isbaditem(i)){
    document.write("<option value=\""+i+"\">"+items[i]
 //      +" ["+i.toString(16)+"]"
@@ -103,29 +103,29 @@ function showrewards(name){
 }
 
 function decodemission(pass){
- var diffstring="EDCBAS*"
- var client=pass[12]|(pass[13]<<8)
- var clientname=""
- for(var i=0;i<10;i++){
+ let diffstring="EDCBAS*"
+ let client=pass[12]|(pass[13]<<8)
+ let clientname=""
+ for(let i=0;i<10;i++){
   if(pass[20+i]==0)break
   clientname+=String.fromCharCode(pass[20+i])
  }
- var clientstr=ClientLine+" "+clientname+" ("+pokemon[client]+")"
- var placestr=PlaceLine+" "+dungeons[pass[4]]+" "
+ let clientstr=ClientLine+" "+clientname+" ("+pokemon[client]+")"
+ let placestr=PlaceLine+" "+dungeons[pass[4]]+" "
  if(IsAboveGround(pass[4]))
   placestr+=AboveGroundFloor.replace("XX",pass[5])
  else
   placestr+=BasementFloor.replace("XX",pass[5])
- var id=pass[16]|(pass[17]<<8)
- var idstr=IDLine+" "+(id%10000)+"\r\n"
+ let id=pass[16]|(pass[17]<<8)
+ let idstr=IDLine+" "+(id%10000)+"\r\n"
           +RescueChancesLine+" "+pass[44]+"\r\n"
           +DifficultyLine+" "+diffstring.charAt(GetDifficulty(0,pass[4],pass[5]))
  return clientstr+"\r\n"+placestr+"\r\n"+idstr+"\r\n"
 }
 
 function genmailex(f,mail,flags,mailtype){
- var pass=[]
- var x=entrytopass(mail)
+ let pass=[]
+ let x=entrytopass(mail)
  if(x.length==0){
   alert(NoPassword)
   return 0
@@ -169,7 +169,7 @@ function genmailex(f,mail,flags,mailtype){
   f.aok.value=formatpass(datatopass(pass))
  }
  if(flags&2){
-  var itemidx=option(f.item)
+  let itemidx=option(f.item)
   pass[0]=5//Thank-You mail ID
   if(itemidx){
    pass[33]=1
@@ -200,8 +200,8 @@ function genty(f){
 }
 
 function decsos(f){
- var x=entrytopass(f.sos.value)
- var pass=[]
+ let x=entrytopass(f.sos.value)
+ let pass=[]
  if(!convertpass(x,pass)){
   alert(InvalidPassword)
  } else {
@@ -214,8 +214,8 @@ function decsos(f){
 }
 
 function encsos(f){
- var pass=f.data.value.split(",")
- for(var i=0;i<pass.length;i++){
+ let pass=f.data.value.split(",")
+ for(let i=0;i<pass.length;i++){
   pass[i]=parseInt(pass[i],16)
  }
  x=datatopass(pass)
