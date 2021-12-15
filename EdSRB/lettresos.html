@@ -12,11 +12,11 @@
 <script src="objets-fr.js" type="text/javascript"></script>
 <script src="pokemon-fr.js" type="text/javascript"></script>
 <script type="text/javascript">
-var ChoosePokemon="Choisissez un Pokémon."
-var SpecialChars="Évitez d'utiliser des caractères spéciaux dans le nom."
+let ChoosePokemon="Choisissez un Pokémon."
+let SpecialChars="Évitez d'utiliser des caractères spéciaux dans le nom."
 </script><script src="lettresos.js" type="text/javascript"></script><script type="text/javascript">//<![CDATA[
 
-var debug=0
+let debug=0
 
 
 function formatpass(x){
@@ -32,15 +32,15 @@ function formatpass(x){
        +x.substr(49,5)+"\r\n"
 }
 
-var baddungeons="18191E2731323336373D3F"
-var badpokemon=
+let baddungeons="18191E2731323336373D3F"
+let badpokemon=
 "C90078017C01230125010E0051005200"+
 "33015E009100920090009C010D010C01"+
 "0E0113019600990198019D0112011401"+
 "95019601970197009B019A019E01A401"+
 "A501A601"
 
-var floors=
+let floors=
 "04060A0E0A0B040D0F0D040A06100618"+
 "041A0A2964150564150C64641A1A0D15"+
 "331F1F1F151F100D141F0B1015151F05"+
@@ -52,7 +52,7 @@ onload=function(){
 
 function isbaditem(x){
  if(x>=0xF0)return 0
- for(var i=0;i<baditems.length/2;i++){
+ for(let i=0;i<baditems.length/2;i++){
   if(x==c2c(baditems,i))
    return 1
  }
@@ -61,7 +61,7 @@ function isbaditem(x){
 
 function isbaddungeon(x){
  if(x>0x3F)return 1
- for(var i=0;i<baddungeons.length/2;i++){
+ for(let i=0;i<baddungeons.length/2;i++){
   if(x==c2c(baddungeons,i))
    return 1
  }
@@ -84,7 +84,7 @@ function getspecies(id){
 function isbadpokemon(x){
  if(getspecies(x)!=x)
   return 1
- for(var i=0;i<badpokemon.length/2;i++){
+ for(let i=0;i<badpokemon.length/2;i++){
   if(x==c2w(badpokemon,i))
    return 1
  }
@@ -97,18 +97,18 @@ function option(x){
 }
 
 function showfloors(f){
- var dungeon=option(f.dungeon)
- var numfloors=(dungeon>0x3F)?1:c2c(floors,dungeon);
- var startfloor=(dungeon>0x3F)?0:1;
+ let dungeon=option(f.dungeon)
+ let numfloors=(dungeon>0x3F)?1:c2c(floors,dungeon);
+ let startfloor=(dungeon>0x3F)?0:1;
  f.floor.options.length=0
- for(var i=startfloor;i<numfloors;i++){
+ for(let i=startfloor;i<numfloors;i++){
   f.floor.options[i-startfloor]=new Option(i+"",i+"")
  }
 }
 
 function showdungeon(name){
  document.write("<select name=\""+name+"\" onchange=\"showfloors(this.form)\">");
- for(var i=0;i<dungeons.length;i++){
+ for(let i=0;i<dungeons.length;i++){
   if(!isbaddungeon(i)){
    document.write("<option value=\""+i+"\">"+dungeons[i]+"</option>");  
   }
@@ -119,8 +119,8 @@ function showdungeon(name){
 
 
 function genpass(f){
- var pass=[]
- for(var i=0;i<56;i++){
+ let pass=[]
+ for(let i=0;i<56;i++){
   pass[i]=0
  }
  pass[0]=1
@@ -131,14 +131,14 @@ function genpass(f){
  pass[8]=Math.floor(Math.random()*256)
  pass[9]=Math.floor(Math.random()*256)
  pass[10]=Math.floor(Math.random()*256)
- var poke=option(f.poke)
+ let poke=option(f.poke)
  if(poke==0){
   alert(ChoosePokemon)
   return 0
  }
  pass[12]=poke&0xFF
  pass[13]=(poke>>8)&0xFF
- var mailid=parseInt(f.mailid.value)
+ let mailid=parseInt(f.mailid.value)
  if(f.mailid.value==""||isNaN(mailid)){
   pass[16]=Math.floor(Math.random()*256)
   pass[17]=Math.floor(Math.random()*256)
@@ -148,19 +148,19 @@ function genpass(f){
  }
  pass[18]=Math.floor(Math.random()*256)
  pass[19]=Math.floor(Math.random()*256)
- var pokename=f.pokename.value
+ let pokename=f.pokename.value
  if(!pokename){
   pokename=pokemon[poke]
  }
- for(var i=0;i<10;i++){
-  var c=pokename.charCodeAt(i)
+ for(let i=0;i<10;i++){
+  let c=pokename.charCodeAt(i)
   if(c<0x20||(c>=0x80&&c<=0x9F)||c>0xFF){
    alert(SpecialChars)
    return 0
   }
   pass[20+i]=c
  }
- var chances=parseInt(f.chances.value)
+ let chances=parseInt(f.chances.value)
  if(f.chances.value==""||isNaN(chances)){
   pass[44]=10
  } else {
@@ -171,7 +171,7 @@ function genpass(f){
  pass[37]=Math.floor(Math.random()*256)
  pass[38]=Math.floor(Math.random()*256)
  pass[39]=Math.floor(Math.random()*256)
- var sos=datatopass(pass)
+ let sos=datatopass(pass)
  f.sos.value=formatpass(sos)
  if(debug){
   f.data.value=tostr(pass)
@@ -181,7 +181,7 @@ function genpass(f){
 
 function showpkmn(name){
  document.write("<select name=\""+name+"\">");
- for(var i=0;i<pokemon.length;i++){
+ for(let i=0;i<pokemon.length;i++){
   if(i==0||1/*||!isbadpokemon(i)*/){
    document.write("<option value=\""+i+"\">"+pokemon[i]+"</option>");  
   }
@@ -190,8 +190,8 @@ function showpkmn(name){
 }
 
 function decsos(f){
- var x=f.sos.value.replace(/[\n\s\r]/g,"").toUpperCase()
- var pass=[]
+ let x=f.sos.value.replace(/[\n\s\r]/g,"").toUpperCase()
+ let pass=[]
  if(!convertpass(x,pass)){
   alert("The password is invalid.")
  } else {
@@ -205,8 +205,8 @@ function decsos(f){
 
 
 function encsos(f){
- var pass=f.data.value.split(",")
- for(var i=0;i<pass.length;i++){
+ let pass=f.data.value.split(",")
+ for(let i=0;i<pass.length;i++){
   pass[i]=parseInt(pass[i],16)
  }
  x=datatopass(pass)
