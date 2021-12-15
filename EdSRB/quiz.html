@@ -10,16 +10,16 @@
 <script type="text/javascript" src="./quiz.js"></script>
 <script type="text/javascript" src="./pokemon-fr.js"></script>
 <script type="text/javascript"><!--
-var loc=self.location.href
+let loc=self.location.href
 if(loc.charAt(loc.length-1)=="/"){
  self.location.replace(loc.substr(0,loc.length-1))
 }
 
-var qflags=[]
-var natures=[]
-var quesleft=8
+let qflags=[]
+let natures=[]
+let quesleft=8
 
-var genderpokemon=
+let genderpokemon=
 "04001900010098004200040007009E00"+
 "190068009E0085009B001B0118014501"+
 "150118011B0101003600070068003600"+
@@ -32,10 +32,10 @@ function c2w(s,c){
  return c2c(s,c<<1)|(c2c(s,(c<<1)+1)<<8)
 }
 
-for(var i=0;i<56;i++){
+for(let i=0;i<56;i++){
  qflags[i]=0
 }
-for(var i=0;i<13;i++){
+for(let i=0;i<13;i++){
  natures[i]=0
 }
 
@@ -50,16 +50,16 @@ function option(x){
 }
 
 function questionlist(){
- var ret="<xmp>"
- for(var i=0;i<questions.length;i++){
-  var group=parseInt(quesgroups.charAt(i),16)
-  var ques=questions[i]
+ let ret="<xmp>"
+ for(let i=0;i<questions.length;i++){
+  let group=parseInt(quesgroups.charAt(i),16)
+  let ques=questions[i]
   ret+="<p>"+ques[0]+" [Group "+group+"]</p><ul>\r\n"
-  for(var k=0;k<ques.length-2;k++){
+  for(let k=0;k<ques.length-2;k++){
    ret+="<li>"+ques[k+2]
    ret+=" ("
-   var comma=0
-   for(var j=0;j<13;j++){
+   let comma=0
+   for(let j=0;j<13;j++){
     if(answers[ques[1]+k][j]){
      if(comma)ret+=" ; "
      ret+=naturenames[j]+" : "+answers[ques[1]+k][j];
@@ -75,19 +75,19 @@ function questionlist(){
 }
 
 function loadquestion(q,dst,qname){
- var o=document.getElementById(dst)
- var oLeft=document.getElementById("quesleft")
- var ques=questions[q]
- var answer=ques[1]
- var ret="<p>"+ques[0]+"</p>\r\n"
+ let o=document.getElementById(dst)
+ let oLeft=document.getElementById("quesleft")
+ let ques=questions[q]
+ let answer=ques[1]
+ let ret="<p>"+ques[0]+"</p>\r\n"
  ret+="<table><tr><th>Réponses</th><th>Changements de score</th>";
  ret+="</tr>"
- for(var i=2;i<ques.length;i++){
+ for(let i=2;i<ques.length;i++){
   ret+="<tr><td>"
   ret+=radio(qname,qname+""+(i-2),i-2,ques[i])+"\r\n"
   ret+="</td><td>"
-  var comma=0
-  for(var j=0;j<13;j++){
+  let comma=0
+  for(let j=0;j<13;j++){
    if(answers[answer][j]){
     if(comma)ret+=" ; "
     ret+=naturenames[j]+" : "+answers[answer][j];
@@ -108,9 +108,9 @@ function sortfunc(a,b){
 }
 
 function writequestions(name){
- var sorted=[]
- for(var i=0;i<questions.length;i++){
-  var question=questions[i][0].replace(/<.*?>/g,"")
+ let sorted=[]
+ for(let i=0;i<questions.length;i++){
+  let question=questions[i][0].replace(/<.*?>/g,"")
   if(question.length>80){
    question=question.substr(0,80)+"..."
   }
@@ -119,7 +119,7 @@ function writequestions(name){
  sorted=sorted.sort(sortfunc)
  document.write("<select name=\""+name+"\" onchange=\"loadques(this.form)\">\r\n")
  document.write("<option value=\"-1\">Sélectionnez une question.</option>\r\n");
- for(var i=0;i<questions.length;i++){
+ for(let i=0;i<questions.length;i++){
   document.write("<option value=\""+sorted[i][1]+"\">"
     +sorted[i][0]+"</option>\r\n");
  }
@@ -127,25 +127,25 @@ function writequestions(name){
 }
 
 function radiocheck(rad){
- var val=parseInt(rad.value)
- var o=document.getElementById("quesdiv")
- var oLeft=document.getElementById("quesleft")
- var oStatus=document.getElementById("quesstatus")
- var oResult=document.getElementById("quesresult")
- var q=option(rad.form.queslist)
- var answer=questions[q][1]+val
- var ans=answers[answer]
- var maxnature=-1
- var maxholders=[]
- var bestnature
+ let val=parseInt(rad.value)
+ let o=document.getElementById("quesdiv")
+ let oLeft=document.getElementById("quesleft")
+ let oStatus=document.getElementById("quesstatus")
+ let oResult=document.getElementById("quesresult")
+ let q=option(rad.form.queslist)
+ let answer=questions[q][1]+val
+ let ans=answers[answer]
+ let maxnature=-1
+ let maxholders=[]
+ let bestnature
  if(quesleft<=0){
   return
  }
  if(answer!=22){
   quesleft=quesleft-1
  }
- var result="<ul>";
- for(var i=0;i<13;i++){
+ let result="<ul>";
+ for(let i=0;i<13;i++){
   natures[i]+=ans[i]
   result+="<li>"+naturenames[i]+" : "+natures[i]+"</li>"
   maxnature=Math.max(maxnature,natures[i])
@@ -155,14 +155,14 @@ function radiocheck(rad){
  oLeft.innerHTML="<p><b>Questions restantes : "+quesleft+"</b></p>"
  oStatus.innerHTML=result
  if(quesleft==0){
-  for(var i=0;i<13;i++){
+  for(let i=0;i<13;i++){
    if(natures[i]==maxnature){
     maxholders[maxholders.length]=i
    }
   }
   bestnature=maxholders[Math.floor(Math.random()*maxholders.length)]
-  var boypokemon=pokemon[c2w(genderpokemon,(bestnature<<1))]
-  var girlpokemon=pokemon[c2w(genderpokemon,(bestnature<<1)+1)]
+  let boypokemon=pokemon[c2w(genderpokemon,(bestnature<<1))]
+  let girlpokemon=pokemon[c2w(genderpokemon,(bestnature<<1)+1)]
   oResult.innerHTML="<p>"+naturetext[bestnature]+"</p><ul>"
    +"<li>Garçon : ... le Pokémon "+boypokemon+"!</li>"
    +"<li>Fille : ... le Pokémon "+girlpokemon+"!</li>"
@@ -171,7 +171,7 @@ function radiocheck(rad){
 }
 
 function loadques(form){
- var q=option(form.queslist)
+ let q=option(form.queslist)
  if(q>=0){
   loadquestion(q,"quesdiv","question")
  }
