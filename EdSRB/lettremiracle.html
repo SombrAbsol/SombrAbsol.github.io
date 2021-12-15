@@ -14,31 +14,31 @@
 <script src="pokemon-fr.js" type="text/javascript"></script>
 <script src="type-fr.js" type="text/javascript"></script>
 <script  type="text/javascript">
-var FriendRescue="Sauvetage Ami"
-var RescueType0="M'aider."
-var RescueType1="Trouver XXPKMN."
-var RescueType2="Me mener à XXPKMN."
-var RescueType3="Trouver XXITEM !"
-var RescueType4="Livrer XXITEM !"
-var BasementFloor="E. -XX"
-var AboveGroundFloor="E. XX"
-var SpecialMission="Mission spéciale"
-var ChooseClient="Choisissez un client."
-var ChooseTarget="Choisissez un Pokémon à sauver/trouver."
-var ChooseItem="Choisissez un objet à trouver ou à livrer."
-var ItemNotFound="L'objet XX ne peut pas être trouvé dans le donjon YY."
-var FriendAreaError="Pour recevoir une Zone d'Accueil en récompense, la mission doit être au moins de difficulté D."
-var InvalidPassword="Le mot de passe est incorrect."
-var FriendAreaReward="Zone d'Accueil [XX]."
-var NearPlace="Vers XX"
-var DifficultyLine="Difficulté :"
-var PlusReward="XX + ?"
-var PlusRewardBrackets="XX + ? [YY]"
-var RewardLine="Prime :"
-var PlaceLine="Lieu :"
-var ClientLine="Client :"
-var ObjectiveLine="Objectif :"
-var WonderMailLine="Lettre Miracle :"
+const FriendRescue="Sauvetage Ami"
+const RescueType0="M'aider."
+const RescueType1="Trouver XXPKMN."
+const RescueType2="Me mener à XXPKMN."
+const RescueType3="Trouver XXITEM !"
+const RescueType4="Livrer XXITEM !"
+const BasementFloor="E. -XX"
+const AboveGroundFloor="E. XX"
+const SpecialMission="Mission spéciale"
+const ChooseClient="Choisissez un client."
+const ChooseTarget="Choisissez un Pokémon à sauver/trouver."
+const ChooseItem="Choisissez un objet à trouver ou à livrer."
+const ItemNotFound="L'objet XX ne peut pas être trouvé dans le donjon YY."
+const FriendAreaError="Pour recevoir une Zone d'Accueil en récompense, la mission doit être au moins de difficulté D."
+const InvalidPassword="Le mot de passe est incorrect."
+const FriendAreaReward="Zone d'Accueil [XX]."
+const NearPlace="Vers XX"
+const DifficultyLine="Difficulté :"
+const PlusReward="XX + ?"
+const PlusRewardBrackets="XX + ? [YY]"
+const RewardLine="Prime :"
+const PlaceLine="Lieu :"
+const ClientLine="Client :"
+const ObjectiveLine="Objectif :"
+const WonderMailLine="Lettre Miracle :"
 </script>
 <script src="lettresos.js" type="text/javascript"></script>
 <script src="donjobjets.js" type="text/javascript"></script>
@@ -46,7 +46,7 @@ var WonderMailLine="Lettre Miracle :"
 <script src="diff.js" type="text/javascript"></script>
 <script type="text/javascript">//<![CDATA[
 
-var AboveGround=[
+const AboveGround=[
 0,0,1,1,0,1,1,1,0,1,1,1,1,1,1,0,0,1,1,0,0,0,
 1,0,0,0,0,0,0,1,0,1,0,1,1,1,0,1,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,1,0
@@ -57,7 +57,7 @@ function IsAboveGround(d){
 }
 function showitems(name){
  document.write("<select name=\""+name+"\">");
- for(var i=0;i<items.length;i++){
+ for(const i=0;i<items.length;i++){
   document.write("<option value=\"\">"+items[i]+" ["+i.toString(16)+"]</option>");  
  } 
  document.write("</select>");
@@ -65,7 +65,7 @@ function showitems(name){
 
 function showpokemon(name){
  document.write("<select name=\""+name+"\">");
- for(var i=0;i<pokemon.length;i++){
+ for(const i=0;i<pokemon.length;i++){
   document.write("<option value=\"\">"+pokemon[i]+"</option>");  
  } 
  document.write("</select>");
@@ -96,17 +96,17 @@ function formatpass(x){
        +x.substr(20,4)+"\r\n"
 }
 
-var debug=0
-var baditems="EDEEEFB1E924D8D2B0DC323334C2EC"
-var baddungeons="18191E2731323336373D3F"
-var badpokemon=
+const debug=0
+const baditems="EDEEEFB1E924D8D2B0DC323334C2EC"
+const baddungeons="18191E2731323336373D3F"
+const badpokemon=
 "C90078017C01230125010E0051005200"+
 "33015E009100920090009C010D010C01"+
 "0E0113019600990198019D0112011401"+
 "95019601970197009B019A019E01A401"+
 "A501A601"
 
-var floors=
+const floors=
 "04060A0E0A0B040D0F0D040A06100618"+
 "041A0A2964150564150C64641A1A0D15"+
 "331F1F1F151F100D141F0B1015151F05"+
@@ -120,7 +120,7 @@ onload=function(){
 
 function isbaditem(x){
  if(x>=0xF0)return 0
- for(var i=0;i<baditems.length/2;i++){
+ for(const i=0;i<baditems.length/2;i++){
   if(x==c2c(baditems,i))
    return 1
  }
@@ -129,7 +129,7 @@ function isbaditem(x){
 
 function isbaddungeon(x){
  if(x>0x3F)return 1
- for(var i=0;i<baddungeons.length/2;i++){
+ for(const i=0;i<baddungeons.length/2;i++){
   if(x==c2c(baddungeons,i))
    return 1
  }
@@ -138,18 +138,18 @@ function isbaddungeon(x){
 
 function flavors(){
  document.write("<xmp><dl>\r\n")
- for(var i=0;i<ParentChild.length;i++){
+ for(const i=0;i<ParentChild.length;i++){
   document.write("<dt><b>"+pokemon[ParentChild[i][0]]+", "+pokemon[ParentChild[i][1]]+"</b></dt>\r\n")
   document.write("<dd>"+ParentChild[i][2]+"</dd>\r\n")
  }
  document.write("</dl><dl>\r\n")
- for(var i=0;i<Pairs.length;i++){
+ for(const i=0;i<Pairs.length;i++){
   document.write("<dt><b>"+pokemon[Pairs[i][0]]+", "+pokemon[Pairs[i][1]]+":</b> \""+Pairs[i][2]+"\"</dt>\r\n")
   document.write("<dd>"+Pairs[i][3]+"</dd>\r\n")
  }
  document.write("</dl>\r\n")
  document.write("<ul>\r\n")
- for(var i=0;i<Lovers.length;i+=2){
+ for(const i=0;i<Lovers.length;i+=2){
   document.write("<li>"+pokemon[Lovers[i]]+", "+pokemon[Lovers[i+1]]+"</li>\r\n")
  }
  document.write("</ul>\r\n")
@@ -172,7 +172,7 @@ function getspecies(id){
 function isbadpokemon(x){
  if(getspecies(x)!=x)
   return 1
- for(var i=0;i<badpokemon.length/2;i++){
+ for(const i=0;i<badpokemon.length/2;i++){
   if(x==c2w(badpokemon,i))
    return 1
  }
@@ -189,8 +189,8 @@ function optionarray(x){
  if(x.selectedIndex<0){
   return []
  } else {
-  var v=x[x.selectedIndex].value.split(",")
-  for(var i=0;i<v.length;i++){
+  const v=x[x.selectedIndex].value.split(",")
+  for(const i=0;i<v.length;i++){
    v[i]=parseInt(v[i])
   }
   return v
@@ -198,17 +198,17 @@ function optionarray(x){
 }
 
 function showfloors(f){
- var dungeon=option(f.dungeon)
- var numfloors=c2c(floors,dungeon);
+ const dungeon=option(f.dungeon)
+ const numfloors=c2c(floors,dungeon);
  f.floor.options.length=0
- for(var i=1;i<numfloors;i++){
+ for(const i=1;i<numfloors;i++){
   f.floor.options[i-1]=new Option(i+"",i+"")
  }
 }
 
 function showdungeon(name){
  document.write("<select name=\""+name+"\" onchange=\"showfloors(this.form);updateform(this.form);\">");
- for(var i=0;i<dungeons.length;i++){
+ for(const i=0;i<dungeons.length;i++){
   if(!isbaddungeon(i)){
    document.write("<option value=\""+i+"\">"+dungeons[i]+"</option>");  
   }
@@ -223,14 +223,14 @@ function pkmnsort(a,b){
 
 function showpkmn(name){
  document.write("<select name=\""+name+"\" onchange=\"showftext(this.form);\">");
- var poke=[]
- for(var i=0;i<pokemon.length;i++){
+ const poke=[]
+ for(const i=0;i<pokemon.length;i++){
   if(i==0||!isbadpokemon(i)){
    poke[poke.length]=[i,pokemon[i]]
   }
  }
  poke=poke.sort(pkmnsort)
- for(var i=0;i<poke.length;i++){
+ for(const i=0;i<poke.length;i++){
   document.write("<option value=\""+poke[i][0]+"\">"+poke[i][1]+"</option>");  
  } 
  document.write("</select>");
@@ -240,7 +240,7 @@ function showpkmn(name){
 function showareas(name){
  document.write("<select name=\""+name+"\">");
  document.write("<option value=\"-1\">\-\-\-\-\-\-</a>");
- for(var i=0;i<friendareas.length;i++){
+ for(const i=0;i<friendareas.length;i++){
   if(i==10||i==14||i==35||i==36){
    document.write("<option value=\""+i+"\">"+friendareas[i]+"</option>");  
   }
@@ -249,10 +249,10 @@ function showareas(name){
 }
 
 function showfind2(f){
- var dungeon=option(f.dungeon)
+ const dungeon=option(f.dungeon)
  f.item.options.length=0
- var len=0
- for(var i=0;i<items.length;i++){
+ const len=0
+ for(const i=0;i<items.length;i++){
   if(!isbaditem(i)&&i!=0x69&&i!=0x7c&&(i==0||i>=9)){
    if(f.type.selectedIndex!=3||ItemInDungeon(i,dungeon)){
     f.item.options[len++]=new Option(items[i],i+"")
@@ -273,17 +273,17 @@ function updateform2(f){
 
 
 function showftext(f,typechanged){
- var mtype=f.type.selectedIndex
- var poke1=option(f.client)
- var poke2=option(f.poke)
- var item=items[option(f.item)]
- var fthead=FindFlavorTextHead(mtype,poke1,poke2)
- var oldsel=f.mhead.selectedIndex
+ const mtype=f.type.selectedIndex
+ const poke1=option(f.client)
+ const poke2=option(f.poke)
+ const item=items[option(f.item)]
+ const fthead=FindFlavorTextHead(mtype,poke1,poke2)
+ const oldsel=f.mhead.selectedIndex
  f.mhead.options.length=0
- var len=0
- for(var i=0;i<fthead.length;i++){
-  var optstr=fthead[i][0]+","+fthead[i][1]+","+fthead[i][2]
-  var ftext=fthead[i][3]
+ const len=0
+ for(const i=0;i<fthead.length;i++){
+  const optstr=fthead[i][0]+","+fthead[i][1]+","+fthead[i][2]
+  const ftext=fthead[i][3]
   if(mtype==3||mtype==4){
    ftext=ftext.replace(/\%s/g,item)
   } else {
@@ -300,24 +300,24 @@ function showftext(f,typechanged){
 }
 
 function updateftext(f){
- var mtype=f.type.selectedIndex
- var poke1=option(f.client)
- var poke2=option(f.poke)
- var dungeon=option(f.dungeon)
- var floor=option(f.floor)
- var item=items[option(f.item)]
- var headinfo=f.mhead.options[f.mhead.selectedIndex].value
- var oldsel,newsel=0
+ const mtype=f.type.selectedIndex
+ const poke1=option(f.client)
+ const poke2=option(f.poke)
+ const dungeon=option(f.dungeon)
+ const floor=option(f.floor)
+ const item=items[option(f.item)]
+ const headinfo=f.mhead.options[f.mhead.selectedIndex].value
+ const oldsel,newsel=0
  headinfo=headinfo.split(",")
- var fthead=FindFlavorTextLines(
+ const fthead=FindFlavorTextLines(
   headinfo[0],headinfo[1],headinfo[2],
   dungeon,floor)
  oldsel=optionarray(f.mline1)
  f.mline1.options.length=0
- var len=0
- for(var i=0;i<fthead.length;i++){
-  var optstr=fthead[i][0]+","+fthead[i][1]+","+fthead[i][2]
-  var ftext=fthead[i][3]
+ const len=0
+ for(const i=0;i<fthead.length;i++){
+  const optstr=fthead[i][0]+","+fthead[i][1]+","+fthead[i][2]
+  const ftext=fthead[i][3]
   if(mtype==3||mtype==4){
    ftext=ftext.replace(/\%s/g,item)
   } else {
@@ -341,7 +341,7 @@ function updateftext(f){
 
 function showrewards(name){
  document.write("<select name=\""+name+"\">");
- for(var i=0;i<items.length;i++){
+ for(const i=0;i<items.length;i++){
   if(!isbaditem(i)){
    document.write("<option value=\""+i+"\">"+items[i]+"</option>");  
   }
@@ -350,15 +350,15 @@ function showrewards(name){
 }
 
 function setpass(f,pass){
- var headinfo=optionarray(f.mhead)
- var line1=optionarray(f.mline1)
+ const headinfo=optionarray(f.mhead)
+ const line1=optionarray(f.mline1)
  PassSetFlavorText(pass,headinfo[0],headinfo[1],headinfo[2],
    line1[2]);
 }
 
 function genwonder(f){
- var pass=[]
- for(var i=0;i<20;i++){
+ const pass=[]
+ for(const i=0;i<20;i++){
   pass[i]=0
  }
  pass[0]=5
@@ -370,7 +370,7 @@ function genwonder(f){
  pass[9]=0xFF
  pass[10]=0xFF
  setpass(f,pass)
- var poke=option(f.client)
+ const poke=option(f.client)
  if(poke==0){
   alert(ChooseClient)
   return 0
@@ -378,7 +378,7 @@ function genwonder(f){
  pass[12]=poke&0xFF
  pass[13]=(poke>>8)&0xFF
  if(pass[1]==1||pass[1]==2){
-  var poke=option(f.poke)
+  const poke=option(f.poke)
   if(poke==0){
    alert(ChooseTarget)
    return 0
@@ -418,7 +418,7 @@ function genwonder(f){
   pass[17]=5
   pass[18]=9
  }
- var wonder=datatowonderpass(pass)
+ const wonder=datatowonderpass(pass)
  f.wonder.value=formatpass(wonder)
  if(debug){
   f.data.value=tostr(pass)
@@ -429,19 +429,19 @@ function genwonder(f){
 
 
 function maildata(pass){
- var ftext=FlavorText(pass)
- var h=FlavorTextHead(pass,ftext)
- var b=FlavorTextBody(pass,ftext)
+ const ftext=FlavorText(pass)
+ const h=FlavorTextHead(pass,ftext)
+ const b=FlavorTextBody(pass,ftext)
  b=b.split("<!--break-->")
- var diffstring="EDCBAS*"
- var data=h+"\r\n  "+b[0].replace(/\s+$/,"")
+ const diffstring="EDCBAS*"
+ const data=h+"\r\n  "+b[0].replace(/\s+$/,"")
  if(b.length>1){
   data+="\r\n  "+b[1].replace(/\s+$/,"")
  }
  data+="\r\n"
- var poke1=pass[12]|(pass[13]<<8)
- var poke2=pass[14]|(pass[15]<<8)
- var item=items[pass[16]]
+ const poke1=pass[12]|(pass[13]<<8)
+ const poke2=pass[14]|(pass[15]<<8)
+ const item=items[pass[16]]
  data+=ClientLine+" "+pokemon[poke1]+"\r\n"
  data+=ObjectiveLine+" "
  switch(ftext[2]){
@@ -465,7 +465,7 @@ function maildata(pass){
  else
   data+=BasementFloor.replace("XX",""+pass[5])
  data+="\r\n"
- var diff=GetDifficulty(pass[1],pass[4],pass[5])
+ const diff=GetDifficulty(pass[1],pass[4],pass[5])
  data+=DifficultyLine+" "+diffstring.charAt(diff)+"\r\n"
  data+=RewardLine+" "
  diff=(diff+1)*100
@@ -483,14 +483,14 @@ function maildata(pass){
  }
  data+="\r\n"
  data+=WonderMailLine+"\r\n"
- var wonder=datatowonderpass(pass)
+ const wonder=datatowonderpass(pass)
  data+=formatpass(wonder)
  return data
 }
 
 function decwonder(f){
- var x=entrytopass(f.wonder.value)
- var pass=[]
+ const x=entrytopass(f.wonder.value)
+ const pass=[]
  if(!convertwonderpass(x,pass)
    ||pass[0]!=5
    ||pass[1]>4){
@@ -502,7 +502,7 @@ function decwonder(f){
    f.data.value=tostr(pass)
    alert(maildata(pass))
   } else {
-   var md=maildata(pass)
+   const md=maildata(pass)
    if(!md){
     alert(InvalidPassword)
    } else {
@@ -513,8 +513,8 @@ function decwonder(f){
 }
 
 function encwonder(f){
- var pass=f.data.value.split(",")
- for(var i=0;i<pass.length;i++){
+ const pass=f.data.value.split(",")
+ for(const i=0;i<pass.length;i++){
   pass[i]=parseInt(pass[i],16)
  }
  x=datatowonderpass(pass)
