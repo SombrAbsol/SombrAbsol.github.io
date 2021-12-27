@@ -10,7 +10,7 @@ if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; re
   let frames = _____WB$wombat$assign$function_____("frames");
   let opener = _____WB$wombat$assign$function_____("opener");
 
-if(typeof(console) === "undefined" || typeof(console.log) === "undefined") {
+if(typeof(console) === "indéfini" || typeof(console.log) === "indéfini") {
 	var console = { log: function() {} };
 	console.info = console.log;
 	console.error = console.log;
@@ -85,7 +85,7 @@ function getItemName(itemId) {
 		return WMSkyItem[itemId];
 	}
 	else {
-		return "Unknown Item";
+		return "Objet inconnu";
 	}
 }
 
@@ -100,7 +100,7 @@ function getDungeonName(dungeonId) {
 		return WMSkyDungeon[dungeonId];
 	}
 	else {
-		return "Unknown";
+		return "Inconnu";
 	}
 }
 
@@ -120,7 +120,7 @@ function getMonName(monId) {
 		return WMSkyPoke[monId];
 	}
 	else {
-		return "Unknown";
+		return "Inconnu";
 	}
 }
 
